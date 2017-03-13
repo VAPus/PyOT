@@ -1,0 +1,12 @@
+diabolic_imp = genMonster("Diabolic Imp", 237, 6364)
+diabolic_imp.health(1950)
+diabolic_imp.type("blood")
+diabolic_imp.defense(armor=30, fire=0, earth=0.5, energy=1, ice=1.1, holy=1.05, death=0.9, physical=1, drown=1)
+diabolic_imp.experience(2900)
+diabolic_imp.speed(320)
+diabolic_imp.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=4, runOnHealth=400)
+diabolic_imp.walkAround(energy=1, fire=0, poison=0)
+diabolic_imp.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+diabolic_imp.voices("Muahaha!", "He he he.")
+diabolic_imp.melee(240) #poisons from 8hp
+diabolic_imp.loot( ("necrotic rod", 0.75), ("cleaver", 9.25), ("scimitar", 6.25), ("concentrated demonic blood", 39.0, 2), ("demonic essence", 7.5, 3), ("blank rune", 23.0, 2), (2148, 100, 199), (2548, 50.25), ("small amethyst", 4.5, 3), ("platinum coin", 13.0, 7), ("soul orb", 6.75), ("guardian shield", 7.5), ("double axe", 1.5), ("stealth ring", 2.5), ("magma coat", 0.5), ("magma monocle", 0.5), ("death ring", 0.25) )

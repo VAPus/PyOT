@@ -1,0 +1,11 @@
+#file is mostly wrong
+troll_guard = genMonster("Troll Guard", 281, 7926)
+troll_guard.health(60)
+troll_guard.type("blood")
+troll_guard.defense(armor=10, fire=1, earth=1.1, energy=0.85, ice=1, holy=0.9, death=1.1, physical=1, drown=1)
+troll_guard.experience(25)
+troll_guard.speed(120)
+troll_guard.behavior(summonable=340, hostile=True, illusionable=True, convinceable=340, pushable=True, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=20)
+troll_guard.walkAround(energy=1, fire=1, poison=1)
+troll_guard.immunity(paralyze=0, invisible=0, lifedrain=0, drunk=0)
+troll_guard.melee(15)

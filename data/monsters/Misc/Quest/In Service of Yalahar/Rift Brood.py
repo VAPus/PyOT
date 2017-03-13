@@ -1,0 +1,11 @@
+#mostly unknown
+rift_brood = genMonster("Rift Brood", 290, 8966)
+rift_brood.health(3000)
+rift_brood.type("undead")
+rift_brood.defense(armor=29, fire=0, earth=1.25, energy=0, ice=0, holy=0.85, death=1.25, physical=0.6, drown=1)
+rift_brood.experience(1600)
+rift_brood.speed(300)
+rift_brood.behavior(summonable=0, hostile=True, illusionable=True, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+rift_brood.walkAround(energy=0, fire=0, poison=1)
+rift_brood.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+rift_brood.melee(100)

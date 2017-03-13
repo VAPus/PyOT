@@ -1,0 +1,6 @@
+instant = spell.Spell("Wrath of Nature", "exevo gran mas tera", icon=56, group=ATTACK_GROUP)
+instant.require(mana=700, level=55, maglevel=0, learned=0, vocations=(2, 6))
+instant.cooldowns(40, 4)
+instant.area(AREA_UE6X6)
+instant.targetEffect(callback=spell.damage(3, 9, 32, 40))
+instant.effects(area=EFFECT_PLANTATTACK)

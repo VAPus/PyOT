@@ -1,0 +1,5 @@
+instant = spell.Spell("Heal Friend", "exura sio", icon=84, group=HEALING_GROUP)
+instant.require(mana=140, level=18, maglevel=0, learned=0, vocations=(2, 6))
+instant.cooldowns(1, 1)
+instant.effects(target=EFFECT_MAGIC_BLUE)
+instant.targetEffect(callback=spell.heal(6.3, 13.3, 45, 165))

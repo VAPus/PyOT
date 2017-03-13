@@ -1,0 +1,12 @@
+wasp = genMonster("Wasp", 44, 5989)
+wasp.health(35)
+wasp.type("slime")
+wasp.defense(armor=4, fire=1.1, earth=0, energy=1, ice=1, holy=1, death=1, physical=1, drown=1)
+wasp.experience(24)
+wasp.speed(460)
+wasp.behavior(summonable=280, hostile=True, illusionable=True, convinceable=0, pushable=True, pushItems=False, pushCreatures=False, targetDistance=1, runOnHealth=0)
+wasp.walkAround(energy=1, fire=1, poison=0)
+wasp.immunity(paralyze=0, invisible=0, lifedrain=0, drunk=0)
+wasp.voices("Bssssss")
+wasp.melee(20)#plus poison
+wasp.loot( ("honeycomb", 3.0, 3) )

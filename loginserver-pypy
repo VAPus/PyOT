@@ -1,0 +1,2 @@
+#!/bin/sh
+pypy /usr/bin/twistd --nodaemon --python loginserver.tac --pidfile loginserver.pid

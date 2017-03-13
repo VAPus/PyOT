@@ -1,0 +1,13 @@
+
+island_troll = genMonster("Island Troll", 282, 7930)
+island_troll.health(50)
+island_troll.type("blood")
+island_troll.defense(armor=6, fire=1, earth=1, energy=1, ice=1, holy=1, death=1, physical=1, drown=1)
+island_troll.experience(20)
+island_troll.speed(190)
+island_troll.behavior(summonable=290, hostile=True, illusionable=True, convinceable=290, pushable=True, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=15)
+island_troll.walkAround(energy=1, fire=1, poison=1)
+island_troll.immunity(paralyze=0, invisible=0, lifedrain=0, drunk=0)
+island_troll.voices("Hmmm, turtles", "Hmmm, dogs", "Hmmm, worms", "Groar", "Gruntz!")
+island_troll.melee(10)
+island_troll.loot( ("studded club", 4.5), ("rope", 7.75), (2148, 100, 10), ("mango", 5.0), ("wood", 29.25), ("hand axe", 18.25), ("leather helmet", 9.75), ("spear", 19.75), ("wooden shield", 15.0), ("leather boots", 10.75), ("marlin", 0.0025), ("silver amulet", 0.0025) )

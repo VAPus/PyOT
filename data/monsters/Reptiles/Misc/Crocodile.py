@@ -1,0 +1,12 @@
+
+crocodile = genMonster("Crocodile", 119, 6046)
+crocodile.health(105)
+crocodile.type("blood")
+crocodile.defense(armor=9, fire=1, earth=1, energy=1, ice=1, holy=1, death=1, physical=1, drown=1)
+crocodile.experience(40)
+crocodile.speed(240)
+crocodile.behavior(summonable=350, hostile=True, illusionable=True, convinceable=350, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=10)
+crocodile.walkAround(energy=1, fire=1, poison=1)
+crocodile.immunity(paralyze=0, invisible=0, lifedrain=0, drunk=0)
+crocodile.melee(40)
+crocodile.loot( ("ham", 40.0), (2148, 100, 10), ("piece of crocodile leather", 19.5), ("crocodile boots", 0.0025) )

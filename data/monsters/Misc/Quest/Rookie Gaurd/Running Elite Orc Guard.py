@@ -1,0 +1,10 @@
+
+running_elite_orc_guard = genMonster("Running Elite Orc Guard", 7, 5979)
+running_elite_orc_guard.health(1)
+running_elite_orc_guard.type("blood")
+running_elite_orc_guard.defense(-1)
+running_elite_orc_guard.experience(0)
+running_elite_orc_guard.speed(200)
+running_elite_orc_guard.behavior(summonable=0, hostile=False, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=1)
+running_elite_orc_guard.walkAround(energy=0, fire=0, poison=0)
+running_elite_orc_guard.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)

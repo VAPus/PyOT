@@ -1,0 +1,5 @@
+instant = spell.Spell("Whirlwind Throw", "exori hur", icon=107, group=ATTACK_GROUP)
+instant.require(mana=40, level=28, maglevel=0, learned=0, vocations=(4, 8))
+instant.cooldowns(6, 2)
+instant.targetEffect(callback=spell.meleeBased(1, 1, 0.3, 1, PHYSICAL))
+#instant.effects(shoot=ANIMATION_WEAPONTYPE)

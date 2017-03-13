@@ -1,0 +1,11 @@
+phantasm_summon = genMonster("Phantasm", 241, 6344)
+phantasm_summon.health(65)
+phantasm_summon.type("undead")
+phantasm_summon.defense(armor=2, fire=1.1, earth=0.8, energy=1.1, ice=0.8, holy=1.1, death=0, physical=0, drown=1)
+phantasm_summon.experience(0)
+phantasm_summon.speed(280)
+phantasm_summon.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+phantasm_summon.walkAround(energy=1, fire=1, poison=1)
+phantasm_summon.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+phantasm_summon.voices("Oh my, you forgot to put your pants on!", "Weeheeheeheehee!", "Its nothing but a dream.", "Dream a little dream with me!", "Give in.")
+phantasm_summon.melee(200)#wrong

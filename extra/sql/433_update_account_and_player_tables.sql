@@ -1,0 +1,2 @@
+ALTER TABLE `players` ADD `depot` MEDIUMBLOB NOT NULL DEFAULT '' AFTER `storage` ,
+ADD `inventory` MEDIUMBLOB NOT NULL DEFAULT '' AFTER `depot` 

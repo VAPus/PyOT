@@ -1,0 +1,12 @@
+#largely unknown
+weak_gloombringer = genMonster("Weak Gloombringer", 12, 5980)
+weak_gloombringer.health(10000)
+weak_gloombringer.type("blood")
+weak_gloombringer.defense(armor=1, fire=1, earth=1, energy=1, ice=1, holy=1, death=1, physical=1, drown=1)
+weak_gloombringer.experience(0)
+weak_gloombringer.speed(300)
+weak_gloombringer.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+weak_gloombringer.walkAround(energy=0, fire=0, poison=0)
+weak_gloombringer.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+weak_gloombringer.melee(3000)
+weak_gloombringer.loot( ("small diamond", 100, 5), ("gold ingot", 31.5), ("platinum coin", 100, 35), ("small ruby", 100, 5), (2148, 100, 156), ("midnight shard", 100.0), ("small topaz", 10.5), ("small emerald", 15.75, 2), ("small sapphire", 47.25, 4) )

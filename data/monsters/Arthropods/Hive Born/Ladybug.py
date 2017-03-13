@@ -1,0 +1,10 @@
+ladybug = genMonster("Ladybug", 448, 15272)
+ladybug.health(255)
+ladybug.type("slime")
+ladybug.defense(armor=10, fire=1.05, earth=0.95, energy=1, ice=1.05, holy=1, death=1, physical=1.05, drown=1)
+ladybug.experience(70)
+ladybug.speed(150) #incorrect
+ladybug.behavior(summonable=0, hostile=True, illusionable=True, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+ladybug.walkAround(energy=0, fire=0, poison=0)
+ladybug.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+ladybug.melee(5)

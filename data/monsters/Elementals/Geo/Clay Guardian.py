@@ -1,0 +1,13 @@
+#mostly unknown
+clay_guardian = genMonster("Clay Guardian", 8, 5980)
+clay_guardian.health(625)
+clay_guardian.type("blood")
+clay_guardian.defense(armor=46, fire=1, earth=0, energy=0.7, ice=0.65, holy=1, death=0.6, physical=0.75, drown=1)
+clay_guardian.experience(400)
+clay_guardian.speed(250)
+clay_guardian.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+clay_guardian.walkAround(energy=0, fire=0, poison=0)
+clay_guardian.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+#clay_guardian.voices(*arg)
+clay_guardian.melee(120)
+clay_guardian.loot( (2148, 100, 158), ("small stone", 60.75, 10), ("lump of earth", 27.0), ("blank rune", 25.25), ("earth arrow", 21.0, 8), ("clay lump", 1.25), ("small topaz", 0.0025) )

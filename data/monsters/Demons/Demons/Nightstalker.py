@@ -1,0 +1,12 @@
+nightstalker = genMonster("Nightstalker", 320, 9915)
+nightstalker.health(700)
+nightstalker.type("undead")
+nightstalker.defense(armor=44, fire=1, earth=1, energy=1.05, ice=0.8, holy=0.8, death=1.05, physical=1.05, drown=1, lifedrain=1)
+nightstalker.experience(500)
+nightstalker.speed(260)
+nightstalker.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+nightstalker.walkAround(energy=1, fire=1, poison=1)
+nightstalker.immunity(paralyze=1, invisible=1, drunk=1)
+nightstalker.voices("The sunlight is so depressing.", "Come with me, my child.", "I've been in the shadow under your bed last night.", "You never know what hides in the night.", "I remember your face - and I know where you sleep.", "Only the sweetest and cruelest dreams for you, my love.")
+nightstalker.melee(90) #poisons you starting from 4hp
+nightstalker.loot( (2148, 100, 109), ("shadow herb", 4.5), ("spirit cloak", 0.5), ("strong mana potion", 1.5), ("protection amulet", 1.0), ("boots of haste", 0.0025), ("crystal ring", 1.0), ("crystal of balance", 0.25), ("haunted blade", 0.25), ("platinum amulet", 0.25), ("chaos mace", 0.0025) )

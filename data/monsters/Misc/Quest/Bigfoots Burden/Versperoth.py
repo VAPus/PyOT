@@ -1,0 +1,11 @@
+Versperoth = genMonster("Versperoth", 8, 5980) #rotworm queen look id, mostly unkown
+Versperoth.health(125000)
+Versperoth.type("blood")
+Versperoth.defense(armor=65, fire=0.5, earth=1.05, energy=0.55, ice=0.55, holy=0.6, death=0.45, physical=0.7, drown=0.7)
+Versperoth.experience(20000)
+Versperoth.speed(0)
+Versperoth.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+Versperoth.walkAround(energy=0, fire=0, poison=0)
+Versperoth.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+Versperoth.voices("GrrroaR!", "GROWL!", "Waaaah!")
+Versperoth.melee(900)

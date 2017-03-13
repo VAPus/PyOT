@@ -1,0 +1,11 @@
+cliff_strider = genMonster("Cliff Strider", 497, 17420)#mostly unkniown including
+cliff_strider.health(9400, healthmax=9400)
+cliff_strider.type("blood")
+cliff_strider.defense(armor=55, fire=0.8, earth=0, energy=0, ice=0.2, holy=1, death=0.65, physical=0.9, drown=1)
+cliff_strider.experience(5700)
+cliff_strider.speed(350)
+cliff_strider.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+cliff_strider.walkAround(energy=0, fire=1, poison=0)
+cliff_strider.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+cliff_strider.voices("Knorrrr")
+cliff_strider.melee(500)

@@ -1,0 +1,13 @@
+
+orc = genMonster("Orc", 5, 5966)
+orc.health(70)
+orc.type("blood")
+orc.defense(armor=5, fire=1, earth=1.1, energy=0.8, ice=1, holy=0.9, death=1.1, physical=1, drown=1)
+orc.experience(25)
+orc.speed(150)
+orc.behavior(summonable=300, hostile=True, illusionable=True, convinceable=300, pushable=True, pushItems=False, pushCreatures=False, targetDistance=1, runOnHealth=15)
+orc.walkAround(energy=1, fire=1, poison=1)
+orc.immunity(paralyze=0, invisible=0, lifedrain=0, drunk=0)
+orc.voices("Grow truk grrrrr.", "Prek tars, dekklep zurk.", "Grak brrretz!")
+orc.melee(35)
+orc.loot( (2148, 100, 14), ("studded armor", 7.25), ("studded shield", 8.0), ("sabre", 5.5), ("meat", 11.25), ("studded helmet", 3.5), ("axe", 4.25), ("orc leather", 0.75), ("orc tooth", 0.25) )

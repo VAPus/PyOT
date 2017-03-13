@@ -1,0 +1,11 @@
+#largely unknown
+harbinger_of_darkness = genMonster("Harbinger of Darkness", 244, 6336)
+harbinger_of_darkness.health(10000)
+harbinger_of_darkness.type("blood")
+harbinger_of_darkness.defense(armor=1, fire=1, earth=1, energy=1, ice=1, holy=1, death=1, physical=1, drown=1)
+harbinger_of_darkness.experience(0)
+harbinger_of_darkness.speed(400)
+harbinger_of_darkness.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+harbinger_of_darkness.walkAround(energy=0, fire=0, poison=0)
+harbinger_of_darkness.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+harbinger_of_darkness.melee(4100)

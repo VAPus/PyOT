@@ -1,0 +1,1 @@
+ALTER TABLE `accounts` ADD `language` CHAR( 5 ) NOT NULL DEFAULT 'en_EN' AFTER `premdays` 

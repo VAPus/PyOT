@@ -1,0 +1,12 @@
+quara_predator_scount = genMonster("Quara Predator Scout", 20, 6067)
+quara_predator_scount.health(890)
+quara_predator_scount.type("blood")
+quara_predator_scount.defense(armor=33, fire=0, earth=1.1, energy=1.1, ice=0, holy=1, death=1, physical=1, drown=0)
+quara_predator_scount.experience(400)
+quara_predator_scount.speed(290)
+quara_predator_scount.behavior(summonable=0, hostile=True, illusionable=True, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+quara_predator_scount.walkAround(energy=1, fire=0, poison=1)
+quara_predator_scount.immunity(paralyze=1, invisible=0, lifedrain=0, drunk=0)
+quara_predator_scount.voices("Gnarrr!", "Tcharrr!", "Rrrah!", "Rraaar!")
+
+quara_predator_scount.melee(190)

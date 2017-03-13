@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<houses>
+  <house name="The W House" houseid="1" entryx="967" entryy="990" entryz="7" rent="1000" townid="1" size="126"/>
+  <house name="The Bear" houseid="2" entryx="1008" entryy="1010" entryz="7" rent="100000" guildhall="1" townid="1" size="193"/>
+  <house name="The School and Church" houseid="3" entryx="938" entryy="1015" entryz="7" rent="100000000" townid="1" size="109"/>
+  <house name="Island" houseid="4" entryx="934" entryy="988" entryz="7" rent="10000000" townid="1" size="18"/>
+  <house name="Mini Flat I" houseid="5" entryx="938" entryy="985" entryz="7" rent="10000" townid="1" size="50"/>
+  <house name="Mini Flat II" houseid="6" entryx="945" entryy="985" entryz="7" rent="10000" townid="1" size="50"/>
+  <house name="Mini Flat III" houseid="7" entryx="950" entryy="985" entryz="7" rent="10000" townid="1" size="50"/>
+  <house name="Mini Flat IV" houseid="8" entryx="957" entryy="985" entryz="7" rent="10000" townid="1" size="50"/>
+  <house name="Stone Entrance I" houseid="9" entryx="990" entryy="986" entryz="7" rent="10000" townid="1" size="40"/>
+  <house name="Stone Entrance II" houseid="10" entryx="1001" entryy="986" entryz="7" rent="10000" townid="1" size="28"/>
+  <house name="Stone Entrance III" houseid="11" entryx="1009" entryy="986" entryz="7" rent="10000" townid="1" size="28"/>
+  <house name="Yellow Flower I" houseid="12" entryx="967" entryy="1015" entryz="7" rent="10000" townid="1" size="18"/>
+  <house name="Yellow Flower II" houseid="13" entryx="971" entryy="1015" entryz="7" rent="10000" townid="1" size="18"/>
+  <house name="Yellow Flower III" houseid="14" entryx="975" entryy="1015" entryz="7" rent="10000" townid="1" size="18"/>
+  <house name="Temple House I" houseid="15" entryx="1012" entryy="993" entryz="7" rent="10000" townid="1" size="20"/>
+  <house name="Temple House II" houseid="16" entryx="1012" entryy="999" entryz="7" rent="10000" townid="1" size="20"/>
+  <house name="Temple House III" houseid="17" entryx="1012" entryy="1005" entryz="7" rent="10000" townid="1" size="20"/>
+  <house name="City Side I" houseid="18" entryx="983" entryy="1024" entryz="7" rent="10000" townid="1" size="18"/>
+  <house name="City Side II" houseid="19" entryx="999" entryy="1024" entryz="7" rent="10000" townid="1" size="18"/>
+  <house name="City Side III" houseid="20" entryx="1016" entryy="1019" entryz="7" rent="10000" townid="1" size="25"/>
+  <house name="City Side IV" houseid="21" entryx="1016" entryy="1014" entryz="7" rent="10000" townid="1" size="20"/>
+  <house name="Sandland" houseid="22" entryx="0" entryy="0" entryz="0" rent="100000" guildhall="1" townid="1" size="132"/>
+  <house name="Desert Ground" houseid="23" entryx="972" entryy="1057" entryz="7" rent="10000" townid="1" size="15"/>
+  <house name="Desert Ground II" houseid="24" entryx="972" entryy="1061" entryz="7" rent="10000" townid="1" size="15"/>
+  <house name="Ezo TownHouse I" houseid="25" entryx="1208" entryy="1089" entryz="7" rent="100000" townid="1" size="48"/>
+  <house name="Ezo TownHouse II" houseid="26" entryx="1206" entryy="1091" entryz="7" rent="100000" townid="1" size="9"/>
+  <house name="Ezo TownHouse III" houseid="27" entryx="1206" entryy="1099" entryz="7" rent="100000" townid="1" size="9"/>
+  <house name="Ezo TownHouse IV" houseid="28" entryx="1209" entryy="1100" entryz="7" rent="100000" townid="1" size="40"/>
+  <house name="Ezo TownHouse V" houseid="29" entryx="1212" entryy="1100" entryz="7" rent="100000" townid="1" size="40"/>
+</houses>

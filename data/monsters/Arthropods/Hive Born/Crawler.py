@@ -1,0 +1,10 @@
+Crawler = genMonster("Crawler", 456, 15292)
+Crawler.health(0, healthmax=None)
+Crawler.type("slime")
+Crawler.defense(armor=30, fire=1.1, earth=0, energy=1, ice=1.05, holy=1.05, death=1, physical=1, drown=1)
+Crawler.experience(1000)
+Crawler.speed(250) #incorrect
+Crawler.behavior(summonable=0, hostile=True, illusionable=True, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=40)
+Crawler.walkAround(energy=1, fire=1, poison=0)
+Crawler.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+Crawler.melee(120, condition=CountdownCondition(CONDITION_POISON, 4), conditionChance=100)

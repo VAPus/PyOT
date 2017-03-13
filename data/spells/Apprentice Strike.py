@@ -1,0 +1,5 @@
+conjure = spell.Spell("Apprentice's Strike", "exori min flam", group=ATTACK_GROUP)
+conjure.require(mana=6, level=8, maglevel=0, learned=0, vocations=(1, 2, 5, 6))
+conjure.use()
+conjure.cooldowns(0, 2)
+conjure.targetEffect()

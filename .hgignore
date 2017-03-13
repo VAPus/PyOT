@@ -1,0 +1,12 @@
+syntax: glob
+*.orig
+*.rej
+*~
+*.pyo
+*.pyc
+*.cache
+*.log
+.svn
+config.py
+__pycache__
+IP_CACHE

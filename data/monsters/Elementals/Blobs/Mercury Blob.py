@@ -1,0 +1,16 @@
+
+mercury_blob = genMonster("Mercury Blob", 316, 9961)
+mercury_blob.health(150)
+mercury_blob.type("undead")
+mercury_blob.defense(armor=2, fire=0.9, earth=0.35, energy=1, ice=0.85, holy=0.35, death=0, physical=0.9, drown=1)
+mercury_blob.experience(180)
+mercury_blob.speed(210)
+mercury_blob.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=False, targetDistance=1, runOnHealth=0)
+mercury_blob.walkAround(energy=1, fire=1, poison=1)
+mercury_blob.immunity(paralyze=0, invisible=0, lifedrain=1, drunk=1)
+mercury_blob.summon("Mercury Blob", 10)
+mercury_blob.maxSummons(3)
+mercury_blob.voices("Crackle")
+mercury_blob.melee(75) 
+#summons might not cause drunkness
+mercury_blob.loot( ("glob of mercury", 16.75) )

@@ -1,0 +1,21 @@
+dragon_hatchling = genMonster("Dragon Hatchling", 271, 7621)
+dragon_hatchling.health(380)
+dragon_hatchling.type("blood")
+dragon_hatchling.defense(armor=25, fire=0, earth=0.25, energy=1.05, ice=1.1, holy=1, death=1, physical=1, drown=1)
+dragon_hatchling.experience(185)
+dragon_hatchling.speed(170)
+dragon_hatchling.behavior(summonable=0, hostile=True, illusionable=True, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=75)
+dragon_hatchling.walkAround(energy=1, fire=0, poison=1)
+dragon_hatchling.immunity(paralyze=1, invisible=1, lifedrain=0, drunk=0)
+dragon_hatchling.voices("Fchu?", "Rooawwrr")
+dragon_hatchling.loot( (2148, 100, 55), ("dragon ham", 53.5), (12413, 3.5), ("health potion", 0.25) )
+ 
+dfwave = spell.Spell("drag fwave", target=TARGET_AREA)
+dfwave.area(AREA_WAVE8)
+dfwave.element(FIRE)
+dfwave.effects(area=EFFECT_HITBYFIRE)
+ 
+dragon_hatchling.melee(55)
+dragon_hatchling.targetSpell("drag fwave", 60, 90, check=chance(20))
+dragon_hatchling.selfSpell("Light Healing", 25, 55, check=chance(18)) #how much?
+dragon_hatchling.targetSpell(2304, 30, 55, check=chance(20))

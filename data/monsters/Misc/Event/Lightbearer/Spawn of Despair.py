@@ -1,0 +1,12 @@
+#largely unknown
+spawn_of_despair = genMonster("Spawn of Despair", 322, 9923)
+spawn_of_despair.health(10000)
+spawn_of_despair.type("blood")
+spawn_of_despair.defense(armor=10, fire=1, earth=1, energy=1, ice=1.1, holy=1.1, death=1.1, physical=1, drown=1)
+spawn_of_despair.experience(100)
+spawn_of_despair.speed(200)
+spawn_of_despair.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+spawn_of_despair.walkAround(energy=0, fire=0, poison=0)
+spawn_of_despair.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+spawn_of_despair.voices("Tibia will suffer and writhe today!", "Times of darkness are at hand", "The light weakens! The darkness grows stronger!", "YOU CALLED US! HERE WE ARE!", "The world will end today", "HRAAAAAAAAAAH", "OUR DAY HAS COME!", "HIDE YOU WEAKLINGS!", "Give it up. You fragile beings cannot have hope to defeat us demons.")
+spawn_of_despair.melee(500)

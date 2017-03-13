@@ -1,0 +1,6 @@
+instant = spell.Spell("Mass Healing", "exura gran mas res", icon=82, group=HEALING_GROUP)
+instant.require(mana=150, level=36, maglevel=0, learned=0, vocations=(2, 6))
+instant.cooldowns(1, 1)
+instant.area(AREA_CIRCLE3)
+instant.effects(area=EFFECT_MAGIC_BLUE)
+instant.targetEffect(callback=spell.heal(4.6, 9.9, 100, 125))

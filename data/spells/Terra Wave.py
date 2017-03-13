@@ -1,0 +1,6 @@
+instant = spell.Spell("Terra Wave", "exevo tera hur", icon=120, group=ATTACK_GROUP)
+instant.require(mana=210, level=38, maglevel=0, learned=0, vocations=(2, 6))
+instant.cooldowns(2, 2)
+instant.area(AREA_WAVE5)
+instant.targetEffect(callback=spell.damage(3.05, 6.95, 5, 20, EARTH))
+instant.effects(area=EFFECT_SMALLPLANTS)

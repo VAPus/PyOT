@@ -1,0 +1,2 @@
+ALTER TABLE `players` ADD `online` TINYINT( 1 ) UNSIGNED NOT NULL DEFAULT '0' AFTER `lastlogin` ;
+ALTER TABLE `players` ADD `instanceId` MEDIUMINT( 5 ) NULL DEFAULT NULL AFTER `posz` ;

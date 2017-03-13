@@ -1,0 +1,13 @@
+
+frost_troll = genMonster("Frost Troll", 53, 5998)
+frost_troll.health(55)
+frost_troll.type("blood")
+frost_troll.defense(armor=6, fire=0.6, earth=1.1, energy=1.15, ice=1, holy=0.9, death=1.1, physical=1, drown=1)
+frost_troll.experience(23)
+frost_troll.speed(190)
+frost_troll.behavior(summonable=300, hostile=True, illusionable=True, convinceable=300, pushable=True, pushItems=False, pushCreatures=False, targetDistance=1, runOnHealth=10)
+frost_troll.walkAround(energy=1, fire=1, poison=1)
+frost_troll.immunity(paralyze=0, invisible=0, lifedrain=0, drunk=0)
+frost_troll.voices("Brrr", "Broar!")
+frost_troll.melee(20)
+frost_troll.loot( ("twigs", 9.25), (2148, 100, 12), ("wooden shield", 15.25), ("spear", 20.0), ("fish", 16.0), ("rapier", 16.0), ("coat", 9.0), ("frosty ear of a troll", 1.75) )

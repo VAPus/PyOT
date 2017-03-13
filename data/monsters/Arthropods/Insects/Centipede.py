@@ -1,0 +1,12 @@
+centipede = genMonster("Centipede", 124, 6050)
+centipede.health(70, healthmax=70)
+centipede.type("slime")
+centipede.defense(armor=9, fire=1.15, earth=0, energy=0.9, ice=0.8, holy=1, death=1, physical=1, drown=1)
+centipede.experience(34)
+centipede.speed(195)
+centipede.behavior(summonable=335, hostile=True, illusionable=True, convinceable=0, pushable=True, pushItems=False, pushCreatures=False, targetDistance=1, runOnHealth=0)
+centipede.walkAround(energy=1, fire=1, poison=0)
+centipede.immunity(paralyze=0, invisible=0, lifedrain=0, drunk=0)
+centipede.loot( (2148, 100, 15), ("centipede leg", 10.0) )
+
+centipede.melee(45, condition=CountdownCondition(CONDITION_POISON, 1), conditionChance=100)

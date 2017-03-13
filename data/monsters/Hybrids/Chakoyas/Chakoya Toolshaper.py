@@ -1,0 +1,13 @@
+chakoya_toolshaper = genMonster("Chakoya Toolshaper", 259, 7320)#wrong looktype?
+chakoya_toolshaper.health(80, healthmax=80)
+chakoya_toolshaper.type("blood")
+chakoya_toolshaper.defense(armor=7, fire=0.6, earth=1, energy=1.15, ice=0, holy=0.9, death=1.05, physical=1, drown=1)
+chakoya_toolshaper.experience(40)
+chakoya_toolshaper.speed(270)
+chakoya_toolshaper.behavior(summonable=0, hostile=True, illusionable=False, convinceable=305, pushable=False, pushItems=False, pushCreatures=False, targetDistance=1, runOnHealth=0)
+chakoya_toolshaper.walkAround(energy=1, fire=1, poison=1)
+chakoya_toolshaper.immunity(paralyze=1, invisible=0, lifedrain=0, drunk=0)
+chakoya_toolshaper.voices("Chikuva!", "Jinuma jamjam!", "Suvituka siq chuqua!", "Kiyosa sipaju!")
+chakoya_toolshaper.melee(35)
+chakoya_toolshaper.distance(45, ANIMATION_THROWINGKNIFE, chance(21))
+chakoya_toolshaper.loot( (2148, 100, 20), ("fish", 34.75, 2), ("mace", 4.25), ("pick", 1.5), ("ice cube", 0.25), ("bone shield", 1.0), ("green perch", 0.25), ("mammoth whopper", 0.25), ("rainbow trout", 0.0025), ("northern pike", 0.0025) )

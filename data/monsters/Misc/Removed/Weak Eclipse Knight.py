@@ -1,0 +1,13 @@
+#largely unknown
+weak_eclipse_knight = genMonster("Weak Eclipse Knight", 234, 6328)
+weak_eclipse_knight.health(10000)
+weak_eclipse_knight.type("blood")
+weak_eclipse_knight.defense(armor=1, fire=1, earth=1, energy=1, ice=1.1, holy=1.1, death=1, physical=0.9, drown=1)
+weak_eclipse_knight.experience(100)
+weak_eclipse_knight.speed(300)
+weak_eclipse_knight.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+weak_eclipse_knight.walkAround(energy=0, fire=0, poison=0)
+weak_eclipse_knight.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+weak_eclipse_knight.voices("Yes, flee from me!")
+weak_eclipse_knight.melee(5000)
+weak_eclipse_knight.loot( ("gold ingot", 17.25), ("small sapphire", 42.75, 4), ("small diamond", 77.25, 5), (2148, 100, 174), ("midnight shard", 91.5), ("platinum coin", 100, 40), ("small topaz", 11.5), ("small amethyst", 11.5), ("rusty armor", 2.75), ("small emerald", 48.5, 5), ("small ruby", 28.5, 3) )

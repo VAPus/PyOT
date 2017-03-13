@@ -1,0 +1,12 @@
+wisp = genMonster("Wisp", 294, 6324)
+wisp.health(115)
+wisp.type("undead")
+wisp.defense(armor=6, fire=1, earth=0.1, energy=0.6, ice=1, holy=1, death=0, physical=0.4, drown=1)
+wisp.experience(0)
+wisp.speed(200)
+wisp.behavior(summonable=0, hostile=True, illusionable=True, convinceable=0, pushable=False, pushItems=False, pushCreatures=False, targetDistance=1, runOnHealth=115)
+wisp.walkAround(energy=1, fire=1, poison=1)
+wisp.immunity(paralyze=1, invisible=0, lifedrain=0, drunk=1)
+wisp.voices("Crackle!", "Tsshh")
+#nomelle attack only life drain
+wisp.loot( ("moon backpack", 0.0025) )

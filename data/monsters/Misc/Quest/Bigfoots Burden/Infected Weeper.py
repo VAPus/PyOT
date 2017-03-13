@@ -1,0 +1,13 @@
+Infected_Weeper = genMonster("Infected Weeper", 489, 15906) #mostly unknown
+Infected_Weeper.health(6800)
+Infected_Weeper.type("blood")
+Infected_Weeper.defense(armor=20, fire=1, earth=1, energy=1, ice=1, holy=1, death=1, physical=1, drown=1)
+Infected_Weeper.experience(4800)
+Infected_Weeper.speed(500)
+Infected_Weeper.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+Infected_Weeper.walkAround(energy=0, fire=0, poison=0)
+Infected_Weeper.immunity(paralyze=1, invisible=1, lifedrain=1, drunk=1)
+Infected_Weeper.summon("Parasite", 10)
+Infected_Weeper.maxSummons(1)
+Infected_Weeper.voices("Moooaaan")
+Infected_Weeper.melee(200)

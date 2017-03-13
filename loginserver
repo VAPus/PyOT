@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ -x /usr/bin/python2 ]; then
+	python2 -tOO /usr/bin/twistd --nodaemon --python loginserver.tac --pidfile loginserver.pid
+elif [ -x /usr/bin/python2.7 ]; then
+        python2.7 -tOO /usr/bin/twistd --nodaemon --python loginserver.tac --pidfile loginserver.pid
+else
+	python -tOO /usr/bin/twistd --nodaemon --python loginserver.tac --pidfile loginserver.pid
+fi

@@ -1,0 +1,15 @@
+giant_spider = genMonster("Giant Spider", 38, 5977)
+giant_spider.health(1300)
+giant_spider.type("slime")
+giant_spider.defense(armor=32, fire=1.1, earth=0, energy=0.8, ice=0.8, holy=1, death=1, physical=1, drown=1)
+giant_spider.experience(900)
+giant_spider.speed(280)
+giant_spider.behavior(summonable=0, hostile=True, illusionable=False, convinceable=0, pushable=False, pushItems=True, pushCreatures=True, targetDistance=1, runOnHealth=0)
+giant_spider.walkAround(energy=0, fire=1, poison=0)
+giant_spider.immunity(paralyze=0, invisible=0, lifedrain=1, drunk=1)
+giant_spider.summon("Poison Spider", 10)
+giant_spider.maxSummons(2)
+giant_spider.loot( (2148, 100, 98), ("poison arrow", 79.75, 12), ("steel helmet", 5.25), ("plate armor", 10.25), ("time ring", 0.75), ("brass legs", 8.5), (5879, 2.25), ("strong health potion", 1.0), ("knight legs", 0.25), ("knight armor", 0.25), ("platinum amulet", 0.25), ("lightning headband", 0.0025) )
+
+#missing - poison fields and paralyze
+giant_spider.melee(300, condition=CountdownCondition(CONDITION_POISON, 8), conditionChance=100)
