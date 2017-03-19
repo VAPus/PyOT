@@ -1,0 +1,14 @@
+version: '3'
+services:
+  pyot:
+    build: .
+    ports:
+     - "7171:7171"
+     - "7172:7172"
+    links:
+     - database
+  database:
+    image: "mysql:5.6"
+    environment:
+     - MYSQL_ROOT_PASSWORD=my-secret-pw
+     - MYSQL_DATABASE=pyot

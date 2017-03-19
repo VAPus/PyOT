@@ -1,5 +1,9 @@
 from math import log, floor
 
+#first_account
+first_account_name = '1'
+first_account_password = '1'
+
 # Network:
 loginInterface = '' # Leave blank to accept connections on any hostname
 loginPort = 7171

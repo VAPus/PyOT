@@ -440,11 +440,11 @@ def install_tables():
 
     username = None
     while not username:
-        username = input("Accountname: ")
+        username = config.first_account_name
 
     password = None
     while not password:
-         password = input("Password: ")
+         password = config.first_account_password
 
     # Leave demo to en_EN for now.
     language = "en_EN"
