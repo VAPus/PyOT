@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>core Package &mdash; PyOT 1.0-alpha1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0-alpha1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PyOT 1.0-alpha1 documentation" href="index.html" />
+    <link rel="up" title="PyOT Modules" href="modules.html" />
+    <link rel="next" title="game Package" href="game.html" />
+    <link rel="prev" title="config Module" href="config.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="game.html" title="game Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="config Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">PyOT 1.0-alpha1 documentation</a> &raquo;</li>
+          <li><a href="modules.html" accesskey="U">PyOT Modules</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">core Package</a><ul>
+<li><a class="reference internal" href="#module-otjson"><tt class="docutils literal"><span class="pre">otjson</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-packet"><tt class="docutils literal"><span class="pre">packet</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-protocolbase"><tt class="docutils literal"><span class="pre">protocolbase</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-sql"><tt class="docutils literal"><span class="pre">sql</span></tt> Module</a></li>
+<li><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="config.html"
+                        title="previous chapter">config Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="game.html"
+                        title="next chapter">game Package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/core.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="core-package">
+<h1>core Package<a class="headerlink" href="#core-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-otjson">
+<span id="otjson-module"></span><h2><a class="reference internal" href="#module-otjson" title="otjson"><tt class="xref py py-mod docutils literal"><span class="pre">otjson</span></tt></a> Module<a class="headerlink" href="#module-otjson" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-packet">
+<span id="packet-module"></span><h2><a class="reference internal" href="#module-packet" title="packet"><tt class="xref py py-mod docutils literal"><span class="pre">packet</span></tt></a> Module<a class="headerlink" href="#module-packet" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="packet.TibiaPacket">
+<em class="property">class </em><tt class="descclassname">packet.</tt><tt class="descname">TibiaPacket</tt><big>(</big><em>header=None</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="packet.TibiaPacket.clear">
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacket.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="packet.TibiaPacket.data">
+<tt class="descname">data</tt><a class="headerlink" href="#packet.TibiaPacket.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacket.int16">
+<tt class="descname">int16</tt><big>(</big><em>data</em>, <em>pack=&lt;built-in function pack&gt;</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket.int16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacket.int32">
+<tt class="descname">int32</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket.int32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacket.int64">
+<tt class="descname">int64</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket.int64" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacket.int8">
+<tt class="descname">int8</tt><big>(</big><em>data</em>, <em>pack=&lt;built-in function pack&gt;</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket.int8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacket.put">
+<tt class="descname">put</tt><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket.put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="packet.TibiaPacket.raw">
+<tt class="descname">raw</tt><a class="headerlink" href="#packet.TibiaPacket.raw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacket.send">
+<tt class="descname">send</tt><big>(</big><em>stream</em>, <em>pack=&lt;built-in function pack&gt;</em>, <em>len=&lt;built-in function len&gt;</em>, <em>adler32=&lt;built-in function adler32&gt;</em>, <em>encryptXTEA=&lt;function encryptXTEA at 0x2b2db18&gt;</em>, <em>sum=&lt;built-in function sum&gt;</em>, <em>map=&lt;built-in function map&gt;</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket.send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacket.sendto">
+<tt class="descname">sendto</tt><big>(</big><em>list</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket.sendto" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="packet.TibiaPacket.stream">
+<tt class="descname">stream</tt><a class="headerlink" href="#packet.TibiaPacket.stream" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacket.string">
+<tt class="descname">string</tt><big>(</big><em>string</em>, <em>pack=&lt;built-in function pack&gt;</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket.string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacket.uint16">
+<tt class="descname">uint16</tt><big>(</big><em>data</em>, <em>pack=&lt;built-in function pack&gt;</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket.uint16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacket.uint32">
+<tt class="descname">uint32</tt><big>(</big><em>data</em>, <em>pack=&lt;built-in function pack&gt;</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket.uint32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacket.uint64">
+<tt class="descname">uint64</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket.uint64" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacket.uint8">
+<tt class="descname">uint8</tt><big>(</big><em>data</em>, <em>chr=&lt;built-in function chr&gt;</em><big>)</big><a class="headerlink" href="#packet.TibiaPacket.uint8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="packet.TibiaPacketReader">
+<em class="property">class </em><tt class="descclassname">packet.</tt><tt class="descname">TibiaPacketReader</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="attribute">
+<dt id="packet.TibiaPacketReader.data">
+<tt class="descname">data</tt><a class="headerlink" href="#packet.TibiaPacketReader.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.double">
+<tt class="descname">double</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.float">
+<tt class="descname">float</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.float" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.getData">
+<tt class="descname">getData</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.getData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.getX">
+<tt class="descname">getX</tt><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.getX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.int16">
+<tt class="descname">int16</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.int16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.int32">
+<tt class="descname">int32</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.int32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.int64">
+<tt class="descname">int64</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.int64" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.int8">
+<tt class="descname">int8</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.int8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="packet.TibiaPacketReader.pos">
+<tt class="descname">pos</tt><a class="headerlink" href="#packet.TibiaPacketReader.pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.position">
+<tt class="descname">position</tt><big>(</big><em>instance=None</em><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.stackPosition">
+<tt class="descname">stackPosition</tt><big>(</big><em>instance=None</em><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.stackPosition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.string">
+<tt class="descname">string</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.uint16">
+<tt class="descname">uint16</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.uint16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.uint32">
+<tt class="descname">uint32</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.uint32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.uint64">
+<tt class="descname">uint64</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.uint64" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="packet.TibiaPacketReader.uint8">
+<tt class="descname">uint8</tt><big>(</big><big>)</big><a class="headerlink" href="#packet.TibiaPacketReader.uint8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-protocolbase">
+<span id="protocolbase-module"></span><h2><a class="reference internal" href="#module-protocolbase" title="protocolbase"><tt class="xref py py-mod docutils literal"><span class="pre">protocolbase</span></tt></a> Module<a class="headerlink" href="#module-protocolbase" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="protocolbase.TibiaFactory">
+<em class="property">class </em><tt class="descclassname">protocolbase.</tt><tt class="descname">TibiaFactory</tt><a class="headerlink" href="#protocolbase.TibiaFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">twisted.internet.protocol.Factory</span></tt></p>
+<dl class="method">
+<dt id="protocolbase.TibiaFactory.addClient">
+<tt class="descname">addClient</tt><big>(</big><em>client</em><big>)</big><a class="headerlink" href="#protocolbase.TibiaFactory.addClient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="protocolbase.TibiaFactory.protocol">
+<tt class="descname">protocol</tt><em class="property"> = None</em><a class="headerlink" href="#protocolbase.TibiaFactory.protocol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="protocolbase.TibiaFactory.removeClient">
+<tt class="descname">removeClient</tt><big>(</big><em>client</em><big>)</big><a class="headerlink" href="#protocolbase.TibiaFactory.removeClient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="protocolbase.TibiaProtocol">
+<em class="property">class </em><tt class="descclassname">protocolbase.</tt><tt class="descname">TibiaProtocol</tt><a class="headerlink" href="#protocolbase.TibiaProtocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">twisted.internet.protocol.Protocol</span></tt></p>
+<dl class="method">
+<dt id="protocolbase.TibiaProtocol.connectionLost">
+<tt class="descname">connectionLost</tt><big>(</big><em>reason</em><big>)</big><a class="headerlink" href="#protocolbase.TibiaProtocol.connectionLost" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="protocolbase.TibiaProtocol.connectionMade">
+<tt class="descname">connectionMade</tt><big>(</big><big>)</big><a class="headerlink" href="#protocolbase.TibiaProtocol.connectionMade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="protocolbase.TibiaProtocol.dataReceived">
+<tt class="descname">dataReceived</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#protocolbase.TibiaProtocol.dataReceived" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="protocolbase.TibiaProtocol.dataToPacket">
+<tt class="descname">dataToPacket</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#protocolbase.TibiaProtocol.dataToPacket" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="protocolbase.TibiaProtocol.handlePacketFrame">
+<tt class="descname">handlePacketFrame</tt><big>(</big><em>packetData</em><big>)</big><a class="headerlink" href="#protocolbase.TibiaProtocol.handlePacketFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="protocolbase.TibiaProtocol.loseConnection">
+<tt class="descname">loseConnection</tt><big>(</big><big>)</big><a class="headerlink" href="#protocolbase.TibiaProtocol.loseConnection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="protocolbase.TibiaProtocol.onConnect">
+<tt class="descname">onConnect</tt><big>(</big><big>)</big><a class="headerlink" href="#protocolbase.TibiaProtocol.onConnect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="protocolbase.TibiaProtocol.onConnectionLost">
+<tt class="descname">onConnectionLost</tt><big>(</big><big>)</big><a class="headerlink" href="#protocolbase.TibiaProtocol.onConnectionLost" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="protocolbase.TibiaProtocol.onFirstPacket">
+<tt class="descname">onFirstPacket</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#protocolbase.TibiaProtocol.onFirstPacket" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="protocolbase.TibiaProtocol.onInit">
+<tt class="descname">onInit</tt><big>(</big><big>)</big><a class="headerlink" href="#protocolbase.TibiaProtocol.onInit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="protocolbase.TibiaProtocol.onPacket">
+<tt class="descname">onPacket</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#protocolbase.TibiaProtocol.onPacket" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sql">
+<span id="sql-module"></span><h2><a class="reference internal" href="#module-sql" title="sql"><tt class="xref py py-mod docutils literal"><span class="pre">sql</span></tt></a> Module<a class="headerlink" href="#module-sql" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="sql.connect">
+<tt class="descclassname">sql.</tt><tt class="descname">connect</tt><big>(</big><em>module='MySQLdb'</em><big>)</big><a class="headerlink" href="#sql.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sql.runOperation">
+<tt class="descclassname">sql.</tt><tt class="descname">runOperation</tt><big>(</big><em>*argc</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sql.runOperation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sql.runOperationLastId">
+<tt class="descclassname">sql.</tt><tt class="descname">runOperationLastId</tt><big>(</big><em>*argc</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sql.runOperationLastId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sql.runQuery">
+<tt class="descclassname">sql.</tt><tt class="descname">runQuery</tt><big>(</big><em>*argc</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#sql.runQuery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="game.html">game Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.chat"><tt class="docutils literal"><span class="pre">chat</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.creature"><tt class="docutils literal"><span class="pre">creature</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.engine"><tt class="docutils literal"><span class="pre">engine</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.enum"><tt class="docutils literal"><span class="pre">enum</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.errors"><tt class="docutils literal"><span class="pre">errors</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.item"><tt class="docutils literal"><span class="pre">item</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.map"><tt class="docutils literal"><span class="pre">map</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.monster"><tt class="docutils literal"><span class="pre">monster</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.npc"><tt class="docutils literal"><span class="pre">npc</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.pathfinder"><tt class="docutils literal"><span class="pre">pathfinder</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.player"><tt class="docutils literal"><span class="pre">player</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.protocol"><tt class="docutils literal"><span class="pre">protocol</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.resource"><tt class="docutils literal"><span class="pre">resource</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.scriptsystem"><tt class="docutils literal"><span class="pre">scriptsystem</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.spell"><tt class="docutils literal"><span class="pre">spell</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.vocation"><tt class="docutils literal"><span class="pre">vocation</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.house"><tt class="docutils literal"><span class="pre">house</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.guild"><tt class="docutils literal"><span class="pre">guild</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#module-game.party"><tt class="docutils literal"><span class="pre">party</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="game.protocols.html">protocols Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="game.protocols.html#module-game.protocols.860"><tt class="docutils literal"><span class="pre">860</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="game.protocols.html#module-game.protocols.910"><tt class="docutils literal"><span class="pre">910</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="game.protocols.html#module-game.protocols.base"><tt class="docutils literal"><span class="pre">base</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="service.html">service Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="service.html#module-service.gameserver"><tt class="docutils literal"><span class="pre">gameserver</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="service.html#module-service.loginserver"><tt class="docutils literal"><span class="pre">loginserver</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="game.html" title="game Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="config Module"
+             >previous</a> |</li>
+        <li><a href="index.html">PyOT 1.0-alpha1 documentation</a> &raquo;</li>
+          <li><a href="modules.html" >PyOT Modules</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011-2012, stian, soul4soul, sentinello, Mr. Ez, Outerworld.
+      Last updated on Dec 10, 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

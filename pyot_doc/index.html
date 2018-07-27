@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>What’s PyOT &mdash; PyOT 1.0-alpha1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0-alpha1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PyOT 1.0-alpha1 documentation" href="#" />
+    <link rel="next" title="TODO List" href="todo.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="todo.html" title="TODO List"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">PyOT 1.0-alpha1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">What&#8217;s PyOT</a><ul>
+<li><a class="reference internal" href="#the-future-for-pyot">The Future for PyOT</a></li>
+<li><a class="reference internal" href="#pyot-features-so-far">PyOT Features (so far)</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="todo.html"
+                        title="next chapter">TODO List</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="what-s-pyot">
+<h1>What&#8217;s PyOT<a class="headerlink" href="#what-s-pyot" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Stian (<a class="reference external" href="http://vapus.net/forum/members/stian">vapus members/stian</a>)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Release:</th><td class="field-body">1.0-alpha1</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body">December 10, 2012</td>
+</tr>
+</tbody>
+</table>
+<p>PyOT is a server written in Python, using that Twisted framework that emulates the Tibia protocol.</p>
+<p>PyOT is super fast, and uses diffrent methods than other projects. Some of which is:</p>
+<ul class="simple">
+<li>Async SQL</li>
+<li>Async core code</li>
+<li>Async scriptsystem</li>
+<li>Ability to utilize the best reactor designs (epoll (Linux), iocp (Windows) and kqueue (FreeBSD))</li>
+<li>Ability to utilize JIT using PyPy</li>
+<li>Very flexible core</li>
+<li>Very configurable core</li>
+<li>Very fast save format (save takes from less than 0.1ms to 0.3ms per player, scales over several sql connections, allowing for upto 10k saves per second)</li>
+<li>Sector maps, dynamic load and unload for optimal memory usage (down to ~50MB on 64bit after login! (32bit can expect around half)) (<a href="#id1"><span class="problematic" id="id2">*</span></a>Multilingual mode may require more)</li>
+<li>Support for instances or even having multiple worlds on one server!</li>
+<li>Support for multiple languages (at the same time, now each individual account can have their own language!) (<a href="#id3"><span class="problematic" id="id4">*</span></a>all server sided messages, client UI is a different matter)</li>
+<li>Ability to dynamicly script maps and custom items!</li>
+</ul>
+<div class="section" id="the-future-for-pyot">
+<h2>The Future for PyOT<a class="headerlink" href="#the-future-for-pyot" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Make all core logic possible to tap into using scripts (say, a war system should be possible to make entierly using scripts)</li>
+<li>More intelligent monsters</li>
+<li>Better NPC framework</li>
+<li>Even more configurable behavior</li>
+<li>Core support for all client features</li>
+<li>Finish a base of scripts that emulates the default behavior rather well (can also be configurable)</li>
+<li>Document all features</li>
+<li>Write a couple of pages on scripting</li>
+<li>Write a couple of pages on monsters, npc and other resources</li>
+<li>Write a couple of pages on core development</li>
+<li>Write a couple of pages on things should as installation</li>
+<li>Write a much more detailed <a class="reference internal" href="todo.html#todo"><em>TODO List</em></a>  list.</li>
+</ul>
+<p>Ideas (not yet desided):</p>
+<ul class="simple">
+<li>Support for own Status protocol</li>
+<li>Support for dynamic upgrade of custom clients over a custom protocol (useful for say, autoupdaters)</li>
+</ul>
+</div>
+<div class="section" id="pyot-features-so-far">
+<h2>PyOT Features (so far)<a class="headerlink" href="#pyot-features-so-far" title="Permalink to this headline">¶</a></h2>
+<p>TODO: Write this one.</p>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">TODO List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="todo.html#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html#core">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html#protocols">Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html#scriptsystem">Scriptsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html#scripts">Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html#monsters">Monsters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html#npc">NPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="todo.html#spells">Spells</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">PyOT Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html">config Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html">core Package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scriptevents.html">Scriptable events in PyOT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfsToPyOT.html">A TFS to PyOT script function map</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="todo.html" title="TODO List"
+             >next</a> |</li>
+        <li><a href="#">PyOT 1.0-alpha1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011-2012, stian, soul4soul, sentinello, Mr. Ez, Outerworld.
+      Last updated on Dec 10, 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>generate_doc_modules Module &mdash; PyOT 1.0-alpha1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0-alpha1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PyOT 1.0-alpha1 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">PyOT 1.0-alpha1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">generate_doc_modules Module</a><ul>
+<li><a class="reference internal" href="#id1"><tt class="docutils literal"><span class="pre">generate_doc_modules</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/generate_doc_modules.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="generate-doc-modules-module">
+<h1>generate_doc_modules Module<a class="headerlink" href="#generate-doc-modules-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><a class="reference internal" href="#module-generate_doc_modules" title="generate_doc_modules"><tt class="xref py py-mod docutils literal"><span class="pre">generate_doc_modules</span></tt></a> Module<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-generate_doc_modules"></span><p>sphinx-autopackage-script</p>
+<p>This script parses a directory tree looking for python modules and packages and
+creates ReST files appropriately to create code documentation with Sphinx.
+It also creates a modules index (named modules.&lt;suffix&gt;).</p>
+<dl class="function">
+<dt id="generate_doc_modules.create_module_file">
+<tt class="descclassname">generate_doc_modules.</tt><tt class="descname">create_module_file</tt><big>(</big><em>package</em>, <em>module</em>, <em>opts</em><big>)</big><a class="headerlink" href="#generate_doc_modules.create_module_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the text of the file and write the file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate_doc_modules.create_modules_toc_file">
+<tt class="descclassname">generate_doc_modules.</tt><tt class="descname">create_modules_toc_file</tt><big>(</big><em>master_package</em>, <em>modules</em>, <em>opts</em>, <em>name='modules'</em><big>)</big><a class="headerlink" href="#generate_doc_modules.create_modules_toc_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the module&#8217;s index.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate_doc_modules.create_package_file">
+<tt class="descclassname">generate_doc_modules.</tt><tt class="descname">create_package_file</tt><big>(</big><em>root</em>, <em>master_package</em>, <em>subroot</em>, <em>py_files</em>, <em>opts</em>, <em>subs</em><big>)</big><a class="headerlink" href="#generate_doc_modules.create_package_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the text of the file and write the file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate_doc_modules.format_directive">
+<tt class="descclassname">generate_doc_modules.</tt><tt class="descname">format_directive</tt><big>(</big><em>module</em>, <em>package=None</em><big>)</big><a class="headerlink" href="#generate_doc_modules.format_directive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the automodule directive and add the options.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate_doc_modules.format_heading">
+<tt class="descclassname">generate_doc_modules.</tt><tt class="descname">format_heading</tt><big>(</big><em>level</em>, <em>text</em><big>)</big><a class="headerlink" href="#generate_doc_modules.format_heading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a heading of &lt;level&gt; [1, 2 or 3 supported].</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate_doc_modules.is_excluded">
+<tt class="descclassname">generate_doc_modules.</tt><tt class="descname">is_excluded</tt><big>(</big><em>root</em>, <em>excludes</em><big>)</big><a class="headerlink" href="#generate_doc_modules.is_excluded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the directory is in the exclude list.</p>
+<dl class="docutils">
+<dt>Note: by having trailing slashes, we avoid common prefix issues, like</dt>
+<dd>e.g. an exlude &#8220;foo&#8221; also accidentally excluding &#8220;foobar&#8221;.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate_doc_modules.main">
+<tt class="descclassname">generate_doc_modules.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#generate_doc_modules.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse and check the command line arguments.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate_doc_modules.makename">
+<tt class="descclassname">generate_doc_modules.</tt><tt class="descname">makename</tt><big>(</big><em>package</em>, <em>module</em><big>)</big><a class="headerlink" href="#generate_doc_modules.makename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Join package and module with a dot.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate_doc_modules.normalize_excludes">
+<tt class="descclassname">generate_doc_modules.</tt><tt class="descname">normalize_excludes</tt><big>(</big><em>rootpath</em>, <em>excludes</em><big>)</big><a class="headerlink" href="#generate_doc_modules.normalize_excludes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalize the excluded directory list:
+* must be either an absolute path or start with rootpath,
+* otherwise it is joined with rootpath
+* with trailing slash</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate_doc_modules.recurse_tree">
+<tt class="descclassname">generate_doc_modules.</tt><tt class="descname">recurse_tree</tt><big>(</big><em>path</em>, <em>excludes</em>, <em>opts</em><big>)</big><a class="headerlink" href="#generate_doc_modules.recurse_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Look for every file in the directory tree and create the corresponding
+ReST files.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate_doc_modules.shall_skip">
+<tt class="descclassname">generate_doc_modules.</tt><tt class="descname">shall_skip</tt><big>(</big><em>module</em><big>)</big><a class="headerlink" href="#generate_doc_modules.shall_skip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if we want to skip this module.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="generate_doc_modules.write_file">
+<tt class="descclassname">generate_doc_modules.</tt><tt class="descname">write_file</tt><big>(</big><em>name</em>, <em>text</em>, <em>opts</em><big>)</big><a class="headerlink" href="#generate_doc_modules.write_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the output file for module/package &lt;name&gt;.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">PyOT 1.0-alpha1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011-2012, stian, soul4soul, sentinello, Mr. Ez, Outerworld.
+      Last updated on Dec 10, 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

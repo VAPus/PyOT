@@ -1,0 +1,866 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Scriptable events in PyOT &mdash; PyOT 1.0-alpha1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0-alpha1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PyOT 1.0-alpha1 documentation" href="index.html" />
+    <link rel="next" title="A TFS to PyOT script function map" href="tfsToPyOT.html" />
+    <link rel="prev" title="service Package" href="service.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tfsToPyOT.html" title="A TFS to PyOT script function map"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="service.html" title="service Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">PyOT 1.0-alpha1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="service.html"
+                        title="previous chapter">service Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tfsToPyOT.html"
+                        title="next chapter">A TFS to PyOT script function map</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/scriptevents.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scriptable-events-in-pyot">
+<h1>Scriptable events in PyOT<a class="headerlink" href="#scriptable-events-in-pyot" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Stian (<a class="reference external" href="http://vapus.net/forum/members/stian">vapus members/stian</a>)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Release:</th><td class="field-body">1.0-alpha1</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body">December 10, 2012</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NB! This page is work in progress!</strong></p>
+<p>PyOT have several scriptable events you and use to interact with the core behavior (you and also overwrite the core calls from scripts aswell):</p>
+<p>Events are registered using the global function <tt class="docutils literal"><span class="pre">reg</span></tt> (linkes to <tt class="xref py py-func docutils literal"><span class="pre">game.scriptsystem.reg()</span></tt>) or <tt class="docutils literal"><span class="pre">regFirst</span></tt> (linkes to <tt class="xref py py-func docutils literal"><span class="pre">game.scriptsystem.regFirst()</span></tt>).
+All parameters are optional, if you don&#8217;t intend to use them all (we suggest to add it regardless) you add &#8220;**k&#8221; parameter to the end.</p>
+<p>The registration function:</p>
+<p><strong>For Scripts()</strong>:</p>
+<blockquote>
+<div><dl class="function">
+<dt id="register">
+<tt class="descname">register</tt><big>(</big><em>type</em><span class="optional">[</span>, <em>weakfunc=True</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Register a  callback to the <tt class="docutils literal"><span class="pre">type</span></tt> script event. <tt class="docutils literal"><span class="pre">Weakfunc</span></tt> should only be set to False if the event gets generated inside the function, non-weak functions won&#8217;t be reloaded!</p>
+</div></blockquote>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>For TriggerScripts() and RegexTriggerScripts() <a href="#id3"><span class="problematic" id="id4">**</span></a>:</p>
+<blockquote>
+<div><dl class="function">
+<dt>
+<tt class="descname">register</tt><big>(</big><em>type</em>, <em>trigger</em><span class="optional">[</span>, <em>weakfunc=True</em><span class="optional">]</span><big>)</big></dt>
+<dd></dd></dl>
+
+<p>Register a callback to the <tt class="docutils literal"><span class="pre">type</span></tt> script event. Which is called when the <tt class="docutils literal"><span class="pre">trigger</span></tt> matches. <tt class="docutils literal"><span class="pre">Weakfunc</span></tt> should only be set to False if the event gets generated inside the function, non-weak functions won&#8217;t be reloaded!</p>
+</div></blockquote>
+<p><strong>For ThingScripts() and CreatureScripts()</strong>:</p>
+<blockquote>
+<div><dl class="function">
+<dt>
+<tt class="descname">register</tt><big>(</big><em>type</em>, <em>id</em><span class="optional">[</span>, <em>weakfunc=True</em><span class="optional">]</span><big>)</big></dt>
+<dd></dd></dl>
+
+<p>Register a callback to the <tt class="docutils literal"><span class="pre">type</span></tt> script event script event. <tt class="docutils literal"><span class="pre">id</span></tt> is the identifier in which things are identified for this callback to be called.</p>
+<ul class="simple">
+<li>It can be a number and it will be checked up against the things thingId(). Example: register(&#8220;use&#8221;, 1234, onUse)</li>
+<li>It can also a list of number to register bind to, or a range. Example: register(&#8220;useWith&#8221;, (1142, 1234), onUse)</li>
+<li>The third option is to use a string, a script will match against the things actions. Actionids is strings aswell. register(&#8220;use&#8221;, &#8220;item&#8221;, onUseAnyItem) or register(&#8220;lookAt&#8221;, &#8220;Wolf&#8221;, onLookAtWolf)</li>
+<li>The fourth option is to bind it directly to a thing, this is usually only good if you intend to make one item chain the next, for instance if you use two pieces of wood together, then the next time you use the wood you want it to burst into flames. Example (inside a callback): register(&#8220;use&#8221;, thing, someCallback)</li>
+</ul>
+<p><tt class="docutils literal"><span class="pre">Weakfunc</span></tt> should only be set to False if the event gets generated inside the function, non-weak functions won&#8217;t be reloaded!</p>
+</div></blockquote>
+<p>Global Events use these registration functions:</p>
+<blockquote>
+<div><dl class="function">
+<dt id="regEvent">
+<tt class="descname">regEvent</tt><big>(</big><em>timeleap</em>, <em>callback</em><big>)</big><a class="headerlink" href="#regEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Register <tt class="docutils literal"><span class="pre">callback</span></tt> (function) to happend after <tt class="docutils literal"><span class="pre">timeleap</span></tt> seconds</p>
+<dl class="function">
+<dt id="regEventDate">
+<tt class="descname">regEventDate</tt><big>(</big><em>date</em>, <em>callback</em><big>)</big><a class="headerlink" href="#regEventDate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Register <tt class="docutils literal"><span class="pre">callback</span></tt> (function) to happend next time the clock is <tt class="docutils literal"><span class="pre">date</span></tt>. Date is a string and can be &#8220;23:00&#8221;, &#8220;10:00am&#8221;, &#8220;16:00:15&#8221;, or full date format such as &#8220;23:00 MM-DD-YYYY&#8221; or &#8220;Thu Sep 25 10:36:28&#8221;, you can also use RFC822 format: &#8220;Thu, 25 Sep 2003 10:49:41 -0300&#8221;.</p>
+<p>The format is documented here: <a class="reference external" href="http://labix.org/python-dateutil#head-c0e81a473b647dfa787dc11e8c69557ec2c3ecd2">http://labix.org/python-dateutil#head-c0e81a473b647dfa787dc11e8c69557ec2c3ecd2</a></p>
+</div></blockquote>
+<p>A little note is that global events are always cleared on reload, there is no option to prevent it.</p>
+<p>The events are:</p>
+<dl class="function">
+<dt id="talkaction">
+<tt class="descname">talkaction</tt><big>(</big><em>creature</em>, <em>text</em><big>)</big><a class="headerlink" href="#talkaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a creature(Player) say something. (TriggerScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>creature</strong> (usually <a class="reference internal" href="game.html#game.player.Player" title="game.player.Player"><tt class="xref py py-class docutils literal"><span class="pre">game.player.Player</span></tt></a>) &#8211; The creature that tries to say something.</li>
+<li><strong>text</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#str" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">str()</span></tt></a>) &#8211; What was said.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Return True/None will use the default internal behavior, while return False will stop it.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@register</span><span class="p">(</span><span class="s">&quot;talkaction&quot;</span><span class="p">,</span> <span class="s">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">onSay</span><span class="p">(</span><span class="n">creature</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+    <span class="n">creature</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s">&quot;Apperently you tried to say &#39;Hello&#39;, but was intercepted by this function&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="talkactionFirstWord">
+<tt class="descname">talkactionFirstWord</tt><big>(</big><em>creature</em>, <em>text</em><big>)</big><a class="headerlink" href="#talkactionFirstWord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called with the remaining text (can also be blank) when the creature(Player) say something that begins with the action it was registered for. (TriggerScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>creature</strong> (usually <a class="reference internal" href="game.html#game.player.Player" title="game.player.Player"><tt class="xref py py-class docutils literal"><span class="pre">game.player.Player</span></tt></a>) &#8211; The creature that tries to say something.</li>
+<li><strong>text</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#str" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">str()</span></tt></a>) &#8211; What was said.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Return True/None will use the default internal behavior, while return False will stop it.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@register</span><span class="p">(</span><span class="s">&quot;talkactionFirstWord&quot;</span><span class="p">,</span> <span class="s">&quot;!repeater&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">onSay</span><span class="p">(</span><span class="n">creature</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+    <span class="n">creature</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s">&quot;I was asked to repeat </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="talkactionRegex">
+<tt class="descname">talkactionRegex</tt><big>(</big><em>creature</em>, <em>text</em><big>)</big><a class="headerlink" href="#talkactionRegex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a regex of the trigger matches the text. (RegexTriggerScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>creature</strong> (usually <a class="reference internal" href="game.html#game.player.Player" title="game.player.Player"><tt class="xref py py-class docutils literal"><span class="pre">game.player.Player</span></tt></a>) &#8211; The creature that tries to say something.</li>
+<li><strong>text</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#str" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">str()</span></tt></a>) &#8211; What was said.</li>
+<li><strong>?</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#str" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">str()</span></tt></a>) &#8211; Any parameter from the regex query, etc (?P&lt;myParam&gt;w+) will match a word in the text, parameter will be named myParam.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Return True/None will use the default internal behavior, while return False will stop it.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@register</span><span class="p">(</span><span class="s">&quot;talkactionRegex&quot;</span><span class="p">,</span> <span class="s">r&#39;fteleport (?P&lt;x&gt;\d+),(?P&lt;y&gt;\d+),(?P&lt;z&gt;\d+)&#39;</span><span class="p">)</span>
+<span class="nd">@access</span><span class="p">(</span><span class="s">&quot;TELEPORT&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">forcedTeleporter</span><span class="p">(</span><span class="n">creature</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+    <span class="c"># Keep in mind that the extra parameters are always strings! You will need to cast them if you intend to use them in functions that require ints.</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">creature</span><span class="o">.</span><span class="n">teleport</span><span class="p">(</span><span class="n">Position</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)),</span> <span class="n">force</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">creature</span><span class="o">.</span><span class="n">lmessage</span><span class="p">(</span><span class="s">&quot;Can&#39;t teleport to void tiles!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">creature</span><span class="o">.</span><span class="n">lmessage</span><span class="p">(</span><span class="s">&quot;Welcome to </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">text</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="use">
+<tt class="descname">use</tt><big>(</big><em>creature</em>, <em>thing</em>, <em>position</em>, <em>index</em><big>)</big><a class="headerlink" href="#use" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a thing is used and the creature is max 1 square away from it. This is called AFTER farUse. (ThingScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>creature</strong> (usually <a class="reference internal" href="game.html#game.player.Player" title="game.player.Player"><tt class="xref py py-class docutils literal"><span class="pre">game.player.Player</span></tt></a>) &#8211; The creature that tries to use something.</li>
+<li><strong>thing</strong> (usually <a class="reference internal" href="game.html#game.item.Item" title="game.item.Item"><tt class="xref py py-class docutils literal"><span class="pre">game.item.Item</span></tt></a>) &#8211; The thing that was used.</li>
+<li><strong>position</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#list" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">list()</span></tt></a>) &#8211; The positon the thing have.</li>
+<li><strong>index</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#int" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">int()</span></tt></a>) &#8211; If the item was called inside a container, this is the position in the container stack.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Have no meaning.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@register</span><span class="p">(</span><span class="s">&quot;use&quot;</span><span class="p">,</span> <span class="mi">1234</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">onUse</span><span class="p">(</span><span class="n">creature</span><span class="p">,</span> <span class="n">thing</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">thing</span><span class="o">.</span><span class="n">isItem</span><span class="p">():</span>
+        <span class="n">creature</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s">&quot;I seem to have used a &#39;</span><span class="si">%s</span><span class="s">&#39; on position </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">thing</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="n">position</span><span class="p">)))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="useWith">
+<tt class="descname">useWith</tt><big>(</big><em>creature</em>, <em>thing</em>, <em>position</em>, <em>onThing</em>, <em>onPosition</em><big>)</big><a class="headerlink" href="#useWith" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a thing is used and the thing is 1 square or less away from the creature. Note, this is called with twice with item in both directions, so you should not need to bind it to all possible things. (ThingScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>creature</strong> (usually <a class="reference internal" href="game.html#game.player.Player" title="game.player.Player"><tt class="xref py py-class docutils literal"><span class="pre">game.player.Player</span></tt></a>) &#8211; The creature that tries to use something.</li>
+<li><strong>thing</strong> (usually <a class="reference internal" href="game.html#game.item.Item" title="game.item.Item"><tt class="xref py py-class docutils literal"><span class="pre">game.item.Item</span></tt></a>) &#8211; The thing that matched the register functions parameters.</li>
+<li><strong>position</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#list" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">list()</span></tt></a>) &#8211; The positon the thing have.</li>
+<li><strong>onThing</strong> (<a class="reference internal" href="game.html#game.item.Item" title="game.item.Item"><tt class="xref py py-class docutils literal"><span class="pre">game.item.Item</span></tt></a> or <a class="reference internal" href="game.html#game.creature.Creature" title="game.creature.Creature"><tt class="xref py py-class docutils literal"><span class="pre">game.creature.Creature</span></tt></a>) &#8211; The thing that the <tt class="docutils literal"><span class="pre">thing`</span></tt> was used against.</li>
+<li><strong>onPosition</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#list" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">list()</span></tt></a>) &#8211; The positon the <tt class="docutils literal"><span class="pre">onThing</span></tt> have.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Have no meaning.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">lockedDoors</span> <span class="o">=</span> <span class="mi">1209</span><span class="p">,</span> <span class="mi">1212</span><span class="p">,</span> <span class="mi">1231</span><span class="p">,</span> <span class="mi">1234</span><span class="p">,</span> <span class="mi">1249</span><span class="p">,</span> <span class="mi">1252</span><span class="p">,</span> <span class="mi">3535</span><span class="p">,</span> <span class="mi">3544</span><span class="p">,</span> <span class="mi">4913</span><span class="p">,</span> <span class="mi">4616</span><span class="p">,</span> <span class="mi">5098</span><span class="p">,</span> <span class="mi">5107</span><span class="p">,</span> <span class="mi">5116</span><span class="p">,</span> <span class="mi">5125</span><span class="p">,</span> <span class="mi">5134</span><span class="p">,</span> <span class="mi">5137</span><span class="p">,</span> <span class="mi">5140</span><span class="p">,</span> <span class="mi">5143</span><span class="p">,</span> <span class="mi">5278</span><span class="p">,</span> <span class="mi">5281</span><span class="p">,</span> <span class="mi">5732</span><span class="p">,</span> <span class="mi">5735</span><span class="p">,</span>\
+                <span class="mi">6192</span><span class="p">,</span> <span class="mi">6195</span><span class="p">,</span> <span class="mi">6249</span><span class="p">,</span> <span class="mi">6252</span><span class="p">,</span> <span class="mi">6891</span><span class="p">,</span> <span class="mi">6900</span><span class="p">,</span> <span class="mi">7033</span><span class="p">,</span> <span class="mi">7042</span><span class="p">,</span> <span class="mi">8541</span><span class="p">,</span> <span class="mi">8544</span><span class="p">,</span> <span class="mi">9165</span><span class="p">,</span> <span class="mi">9168</span><span class="p">,</span> <span class="mi">9267</span><span class="p">,</span> <span class="mi">9270</span><span class="p">,</span> <span class="mi">10268</span><span class="p">,</span> <span class="mi">10271</span><span class="p">,</span> <span class="mi">10468</span><span class="p">,</span> <span class="mi">10477</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2086</span><span class="p">,</span> <span class="mi">2092</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nd">@register</span><span class="p">(</span><span class="s">&#39;useWith&#39;</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">onUseKey</span><span class="p">(</span><span class="n">creature</span><span class="p">,</span> <span class="n">thing</span><span class="p">,</span> <span class="n">onThing</span><span class="p">,</span> <span class="n">onPosition</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">onThing</span><span class="o">.</span><span class="n">actions</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">onThing</span><span class="o">.</span><span class="n">itemId</span> <span class="ow">in</span> <span class="n">lockedDoors</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">onThing</span><span class="o">.</span><span class="n">itemId</span><span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">lockedDoors</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">onThing</span><span class="o">.</span><span class="n">itemId</span><span class="o">-</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">lockedDoors</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="n">canOpen</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">for</span> <span class="n">aid</span> <span class="ow">in</span> <span class="n">thing</span><span class="o">.</span><span class="n">actions</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">aid</span> <span class="ow">in</span> <span class="n">onThing</span><span class="o">.</span><span class="n">actions</span><span class="p">:</span>
+            <span class="n">canOpen</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">canOpen</span><span class="p">:</span>
+        <span class="n">creature</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s">&quot;The key does not match.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">if</span> <span class="n">onThing</span><span class="o">.</span><span class="n">itemId</span> <span class="ow">in</span> <span class="n">lockedDoors</span><span class="p">:</span>
+        <span class="n">onThing</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">onThing</span><span class="o">.</span><span class="n">itemId</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">onThing</span><span class="o">.</span><span class="n">itemId</span><span class="o">-</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">lockedDoors</span><span class="p">:</span>
+        <span class="n">onThing</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">onThing</span><span class="o">.</span><span class="n">itemId</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">onThing</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">onThing</span><span class="o">.</span><span class="n">itemId</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="login">
+<tt class="descname">login</tt><big>(</big><em>creature</em><big>)</big><a class="headerlink" href="#login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a player login. (Script)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>creature</strong> (<a class="reference internal" href="game.html#game.player.Player" title="game.player.Player"><tt class="xref py py-class docutils literal"><span class="pre">game.player.Player</span></tt></a>) &#8211; Player object.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Have no meaning.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@register</span><span class="p">(</span><span class="s">&quot;login&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">onLogin</span><span class="p">(</span><span class="n">creature</span><span class="p">):</span>
+    <span class="n">creature</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s">&quot;Welcome back </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">creature</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="logout">
+<tt class="descname">logout</tt><big>(</big><em>creature</em><big>)</big><a class="headerlink" href="#logout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a player logout. (Script)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>creature</strong> (<a class="reference internal" href="game.html#game.player.Player" title="game.player.Player"><tt class="xref py py-class docutils literal"><span class="pre">game.player.Player</span></tt></a>) &#8211; Player object.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Have no meaning.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@register</span><span class="p">(</span><span class="s">&quot;logout&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">onLogout</span><span class="p">(</span><span class="n">creature</span><span class="p">):</span>
+    <span class="n">creature</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="walkOn">
+<tt class="descname">walkOn</tt><big>(</big><em>creature</em>, <em>thing</em>, <em>position</em>, <em>fromPosition</em><big>)</big><a class="headerlink" href="#walkOn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the creature walks on a item. (ThingScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>creature</strong> (<a class="reference internal" href="game.html#game.creature.Creature" title="game.creature.Creature"><tt class="xref py py-class docutils literal"><span class="pre">game.creature.Creature</span></tt></a>) &#8211; The creature that walked on this item.</li>
+<li><strong>thing</strong> (<a class="reference internal" href="game.html#game.item.Item" title="game.item.Item"><tt class="xref py py-class docutils literal"><span class="pre">game.item.Item</span></tt></a>) &#8211; The item that triggered this call.</li>
+<li><strong>positon</strong> &#8211; The position where this item is.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Have no meaning.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@register</span><span class="p">(</span><span class="s">&quot;walkOn&quot;</span><span class="p">,</span> <span class="mi">1234</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">walkOn</span><span class="p">(</span><span class="n">creature</span><span class="p">,</span> <span class="n">thing</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">):</span>
+    <span class="n">creature</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s">&quot;You can&#39;t stand here!&quot;</span><span class="p">)</span>
+    <span class="n">creature</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">NORTH</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="walkOff">
+<tt class="descname">walkOff</tt><big>(</big><em>creature</em>, <em>thing</em>, <em>position</em><big>)</big><a class="headerlink" href="#walkOff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the creature walks off a item. (ThingScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>creature</strong> (<a class="reference internal" href="game.html#game.creature.Creature" title="game.creature.Creature"><tt class="xref py py-class docutils literal"><span class="pre">game.creature.Creature</span></tt></a>) &#8211; The creature that walked on this item.</li>
+<li><strong>thing</strong> (<a class="reference internal" href="game.html#game.item.Item" title="game.item.Item"><tt class="xref py py-class docutils literal"><span class="pre">game.item.Item</span></tt></a>) &#8211; The item that triggered this call.</li>
+<li><strong>positon</strong> &#8211; The position where this item is.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Have no meaning.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@register</span><span class="p">(</span><span class="s">&quot;walkOff&quot;</span><span class="p">,</span> <span class="mi">1234</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">walkOff</span><span class="p">(</span><span class="n">creature</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">):</span>
+    <span class="n">creature</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s">&quot;You left this holy place!&quot;</span><span class="p">)</span>
+    <span class="n">creature</span><span class="o">.</span><span class="n">modifyHealth</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="preWalkOn">
+<tt class="descname">preWalkOn</tt><big>(</big><em>creature</em>, <em>thing</em>, <em>position</em>, <em>oldTile</em>, <em>newTile</em><big>)</big><a class="headerlink" href="#preWalkOn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the creature walks on a item. (ThingScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>creature</strong> (<a class="reference internal" href="game.html#game.creature.Creature" title="game.creature.Creature"><tt class="xref py py-class docutils literal"><span class="pre">game.creature.Creature</span></tt></a>) &#8211; The creature that walked on this item.</li>
+<li><strong>thing</strong> (<a class="reference internal" href="game.html#game.item.Item" title="game.item.Item"><tt class="xref py py-class docutils literal"><span class="pre">game.item.Item</span></tt></a>) &#8211; The item that triggered this call.</li>
+<li><strong>positon</strong> &#8211; The position where this item is.</li>
+<li><strong>newTile</strong> &#8211; The new tile that the creature might walk on.</li>
+<li><strong>oldTile</strong> &#8211; The current tile where the creature is placed.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">False</span></tt> will prevent the creature from walking on to this tile.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@register</span><span class="p">(</span><span class="s">&quot;preWalkOn&quot;</span><span class="p">,</span> <span class="mi">1234</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">tileCheck</span><span class="p">(</span><span class="n">creature</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">):</span>
+    <span class="n">creature</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s">&quot;We won&#39;t allow you to touch this holy ground!&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="lookAt">
+<tt class="descname">lookAt</tt><big>(</big><em>creature</em>, <em>thing</em>, <em>position</em><big>)</big><a class="headerlink" href="#lookAt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a player looks at a thing. (ThingScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>creature</strong> (<a class="reference internal" href="game.html#game.player.Player" title="game.player.Player"><tt class="xref py py-class docutils literal"><span class="pre">game.player.Player</span></tt></a>) &#8211; The creature that looks at something.</li>
+<li><strong>thing</strong> (<a class="reference internal" href="game.html#game.item.Item" title="game.item.Item"><tt class="xref py py-class docutils literal"><span class="pre">game.item.Item</span></tt></a> or <a class="reference internal" href="game.html#game.creature.Creature" title="game.creature.Creature"><tt class="xref py py-class docutils literal"><span class="pre">game.creature.Creature</span></tt></a>) &#8211; The thing that the player tries to look at.</li>
+<li><strong>position</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#list" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">list()</span></tt></a>) &#8211; The positon the thing have.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Return False prevents the default behavior.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@register</span><span class="p">(</span><span class="s">&quot;lookAt&quot;</span><span class="p">,</span> <span class="mi">1234</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">lookAt</span><span class="p">(</span><span class="n">creature</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">):</span>
+    <span class="n">creature</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="s">&quot;I can&#39;t look, that thing scare the crap out of me!&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="postLoadSector">
+<tt class="descname">postLoadSector</tt><big>(</big><em>sector</em>, <em>instanceId</em><big>)</big><a class="headerlink" href="#postLoadSector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a map sector is loaded, sector is the 3 dimensional tuple Z -&gt; X -&gt; Y (TriggerScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Item to add to the map (usually just <tt class="docutils literal"><span class="pre">thing</span></tt>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="playerSayTo">
+<tt class="descname">playerSayTo</tt><big>(</big><em>creature</em>, <em>creature2</em>, <em>...</em><big>)</big><a class="headerlink" href="#playerSayTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Currently not in use. (CreatureScript)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="close">
+<tt class="descname">close</tt><big>(</big><em>creature</em>, <em>thing</em>, <em>index</em><big>)</big><a class="headerlink" href="#close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a container is closed.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="hit">
+<tt class="descname">hit</tt><big>(</big><em>creature</em>, <em>creature2</em>, <em>damage</em>, <em>type</em>, <em>textColor</em>, <em>magicEffect</em><big>)</big><a class="headerlink" href="#hit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when <tt class="docutils literal"><span class="pre">creature2</span></tt> hits <tt class="docutils literal"><span class="pre">creature</span></tt>. damage, type, textColor and magicEffect is one item lists. Update them update the data used in the hit process. (CreatureScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Return False prevent the hit from happening.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="death">
+<tt class="descname">death</tt><big>(</big><em>creature</em>, <em>creature2</em>, <em>corpse</em><big>)</big><a class="headerlink" href="#death" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when <tt class="docutils literal"><span class="pre">creature</span></tt> gets killed by <tt class="docutils literal"><span class="pre">creature2</span></tt>. Change the creature.alive value or add health to the creature to resurect him and prevent the rest of the death code from happening (CreatureScript)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="respawn">
+<tt class="descname">respawn</tt><big>(</big><em>creature</em><big>)</big><a class="headerlink" href="#respawn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called as a notification call when a creature respawns. (Script)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="reload">
+<tt class="descname">reload</tt><big>(</big><big>)</big><a class="headerlink" href="#reload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the server reloads.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">False will prevent reloading.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="postReload">
+<tt class="descname">postReload</tt><big>(</big><big>)</big><a class="headerlink" href="#postReload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the server is done reloading. Useful to restore stuff in case you need them.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="startup">
+<tt class="descname">startup</tt><big>(</big><big>)</big><a class="headerlink" href="#startup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the server starts up. Useful to invoke core hooks or initialize your own scripts.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="shutdown">
+<tt class="descname">shutdown</tt><big>(</big><big>)</big><a class="headerlink" href="#shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called just before the server shuts down.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="move">
+<tt class="descname">move</tt><big>(</big><em>creature</em><big>)</big><a class="headerlink" href="#move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a creature moves.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">False will prevent the creature from moving.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@register</span><span class="p">(</span><span class="s">&#39;move&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">preventWalking</span><span class="p">(</span><span class="n">creature</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">creature</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s">&quot;Your leg hurt too much&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="appear">
+<tt class="descname">appear</tt><big>(</big><em>creature</em>, <em>creature2</em><big>)</big><a class="headerlink" href="#appear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when creature2 appear in the view field of creature (and reverse). (CreatureScript)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="disappear">
+<tt class="descname">disappear</tt><big>(</big><em>creature</em>, <em>creature2</em><big>)</big><a class="headerlink" href="#disappear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when creature2 appear in the view field of creature (and reverse). (CreatureScript)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="loot">
+<tt class="descname">loot</tt><big>(</big><em>creature</em>, <em>creature2</em>, <em>loot</em>, <em>maxSize</em><big>)</big><a class="headerlink" href="#loot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when creature dies and generate loot for creature2. maxSize is the amount of slots currently in the bag, you can&#8217;t add items over this. (CreatureScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">New loot list.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="target">
+<tt class="descname">target</tt><big>(</big><em>creature</em>, <em>creature2</em>, <em>attack</em><big>)</big><a class="headerlink" href="#target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when creature target creature2, attack=True if the creature intend to attack it, false otherwise (follow etc). (CreatureScript)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rotate">
+<tt class="descname">rotate</tt><big>(</big><em>creature</em>, <em>thing</em>, <em>position</em><big>)</big><a class="headerlink" href="#rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when creature tries to rotate <tt class="docutils literal"><span class="pre">thing</span></tt> on <tt class="docutils literal"><span class="pre">position</span></tt>. (ThingScript)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><tt class="docutils literal"><span class="pre">False</span></tt> prevent the rotation of the thing.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="questLog">
+<tt class="descname">questLog</tt><big>(</big><em>creature</em>, <em>questLog</em><big>)</big><a class="headerlink" href="#questLog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called with the raw questLog, modify it to change the questLog that is sent to the client. (script)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="modeChange">
+<tt class="descname">modeChange</tt><big>(</big><em>creature</em>, <em>chase</em>, <em>attack</em>, <em>secure</em><big>)</big><a class="headerlink" href="#modeChange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a <tt class="docutils literal"><span class="pre">creature</span></tt> (Player) change the modes. The parameters are the new modes, you can compare them against the old modes (creature.modes). (Script)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">False to prevent mode change.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="equip">
+<tt class="descname">equip</tt><big>(</big><em>creature</em>, <em>thing</em>, <em>slot) / dress(creature</em>, <em>thing</em>, <em>slot) / wield(creature</em>, <em>thing</em>, <em>slot</em><big>)</big><a class="headerlink" href="#equip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a Player equips <tt class="docutils literal"><span class="pre">thing</span></tt> on inventory slot <tt class="docutils literal"><span class="pre">slot</span></tt> (check up against enums). (ThingScript)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="deEquip">
+<tt class="descname">deEquip</tt><big>(</big><em>creature</em>, <em>thing</em>, <em>slot) / undress(creature</em>, <em>thing</em>, <em>slot) / unwield(creature</em>, <em>thing</em>, <em>slot</em><big>)</big><a class="headerlink" href="#deEquip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a Player dequips <tt class="docutils literal"><span class="pre">thing</span></tt> on inventory slot <tt class="docutils literal"><span class="pre">slot</span></tt> (check up against enums). (ThingScript)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="chargeRent">
+<tt class="descname">chargeRent</tt><big>(</big><em>house</em><big>)</big><a class="headerlink" href="#chargeRent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when it&#8217;s time to charge rent for the house (Script)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="requestChannels">
+<tt class="descname">requestChannels</tt><big>(</big><em>creature</em>, <em>channels</em><big>)</big><a class="headerlink" href="#requestChannels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the player (creature) request the channels list. Channels is a dict containing all the channels. This dict might be modified directly. Or returned.
+Format is {id: Channel Object} (Script)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(Optional) dict of channels to display.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="joinChannel">
+<tt class="descname">joinChannel</tt><big>(</big><em>creature</em>, <em>channelId</em><big>)</big><a class="headerlink" href="#joinChannel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when Player (creature) attempts to join a channel. (Script)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">False to prevent the player from joining this channel.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="leaveChannel">
+<tt class="descname">leaveChannel</tt><big>(</big><em>creature</em>, <em>channelId</em><big>)</big><a class="headerlink" href="#leaveChannel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when Player (creature) leaves the channel. Since this can&#8217;t be stopped server sided (aside from rejoining the channel) this is just a notification call. (Script)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">No meaning.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="getChannelMembers">
+<tt class="descname">getChannelMembers</tt><big>(</big><em>creature</em>, <em>channelId</em>, <em>text</em>, <em>type</em>, <em>members</em><big>)</big><a class="headerlink" href="#getChannelMembers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the system want to get a list of members to send the channel list too. This works in the same way as requestChannels does, except that the members list is a list and not a dict. (TriggerScript)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="loginAccountFailed">
+<tt class="descname">loginAccountFailed</tt><big>(</big><em>client</em>, <em>username</em>, <em>password</em><big>)</big><a class="headerlink" href="#loginAccountFailed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when this account fails to login (NCScript). You can use this to etc create a new player.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(Optionally) a new account id object ((ID,)). This will be used to lookup a player.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="loginCharacterFailed">
+<tt class="descname">loginCharacterFailed</tt><big>(</big><em>client</em>, <em>account</em>, <em>name</em><big>)</big><a class="headerlink" href="#loginCharacterFailed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when character lookup fails (NCSCript). You may create this account and return a player object. Or optionally a list representing all the fields from SQL.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(Optionally) player object or list.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="level">
+<tt class="descname">level</tt><big>(</big><em>creature</em>, <em>fromLevel</em>, <em>toLevel</em><big>)</big><a class="headerlink" href="#level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the level of a player gets adjusted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(Optionally) False (prevent level adjustments)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="skill">
+<tt class="descname">skill</tt><big>(</big><em>creature</em>, <em>skill</em>, <em>fromLevel</em>, <em>toLevel</em><big>)</big><a class="headerlink" href="#skill" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>skill</strong> &#8211; number from 0-7 representing the skill.</td>
+</tr>
+</tbody>
+</table>
+<p>Called when the skill (or magic level) of a player gets adjusted</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">(Optionally) False (prevent level adjustments)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="thankYou">
+<tt class="descname">thankYou</tt><big>(</big><em>creature</em>, <em>messageId</em>, <em>author</em>, <em>channelType</em>, <em>channel</em>, <em>text</em><big>)</big><a class="headerlink" href="#thankYou" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>messageId</strong> &#8211; Original messageId.</li>
+<li><strong>author</strong> &#8211; The author of the message.</li>
+<li><strong>channelType</strong> &#8211; The message channel type.</li>
+<li><strong>text</strong> &#8211; The message text.</li>
+<li><strong>channel</strong> &#8211; The channel object.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@register</span><span class="p">(</span><span class="s">&#39;thankYou&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">thankYouNotice</span><span class="p">(</span><span class="n">creature</span><span class="p">,</span> <span class="n">author</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">):</span>
+    <span class="n">author</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="s">&quot;You have just been thanked by </span><span class="si">%s</span><span class="s">!&quot;</span> <span class="o">%</span> <span class="n">creature</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tfsToPyOT.html" title="A TFS to PyOT script function map"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="service.html" title="service Package"
+             >previous</a> |</li>
+        <li><a href="index.html">PyOT 1.0-alpha1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011-2012, stian, soul4soul, sentinello, Mr. Ez, Outerworld.
+      Last updated on Dec 10, 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

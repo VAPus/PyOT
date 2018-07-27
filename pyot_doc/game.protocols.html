@@ -1,0 +1,951 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>protocols Package &mdash; PyOT 1.0-alpha1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0-alpha1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PyOT 1.0-alpha1 documentation" href="index.html" />
+    <link rel="up" title="game Package" href="game.html" />
+    <link rel="next" title="service Package" href="service.html" />
+    <link rel="prev" title="game Package" href="game.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="service.html" title="service Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="game.html" title="game Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">PyOT 1.0-alpha1 documentation</a> &raquo;</li>
+          <li><a href="modules.html" >PyOT Modules</a> &raquo;</li>
+          <li><a href="core.html" >core Package</a> &raquo;</li>
+          <li><a href="game.html" accesskey="U">game Package</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">protocols Package</a><ul>
+<li><a class="reference internal" href="#module-game.protocols.860"><tt class="docutils literal"><span class="pre">860</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-game.protocols.910"><tt class="docutils literal"><span class="pre">910</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-game.protocols.base"><tt class="docutils literal"><span class="pre">base</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="game.html"
+                        title="previous chapter">game Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="service.html"
+                        title="next chapter">service Package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/game.protocols.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="protocols-package">
+<h1>protocols Package<a class="headerlink" href="#protocols-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-game.protocols.860">
+<span id="module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">860</span></tt> Module<a class="headerlink" href="#module-game.protocols.860" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="game.protocols.860.Packet">
+<em class="property">class </em><tt class="descclassname">game.protocols.860.</tt><tt class="descname">Packet</tt><big>(</big><em>header=None</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#game.protocols.base.BasePacket" title="game.protocols.base.BasePacket"><tt class="xref py py-class docutils literal"><span class="pre">game.protocols.base.BasePacket</span></tt></a></p>
+<dl class="method">
+<dt id="game.protocols.860.Packet.cooldownGroup">
+<tt class="descname">cooldownGroup</tt><big>(</big><em>group</em>, <em>cooldown</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet.cooldownGroup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Packet.cooldownIcon">
+<tt class="descname">cooldownIcon</tt><big>(</big><em>icon</em>, <em>cooldown</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet.cooldownIcon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Packet.creature">
+<tt class="descname">creature</tt><big>(</big><em>creature</em>, <em>known</em>, <em>removeKnown=0</em>, <em>player=None</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet.creature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Packet.enum">
+<tt class="descname">enum</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet.enum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Packet.item">
+<tt class="descname">item</tt><big>(</big><em>item</em>, <em>count=None</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet.item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="game.protocols.860.Packet.maxKnownCreatures">
+<tt class="descname">maxKnownCreatures</tt><em class="property"> = 250</em><a class="headerlink" href="#game.protocols.860.Packet.maxKnownCreatures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="game.protocols.860.Packet.maxMounts">
+<tt class="descname">maxMounts</tt><em class="property"> = 0</em><a class="headerlink" href="#game.protocols.860.Packet.maxMounts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="game.protocols.860.Packet.maxOutfits">
+<tt class="descname">maxOutfits</tt><em class="property"> = 25</em><a class="headerlink" href="#game.protocols.860.Packet.maxOutfits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Packet.message">
+<tt class="descname">message</tt><big>(</big><em>player</em>, <em>message</em>, <em>msgType='_MSG_STATUS_DEFAULT '</em>, <em>color=0</em>, <em>value=0</em>, <em>pos=None</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Packet.outfit">
+<tt class="descname">outfit</tt><big>(</big><em>look</em>, <em>addon=0</em>, <em>mount=0</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet.outfit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="game.protocols.860.Packet.protocolEnums">
+<tt class="descname">protocolEnums</tt><em class="property"> = {'_MSG_DAMAGE_RECEIVED': 23, '_MSG_EVENT_ADVANCE': 22, '_MSG_STATUS_CONSOLE_RED': 18, '_MSG_EXPERIENCE': 22, '_MSG_STATUS_DEFAULT': 24, '_MSG_DAMAGE_DEALT': 23, '_MSG_STATUS_SMALL': 26, '_MSG_SPEAK_YELL': 3, '_MSG_STATUS_CONSOLE_ORANGE': 20, '_MSG_EVENT_DEFAULT': 23, '_MSG_INFO_DESCR': 25, '_MSG_EVENT_ORANGE': 19, '_MSG_SPEAK_MONSTER_SAY': 19, '_MSG_NPC_TO': 4, '_MSG_NONE': 0, '_MSG_SPEAK_MONSTER_YELL': 20, '_MSG_NPC_FROM': 5, '_MSG_STATUS_WARNING': 21, '_MSG_HEALED': 12, '_MSG_STATUS_CONSOLE_BLUE': 27, 'SKULL_ORANGE': 0, '_MSG_LOOT': 25, '_MSG_SPEAK_WHISPER': 2, '_MSG_SPEAK_SAY': 1}</em><a class="headerlink" href="#game.protocols.860.Packet.protocolEnums" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Packet.skills">
+<tt class="descname">skills</tt><big>(</big><em>player</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet.skills" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Packet.skull">
+<tt class="descname">skull</tt><big>(</big><em>creatureId</em>, <em>skull</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet.skull" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Packet.status">
+<tt class="descname">status</tt><big>(</big><em>player</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet.status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Packet.tileDescription">
+<tt class="descname">tileDescription</tt><big>(</big><em>tile</em>, <em>player</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet.tileDescription" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Packet.violation">
+<tt class="descname">violation</tt><big>(</big><em>flag</em><big>)</big><a class="headerlink" href="#game.protocols.860.Packet.violation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="game.protocols.860.Protocol">
+<em class="property">class </em><tt class="descclassname">game.protocols.860.</tt><tt class="descname">Protocol</tt><a class="headerlink" href="#game.protocols.860.Protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#game.protocols.base.BaseProtocol" title="game.protocols.base.BaseProtocol"><tt class="xref py py-class docutils literal"><span class="pre">game.protocols.base.BaseProtocol</span></tt></a></p>
+<dl class="class">
+<dt id="game.protocols.860.Protocol.Packet">
+<em class="property">class </em><tt class="descname">Packet</tt><big>(</big><em>header=None</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#game.protocols.base.BasePacket" title="game.protocols.base.BasePacket"><tt class="xref py py-class docutils literal"><span class="pre">game.protocols.base.BasePacket</span></tt></a></p>
+<dl class="method">
+<dt id="game.protocols.860.Protocol.Packet.cooldownGroup">
+<tt class="descname">cooldownGroup</tt><big>(</big><em>group</em>, <em>cooldown</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet.cooldownGroup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Protocol.Packet.cooldownIcon">
+<tt class="descname">cooldownIcon</tt><big>(</big><em>icon</em>, <em>cooldown</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet.cooldownIcon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Protocol.Packet.creature">
+<tt class="descname">creature</tt><big>(</big><em>creature</em>, <em>known</em>, <em>removeKnown=0</em>, <em>player=None</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet.creature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Protocol.Packet.enum">
+<tt class="descname">enum</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet.enum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Protocol.Packet.item">
+<tt class="descname">item</tt><big>(</big><em>item</em>, <em>count=None</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet.item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="game.protocols.860.Protocol.Packet.maxKnownCreatures">
+<tt class="descname">maxKnownCreatures</tt><em class="property"> = 250</em><a class="headerlink" href="#game.protocols.860.Protocol.Packet.maxKnownCreatures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="game.protocols.860.Protocol.Packet.maxMounts">
+<tt class="descname">maxMounts</tt><em class="property"> = 0</em><a class="headerlink" href="#game.protocols.860.Protocol.Packet.maxMounts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="game.protocols.860.Protocol.Packet.maxOutfits">
+<tt class="descname">maxOutfits</tt><em class="property"> = 25</em><a class="headerlink" href="#game.protocols.860.Protocol.Packet.maxOutfits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Protocol.Packet.message">
+<tt class="descname">message</tt><big>(</big><em>player</em>, <em>message</em>, <em>msgType='_MSG_STATUS_DEFAULT '</em>, <em>color=0</em>, <em>value=0</em>, <em>pos=None</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Protocol.Packet.outfit">
+<tt class="descname">outfit</tt><big>(</big><em>look</em>, <em>addon=0</em>, <em>mount=0</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet.outfit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="game.protocols.860.Protocol.Packet.protocolEnums">
+<tt class="descname">protocolEnums</tt><em class="property"> = {'_MSG_DAMAGE_RECEIVED': 23, '_MSG_EVENT_ADVANCE': 22, '_MSG_STATUS_CONSOLE_RED': 18, '_MSG_EXPERIENCE': 22, '_MSG_STATUS_DEFAULT': 24, '_MSG_DAMAGE_DEALT': 23, '_MSG_STATUS_SMALL': 26, '_MSG_SPEAK_YELL': 3, '_MSG_STATUS_CONSOLE_ORANGE': 20, '_MSG_EVENT_DEFAULT': 23, '_MSG_INFO_DESCR': 25, '_MSG_EVENT_ORANGE': 19, '_MSG_SPEAK_MONSTER_SAY': 19, '_MSG_NPC_TO': 4, '_MSG_NONE': 0, '_MSG_SPEAK_MONSTER_YELL': 20, '_MSG_NPC_FROM': 5, '_MSG_STATUS_WARNING': 21, '_MSG_HEALED': 12, '_MSG_STATUS_CONSOLE_BLUE': 27, 'SKULL_ORANGE': 0, '_MSG_LOOT': 25, '_MSG_SPEAK_WHISPER': 2, '_MSG_SPEAK_SAY': 1}</em><a class="headerlink" href="#game.protocols.860.Protocol.Packet.protocolEnums" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Protocol.Packet.skills">
+<tt class="descname">skills</tt><big>(</big><em>player</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet.skills" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Protocol.Packet.skull">
+<tt class="descname">skull</tt><big>(</big><em>creatureId</em>, <em>skull</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet.skull" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Protocol.Packet.status">
+<tt class="descname">status</tt><big>(</big><em>player</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet.status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Protocol.Packet.tileDescription">
+<tt class="descname">tileDescription</tt><big>(</big><em>tile</em>, <em>player</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet.tileDescription" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.860.Protocol.Packet.violation">
+<tt class="descname">violation</tt><big>(</big><em>flag</em><big>)</big><a class="headerlink" href="#game.protocols.860.Protocol.Packet.violation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="game.protocols.860.verify">
+<tt class="descclassname">game.protocols.860.</tt><tt class="descname">verify</tt><big>(</big><big>)</big><a class="headerlink" href="#game.protocols.860.verify" title="Permalink to this definition">¶</a></dt>
+<dd><p>if config.allowMounts:
+log.msg(&#8220;Protocol 860 doesn&#8217;t allow mounts&#8221;)
+return False</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-game.protocols.910">
+<span id="id1"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">910</span></tt> Module<a class="headerlink" href="#module-game.protocols.910" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="game.protocols.910.Packet">
+<em class="property">class </em><tt class="descclassname">game.protocols.910.</tt><tt class="descname">Packet</tt><big>(</big><em>header=None</em><big>)</big><a class="headerlink" href="#game.protocols.910.Packet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#game.protocols.base.BasePacket" title="game.protocols.base.BasePacket"><tt class="xref py py-class docutils literal"><span class="pre">game.protocols.base.BasePacket</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="game.protocols.910.Protocol">
+<em class="property">class </em><tt class="descclassname">game.protocols.910.</tt><tt class="descname">Protocol</tt><a class="headerlink" href="#game.protocols.910.Protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#game.protocols.base.BaseProtocol" title="game.protocols.base.BaseProtocol"><tt class="xref py py-class docutils literal"><span class="pre">game.protocols.base.BaseProtocol</span></tt></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="game.protocols.910.verify">
+<tt class="descclassname">game.protocols.910.</tt><tt class="descname">verify</tt><big>(</big><big>)</big><a class="headerlink" href="#game.protocols.910.verify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-game.protocols.base">
+<span id="base-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">base</span></tt> Module<a class="headerlink" href="#module-game.protocols.base" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="game.protocols.base.BasePacket">
+<em class="property">class </em><tt class="descclassname">game.protocols.base.</tt><tt class="descname">BasePacket</tt><big>(</big><em>header=None</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="core.html#packet.TibiaPacket" title="packet.TibiaPacket"><tt class="xref py py-class docutils literal"><span class="pre">packet.TibiaPacket</span></tt></a></p>
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.addContainerItem">
+<tt class="descname">addContainerItem</tt><big>(</big><em>openId</em>, <em>item</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.addContainerItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.addInventoryItem">
+<tt class="descname">addInventoryItem</tt><big>(</big><em>pos</em>, <em>item</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.addInventoryItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.addTileCreature">
+<tt class="descname">addTileCreature</tt><big>(</big><em>pos</em>, <em>stackpos</em>, <em>creature</em>, <em>player=None</em>, <em>resend=False</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.addTileCreature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.addTileItem">
+<tt class="descname">addTileItem</tt><big>(</big><em>pos</em>, <em>stackpos</em>, <em>item</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.addTileItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.cooldownGroup">
+<tt class="descname">cooldownGroup</tt><big>(</big><em>group</em>, <em>cooldown</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.cooldownGroup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.cooldownIcon">
+<tt class="descname">cooldownIcon</tt><big>(</big><em>icon</em>, <em>cooldown</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.cooldownIcon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.creature">
+<tt class="descname">creature</tt><big>(</big><em>creature</em>, <em>known</em>, <em>removeKnown=0</em>, <em>player=None</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.creature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.creaturelight">
+<tt class="descname">creaturelight</tt><big>(</big><em>cid</em>, <em>level</em>, <em>color</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.creaturelight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.delayWalk">
+<tt class="descname">delayWalk</tt><big>(</big><em>delay</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.delayWalk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.dialog">
+<tt class="descname">dialog</tt><big>(</big><em>player, dialogId, title, message, buttons=['Ok', 'Exit'], defaultEnter=0, defaultExit=1</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.dialog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.enum">
+<tt class="descname">enum</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.enum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.exit">
+<tt class="descname">exit</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.exit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.floorDescription">
+<tt class="descname">floorDescription</tt><big>(</big><em>_x</em>, <em>_y</em>, <em>_z</em>, <em>width</em>, <em>height</em>, <em>offset</em>, <em>skip</em>, <em>player</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.floorDescription" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.icons">
+<tt class="descname">icons</tt><big>(</big><em>icons</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.icons" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.item">
+<tt class="descname">item</tt><big>(</big><em>item</em>, <em>count=None</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.magicEffect">
+<tt class="descname">magicEffect</tt><big>(</big><em>pos</em>, <em>type</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.magicEffect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.mapDescription">
+<tt class="descname">mapDescription</tt><big>(</big><em>position</em>, <em>width</em>, <em>height</em>, <em>player</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.mapDescription" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="game.protocols.base.BasePacket.maxKnownCreatures">
+<tt class="descname">maxKnownCreatures</tt><em class="property"> = 1300</em><a class="headerlink" href="#game.protocols.base.BasePacket.maxKnownCreatures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="game.protocols.base.BasePacket.maxMounts">
+<tt class="descname">maxMounts</tt><em class="property"> = 25</em><a class="headerlink" href="#game.protocols.base.BasePacket.maxMounts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="game.protocols.base.BasePacket.maxOutfits">
+<tt class="descname">maxOutfits</tt><em class="property"> = 29</em><a class="headerlink" href="#game.protocols.base.BasePacket.maxOutfits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.message">
+<tt class="descname">message</tt><big>(</big><em>player</em>, <em>message</em>, <em>msgType='_MSG_STATUS_DEFAULT '</em>, <em>color=0</em>, <em>value=0</em>, <em>pos=None</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.moveDownPlayer">
+<tt class="descname">moveDownPlayer</tt><big>(</big><em>player</em>, <em>oldPos</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.moveDownPlayer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.moveUpPlayer">
+<tt class="descname">moveUpPlayer</tt><big>(</big><em>player</em>, <em>oldPos</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.moveUpPlayer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.openChannel">
+<tt class="descname">openChannel</tt><big>(</big><em>channel</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.openChannel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.openChannels">
+<tt class="descname">openChannels</tt><big>(</big><em>channels</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.openChannels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.outfit">
+<tt class="descname">outfit</tt><big>(</big><em>look</em>, <em>addon=0</em>, <em>mount=0</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.outfit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.playerInfo">
+<tt class="descname">playerInfo</tt><big>(</big><em>player</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.playerInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.position">
+<tt class="descname">position</tt><big>(</big><em>position</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="game.protocols.base.BasePacket.protocolEnums">
+<tt class="descname">protocolEnums</tt><em class="property"> = {}</em><a class="headerlink" href="#game.protocols.base.BasePacket.protocolEnums" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.removeContainerItem">
+<tt class="descname">removeContainerItem</tt><big>(</big><em>openId</em>, <em>slot</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.removeContainerItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.removeInventoryItem">
+<tt class="descname">removeInventoryItem</tt><big>(</big><em>pos</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.removeInventoryItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.removeTileItem">
+<tt class="descname">removeTileItem</tt><big>(</big><em>pos</em>, <em>stackpos</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.removeTileItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.say">
+<tt class="descname">say</tt><big>(</big><em>player</em>, <em>message</em>, <em>msgType='_MSG_STATUS_DEFAULT '</em>, <em>color=0</em>, <em>value=0</em>, <em>pos=None</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.say" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.shield">
+<tt class="descname">shield</tt><big>(</big><em>creatureId</em>, <em>shield</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.shield" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.shoot">
+<tt class="descname">shoot</tt><big>(</big><em>fromPos</em>, <em>toPos</em>, <em>type</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.shoot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.skills">
+<tt class="descname">skills</tt><big>(</big><em>player</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.skills" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.skull">
+<tt class="descname">skull</tt><big>(</big><em>creatureId</em>, <em>skull</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.skull" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.status">
+<tt class="descname">status</tt><big>(</big><em>player</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.tileDescription">
+<tt class="descname">tileDescription</tt><big>(</big><em>tile</em>, <em>player</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.tileDescription" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.updateContainerItem">
+<tt class="descname">updateContainerItem</tt><big>(</big><em>openId</em>, <em>slot</em>, <em>item</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.updateContainerItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.updateTileItem">
+<tt class="descname">updateTileItem</tt><big>(</big><em>pos</em>, <em>stackpos</em>, <em>item</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.updateTileItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.violation">
+<tt class="descname">violation</tt><big>(</big><em>flag</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.violation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.vip">
+<tt class="descname">vip</tt><big>(</big><em>playerId</em>, <em>playerName</em>, <em>online=False</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.vip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.vipLogin">
+<tt class="descname">vipLogin</tt><big>(</big><em>playerId</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.vipLogin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.vipLogout">
+<tt class="descname">vipLogout</tt><big>(</big><em>playerId</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.vipLogout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BasePacket.worldlight">
+<tt class="descname">worldlight</tt><big>(</big><em>level</em>, <em>color</em><big>)</big><a class="headerlink" href="#game.protocols.base.BasePacket.worldlight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="game.protocols.base.BaseProtocol">
+<em class="property">class </em><tt class="descclassname">game.protocols.base.</tt><tt class="descname">BaseProtocol</tt><a class="headerlink" href="#game.protocols.base.BaseProtocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="attribute">
+<dt id="game.protocols.base.BaseProtocol.Packet">
+<tt class="descname">Packet</tt><a class="headerlink" href="#game.protocols.base.BaseProtocol.Packet" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#game.protocols.base.BasePacket" title="game.protocols.base.BasePacket"><tt class="xref py py-class docutils literal"><span class="pre">BasePacket</span></tt></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.enum">
+<tt class="descname">enum</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.enum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handle">
+<tt class="descname">handle</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleAcceptOffer">
+<tt class="descname">handleAcceptOffer</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleAcceptOffer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleAcceptTrade">
+<tt class="descname">handleAcceptTrade</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleAcceptTrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleAddVip">
+<tt class="descname">handleAddVip</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleAddVip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleArrowUpContainer">
+<tt class="descname">handleArrowUpContainer</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleArrowUpContainer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleAttack">
+<tt class="descname">handleAttack</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleAttack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleAutoWalk">
+<tt class="descname">handleAutoWalk</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleAutoWalk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleBrowseMarket">
+<tt class="descname">handleBrowseMarket</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleBrowseMarket" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleCancelOffer">
+<tt class="descname">handleCancelOffer</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleCancelOffer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleCloseChannel">
+<tt class="descname">handleCloseChannel</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleCloseChannel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleCloseContainer">
+<tt class="descname">handleCloseContainer</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleCloseContainer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleCloseMarket">
+<tt class="descname">handleCloseMarket</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleCloseMarket" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleCloseTrade">
+<tt class="descname">handleCloseTrade</tt><big>(</big><em>player</em>, <em>packet</em>, <em>c=False</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleCloseTrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleCloseTradeNPC">
+<tt class="descname">handleCloseTradeNPC</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleCloseTradeNPC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleCreateMarketOffer">
+<tt class="descname">handleCreateMarketOffer</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleCreateMarketOffer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleDebugAssert">
+<tt class="descname">handleDebugAssert</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleDebugAssert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleDialog">
+<tt class="descname">handleDialog</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleDialog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleFollow">
+<tt class="descname">handleFollow</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleFollow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleInviteToParty">
+<tt class="descname">handleInviteToParty</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleInviteToParty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleJoinParty">
+<tt class="descname">handleJoinParty</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleJoinParty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleKeepAlive">
+<tt class="descname">handleKeepAlive</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleKeepAlive" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleLeaveParty">
+<tt class="descname">handleLeaveParty</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleLeaveParty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleLogout">
+<tt class="descname">handleLogout</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleLogout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleLookAt">
+<tt class="descname">handleLookAt</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleLookAt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleLookAtInTrade">
+<tt class="descname">handleLookAtInTrade</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleLookAtInTrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleLookAtTrade">
+<tt class="descname">handleLookAtTrade</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleLookAtTrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleMoveItem">
+<tt class="descname">handleMoveItem</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleMoveItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleOpenChannel">
+<tt class="descname">handleOpenChannel</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleOpenChannel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleOpenPrivateChannel">
+<tt class="descname">handleOpenPrivateChannel</tt><big>(</big><em>player</em>, <em>packeet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleOpenPrivateChannel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleOpenQuestLog">
+<tt class="descname">handleOpenQuestLog</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleOpenQuestLog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handlePassPartyLeadership">
+<tt class="descname">handlePassPartyLeadership</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handlePassPartyLeadership" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handlePing">
+<tt class="descname">handlePing</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handlePing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handlePlayerBuy">
+<tt class="descname">handlePlayerBuy</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handlePlayerBuy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handlePlayerSale">
+<tt class="descname">handlePlayerSale</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handlePlayerSale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleQuestLine">
+<tt class="descname">handleQuestLine</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleQuestLine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleRemoveVip">
+<tt class="descname">handleRemoveVip</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleRemoveVip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleRequestChannels">
+<tt class="descname">handleRequestChannels</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleRequestChannels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleRequestOutfit">
+<tt class="descname">handleRequestOutfit</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleRequestOutfit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleRequestTrade">
+<tt class="descname">handleRequestTrade</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleRequestTrade" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleRevokePartyInvite">
+<tt class="descname">handleRevokePartyInvite</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleRevokePartyInvite" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleRotateItem">
+<tt class="descname">handleRotateItem</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleRotateItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleSay">
+<tt class="descname">handleSay</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleSay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleSetModes">
+<tt class="descname">handleSetModes</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleSetModes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleSetMounted">
+<tt class="descname">handleSetMounted</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleSetMounted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleSetOutfit">
+<tt class="descname">handleSetOutfit</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleSetOutfit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleShareExperience">
+<tt class="descname">handleShareExperience</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleShareExperience" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleStop">
+<tt class="descname">handleStop</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleStop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleStopAutoWalk">
+<tt class="descname">handleStopAutoWalk</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleStopAutoWalk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleThanks">
+<tt class="descname">handleThanks</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleThanks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleTurn0">
+<tt class="descname">handleTurn0</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleTurn0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleTurn1">
+<tt class="descname">handleTurn1</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleTurn1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleTurn2">
+<tt class="descname">handleTurn2</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleTurn2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleTurn3">
+<tt class="descname">handleTurn3</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleTurn3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleUpdateContainer">
+<tt class="descname">handleUpdateContainer</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleUpdateContainer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleUpdateTile">
+<tt class="descname">handleUpdateTile</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleUpdateTile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleUse">
+<tt class="descname">handleUse</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleUse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleUseBattleWindow">
+<tt class="descname">handleUseBattleWindow</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleUseBattleWindow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleUseWith">
+<tt class="descname">handleUseWith</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleUseWith" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleWalk">
+<tt class="descname">handleWalk</tt><big>(</big><em>player</em>, <em>direction</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleWalk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleWalkEast">
+<tt class="descname">handleWalkEast</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleWalkEast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleWalkNorth">
+<tt class="descname">handleWalkNorth</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleWalkNorth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleWalkNorthEast">
+<tt class="descname">handleWalkNorthEast</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleWalkNorthEast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleWalkNorthWest">
+<tt class="descname">handleWalkNorthWest</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleWalkNorthWest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleWalkSouth">
+<tt class="descname">handleWalkSouth</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleWalkSouth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleWalkSouthEast">
+<tt class="descname">handleWalkSouthEast</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleWalkSouthEast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleWalkSouthWest">
+<tt class="descname">handleWalkSouthWest</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleWalkSouthWest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleWalkWest">
+<tt class="descname">handleWalkWest</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleWalkWest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleWriteBack">
+<tt class="descname">handleWriteBack</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleWriteBack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="game.protocols.base.BaseProtocol.handleWriteBackForHouses">
+<tt class="descname">handleWriteBackForHouses</tt><big>(</big><em>player</em>, <em>packet</em><big>)</big><a class="headerlink" href="#game.protocols.base.BaseProtocol.handleWriteBackForHouses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="game.protocols.base.packet">
+<tt class="descclassname">game.protocols.base.</tt><tt class="descname">packet</tt><big>(</big><em>opcode</em><big>)</big><a class="headerlink" href="#game.protocols.base.packet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="service.html" title="service Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="game.html" title="game Package"
+             >previous</a> |</li>
+        <li><a href="index.html">PyOT 1.0-alpha1 documentation</a> &raquo;</li>
+          <li><a href="modules.html" >PyOT Modules</a> &raquo;</li>
+          <li><a href="core.html" >core Package</a> &raquo;</li>
+          <li><a href="game.html" >game Package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011-2012, stian, soul4soul, sentinello, Mr. Ez, Outerworld.
+      Last updated on Dec 10, 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

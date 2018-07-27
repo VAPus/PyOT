@@ -1,0 +1,3210 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>A TFS to PyOT script function map &mdash; PyOT 1.0-alpha1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0-alpha1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PyOT 1.0-alpha1 documentation" href="index.html" />
+    <link rel="prev" title="Scriptable events in PyOT" href="scriptevents.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scriptevents.html" title="Scriptable events in PyOT"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">PyOT 1.0-alpha1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="scriptevents.html"
+                        title="previous chapter">Scriptable events in PyOT</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/tfsToPyOT.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="a-tfs-to-pyot-script-function-map">
+<h1>A TFS to PyOT script function map<a class="headerlink" href="#a-tfs-to-pyot-script-function-map" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Stian (<a class="reference external" href="http://vapus.net/forum/members/stian">vapus members/stian</a>)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Release:</th><td class="field-body">1.0-alpha1</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body">December 10, 2012</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NB! This page is work in progress!</strong></p>
+<p>There is 175 functions left to document.</p>
+<p>First some important class (type) names:</p>
+<blockquote>
+<div><p><strong>Creature</strong> means it&#8217;s part of any creature (<a class="reference internal" href="game.html#game.creature.Creature" title="game.creature.Creature"><tt class="xref py py-class docutils literal"><span class="pre">game.creature.Creature</span></tt></a>)</p>
+<p><strong>Player</strong> means it&#8217;s only part of a player (<a class="reference internal" href="game.html#game.player.Player" title="game.player.Player"><tt class="xref py py-class docutils literal"><span class="pre">game.player.Player</span></tt></a>)</p>
+<p><strong>Item</strong> means it&#8217;s a item (<a class="reference internal" href="game.html#game.item.Item" title="game.item.Item"><tt class="xref py py-class docutils literal"><span class="pre">game.item.Item</span></tt></a>)</p>
+<p><strong>Position</strong> is a position object (<tt class="xref py py-class docutils literal"><span class="pre">game.map.Position</span></tt>)</p>
+<p><strong>StackPosition</strong> is a position object with stack (<tt class="xref py py-class docutils literal"><span class="pre">game.map.StackPosition</span></tt>)</p>
+<p><strong>&lt;&gt;</strong> are used when the value is literaly inlined to the command</p>
+</div></blockquote>
+<dl class="function">
+<dt id="getCreatureHealth">
+<tt class="descname">getCreatureHealth</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureHealth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;health&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureMaxHealth">
+<tt class="descname">getCreatureMaxHealth</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>ignoreModifiers = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getCreatureMaxHealth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;healthmax&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureMana">
+<tt class="descname">getCreatureMana</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureMana" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;mana&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureMaxMana">
+<tt class="descname">getCreatureMaxMana</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>ignoreModifiers = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getCreatureMaxMana" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;manamax&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureHideHealth">
+<tt class="descname">getCreatureHideHealth</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureHideHealth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">getHideHealth</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreatureSetHideHealth">
+<tt class="descname">doCreatureSetHideHealth</tt><big>(</big><em>cid</em>, <em>hide</em><big>)</big><a class="headerlink" href="#doCreatureSetHideHealth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">hideHealth</span><span class="p">(</span><span class="n">hide</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureSpeakType">
+<tt class="descname">getCreatureSpeakType</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureSpeakType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">defaultSpeakType</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreatureSetSpeakType">
+<tt class="descname">doCreatureSetSpeakType</tt><big>(</big><em>cid</em>, <em>type</em><big>)</big><a class="headerlink" href="#doCreatureSetSpeakType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">defaultSpeakType</span> <span class="o">=</span> <span class="nb">type</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureLookDirection">
+<tt class="descname">getCreatureLookDirection</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureLookDirection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">direction</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerLevel">
+<tt class="descname">getPlayerLevel</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;level&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerExperience">
+<tt class="descname">getPlayerExperience</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerExperience" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;experience&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerMagLevel">
+<tt class="descname">getPlayerMagLevel</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>ignoreModifiers = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPlayerMagLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;maglevel&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerSpentMana">
+<tt class="descname">getPlayerSpentMana</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerSpentMana" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;manaspent&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerFood">
+<tt class="descname">getPlayerFood</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerFood" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>No equalent (it's a Condition in PyOT so use Creature.getCondition())</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerAccess">
+<tt class="descname">getPlayerAccess</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerAccess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>PyOT doesn't have access levels, only access flags</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerGhostAccess">
+<tt class="descname">getPlayerGhostAccess</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerGhostAccess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>PyOT doesn't have access levels, only access flags</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerSkillLevel">
+<tt class="descname">getPlayerSkillLevel</tt><big>(</big><em>cid</em>, <em>skill</em><span class="optional">[</span>, <em>ignoreModifiers = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPlayerSkillLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Player.getActiveSkill(skill) (with modifiers) and Player.skill[skill] (without modifers)</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerSkillTries">
+<tt class="descname">getPlayerSkillTries</tt><big>(</big><em>cid</em>, <em>skill</em><big>)</big><a class="headerlink" href="#getPlayerSkillTries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">getSkillAttempts</span><span class="p">(</span><span class="n">skill</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerTown">
+<tt class="descname">getPlayerTown</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerTown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;town_id&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerVocation">
+<tt class="descname">getPlayerVocation</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerVocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Player.getVocation() (for the vocation object), Player.getVocationId() (for the Id)</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerIp">
+<tt class="descname">getPlayerIp</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerIp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">getIP</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerRequiredMana">
+<tt class="descname">getPlayerRequiredMana</tt><big>(</big><em>cid</em>, <em>magicLevel</em><big>)</big><a class="headerlink" href="#getPlayerRequiredMana" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">config</span><span class="o">.</span><span class="n">magicLevelFormula</span><span class="p">(</span><span class="n">magicLevel</span><span class="p">,</span> <span class="n">Vocation</span><span class="o">.</span><span class="n">mlevel</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerRequiredSkillTries">
+<tt class="descname">getPlayerRequiredSkillTries</tt><big>(</big><em>cid</em>, <em>skillId</em>, <em>skillLevel</em><big>)</big><a class="headerlink" href="#getPlayerRequiredSkillTries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Somewhat equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">config</span><span class="o">.</span><span class="n">skillFormula</span><span class="p">(</span><span class="n">skillLevel</span><span class="p">,</span> <span class="n">Player</span><span class="o">.</span><span class="n">getVocation</span><span class="p">()</span><span class="o">.</span><span class="n">meleeSkill</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerItemCount">
+<tt class="descname">getPlayerItemCount</tt><big>(</big><em>cid</em>, <em>itemid</em><span class="optional">[</span>, <em>subType = -1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPlayerItemCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">itemCount</span><span class="p">(</span><span class="n">Item</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerMoney">
+<tt class="descname">getPlayerMoney</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerMoney" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">getMoney</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerSoul">
+<tt class="descname">getPlayerSoul</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>ignoreModifiers = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPlayerSoul" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;soul&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerFreeCap">
+<tt class="descname">getPlayerFreeCap</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerFreeCap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">freeCapasity</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerLight">
+<tt class="descname">getPlayerLight</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>INVIDIDUAL PLAYER LIGHT NOT IMPLANTED (yet)</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerSlotItem">
+<tt class="descname">getPlayerSlotItem</tt><big>(</big><em>cid</em>, <em>slot</em><big>)</big><a class="headerlink" href="#getPlayerSlotItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">inventory</span><span class="p">[</span><span class="n">slot</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerWeapon">
+<tt class="descname">getPlayerWeapon</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>ignoreAmmo = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPlayerWeapon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">inventory</span><span class="p">[</span><span class="n">SLOT_RIGHT</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerItemById">
+<tt class="descname">getPlayerItemById</tt><big>(</big><em>cid</em>, <em>deepSearch</em>, <em>itemId</em><span class="optional">[</span>, <em>subType = -1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPlayerItemById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">findItemById</span><span class="p">(</span><span class="n">itemId</span><span class="p">,</span> <span class="n">count</span><span class="o">/</span><span class="n">subType</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerDepotItems">
+<tt class="descname">getPlayerDepotItems</tt><big>(</big><em>cid</em>, <em>depotid</em><big>)</big><a class="headerlink" href="#getPlayerDepotItems" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">getDepot</span><span class="p">(</span><span class="n">depotId</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerAccountId">
+<tt class="descname">getPlayerAccountId</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerAccountId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;account_id&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerAccount">
+<tt class="descname">getPlayerAccount</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Grab it form SQL?</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerFlagValue">
+<tt class="descname">getPlayerFlagValue</tt><big>(</big><em>cid</em>, <em>flag</em><big>)</big><a class="headerlink" href="#getPlayerFlagValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>We don't have such flags</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerCustomFlagValue">
+<tt class="descname">getPlayerCustomFlagValue</tt><big>(</big><em>cid</em>, <em>flag</em><big>)</big><a class="headerlink" href="#getPlayerCustomFlagValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>We don't have such flags</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerPromotionLevel">
+<tt class="descname">getPlayerPromotionLevel</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerPromotionLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Figure it out from the vocation id</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetPromotionLevel">
+<tt class="descname">doPlayerSetPromotionLevel</tt><big>(</big><em>cid</em>, <em>level</em><big>)</big><a class="headerlink" href="#doPlayerSetPromotionLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Change the vocation</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerGroupId">
+<tt class="descname">getPlayerGroupId</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerGroupId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;group_id&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetGroupId">
+<tt class="descname">doPlayerSetGroupId</tt><big>(</big><em>cid</em>, <em>newGroupId</em><big>)</big><a class="headerlink" href="#doPlayerSetGroupId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;group_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">newGroupId</span> <span class="c"># Currently not saved!!!</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSendOutfitWindow">
+<tt class="descname">doPlayerSendOutfitWindow</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#doPlayerSendOutfitWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">outfitWindow</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerLearnInstantSpell">
+<tt class="descname">doPlayerLearnInstantSpell</tt><big>(</big><em>cid</em>, <em>name</em><big>)</big><a class="headerlink" href="#doPlayerLearnInstantSpell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">learnSpell</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerUnlearnInstantSpell">
+<tt class="descname">doPlayerUnlearnInstantSpell</tt><big>(</big><em>cid</em>, <em>name</em><big>)</big><a class="headerlink" href="#doPlayerUnlearnInstantSpell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">unlearnSpell</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerLearnedInstantSpell">
+<tt class="descname">getPlayerLearnedInstantSpell</tt><big>(</big><em>cid</em>, <em>name</em><big>)</big><a class="headerlink" href="#getPlayerLearnedInstantSpell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">canUseSpell</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerInstantSpellCount">
+<tt class="descname">getPlayerInstantSpellCount</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerInstantSpellCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerInstantSpellInfo">
+<tt class="descname">getPlayerInstantSpellInfo</tt><big>(</big><em>cid</em>, <em>index</em><big>)</big><a class="headerlink" href="#getPlayerInstantSpellInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getInstantSpellInfo">
+<tt class="descname">getInstantSpellInfo</tt><big>(</big><em>cid</em>, <em>name</em><big>)</big><a class="headerlink" href="#getInstantSpellInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">game</span><span class="o">.</span><span class="n">spell</span><span class="o">.</span><span class="n">spells</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureStorageList">
+<tt class="descname">getCreatureStorageList</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureStorageList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">storage</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureStorage">
+<tt class="descname">getCreatureStorage</tt><big>(</big><em>uid</em>, <em>key</em><big>)</big><a class="headerlink" href="#getCreatureStorage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">getStorage</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreatureSetStorage">
+<tt class="descname">doCreatureSetStorage</tt><big>(</big><em>uid</em>, <em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#doCreatureSetStorage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">setStorage</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getStorageList">
+<tt class="descname">getStorageList</tt><big>(</big><big>)</big><a class="headerlink" href="#getStorageList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">engine</span><span class="o">.</span><span class="n">globalStorage</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getStorage">
+<tt class="descname">getStorage</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#getStorage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">getGlobal</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doSetStorage">
+<tt class="descname">doSetStorage</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#doSetStorage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">setGlobal</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayersOnline">
+<tt class="descname">getPlayersOnline</tt><big>(</big><big>)</big><a class="headerlink" href="#getPlayersOnline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">len</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">allPlayers</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getTileInfo">
+<tt class="descname">getTileInfo</tt><big>(</big><em>pos</em><big>)</big><a class="headerlink" href="#getTileInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Position</span><span class="o">.</span><span class="n">getTile</span><span class="p">()</span><span class="o">.</span><span class="n">getFlags</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getThingFromPos">
+<tt class="descname">getThingFromPos</tt><big>(</big><em>pos</em><span class="optional">[</span>, <em>displayError = true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getThingFromPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">StackPosition</span><span class="o">.</span><span class="n">getThing</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getThing">
+<tt class="descname">getThing</tt><big>(</big><em>uid</em><span class="optional">[</span>, <em>recursive = RECURSE _FIRST</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getThing" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal (unnecessary)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="doTileQueryAdd">
+<tt class="descname">doTileQueryAdd</tt><big>(</big><em>uid</em>, <em>pos</em><span class="optional">[</span>, <em>flags</em><span class="optional">[</span>, <em>displayError = true</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#doTileQueryAdd" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal (unnecessary)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="doItemRaidUnref">
+<tt class="descname">doItemRaidUnref</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#doItemRaidUnref" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal (unnecessary)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getThingPosition">
+<tt class="descname">getThingPosition</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getThingPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">thing</span><span class="o">.</span><span class="n">position</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getTileItemById">
+<tt class="descname">getTileItemById</tt><big>(</big><em>pos</em>, <em>itemId</em><span class="optional">[</span>, <em>subType = -1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getTileItemById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Position</span><span class="o">.</span><span class="n">getTile</span><span class="p">()</span><span class="o">.</span><span class="n">findItem</span><span class="p">(</span><span class="n">itemId</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getTileItemByType">
+<tt class="descname">getTileItemByType</tt><big>(</big><em>pos</em>, <em>type</em><big>)</big><a class="headerlink" href="#getTileItemByType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">thing</span> <span class="ow">in</span> <span class="n">pos</span><span class="o">.</span><span class="n">getTile</span><span class="p">()</span><span class="o">.</span><span class="n">things</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="n">Item</span><span class="p">)</span> <span class="ow">and</span> <span class="n">thing</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="nb">type</span><span class="p">:</span>
+        <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thing</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getTileThingByPos">
+<tt class="descname">getTileThingByPos</tt><big>(</big><em>pos</em><big>)</big><a class="headerlink" href="#getTileThingByPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">StackPosition</span><span class="o">.</span><span class="n">getThing</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getTopCreature">
+<tt class="descname">getTopCreature</tt><big>(</big><em>pos</em><big>)</big><a class="headerlink" href="#getTopCreature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Position.getTile().creatures()[0] (might raise an exception)</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doRemoveItem">
+<tt class="descname">doRemoveItem</tt><big>(</big><em>uid</em><span class="optional">[</span>, <em>count = -1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doRemoveItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>You may do something like this:</p>
+<div class="highlight-python"><pre>item.modify(count)
+
+or
+
+item.remove()</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerFeed">
+<tt class="descname">doPlayerFeed</tt><big>(</big><em>cid</em>, <em>food</em><big>)</big><a class="headerlink" href="#doPlayerFeed" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal (use Conditions)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSendCancel">
+<tt class="descname">doPlayerSendCancel</tt><big>(</big><em>cid</em>, <em>text</em><big>)</big><a class="headerlink" href="#doPlayerSendCancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">cancelMessage</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSendDefaultCancel">
+<tt class="descname">doPlayerSendDefaultCancel</tt><big>(</big><em>cid</em>, <em>ReturnValue</em><big>)</big><a class="headerlink" href="#doPlayerSendDefaultCancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>We got calls such as Player.notPossible()</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="doTransformItem">
+<tt class="descname">doTransformItem</tt><big>(</big><em>uid</em>, <em>newId</em><span class="optional">[</span>, <em>count/subType</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doTransformItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">newId</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreatureSay">
+<tt class="descname">doCreatureSay</tt><big>(</big><em>uid</em>, <em>text</em><span class="optional">[</span>, <em>type = SPEAK _SAY</em><span class="optional">[</span>, <em>ghost = false</em><span class="optional">[</span>, <em>cid = 0</em><span class="optional">[</span>, <em>pos</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#doCreatureSay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doSendCreatureSquare">
+<tt class="descname">doSendCreatureSquare</tt><big>(</big><em>cid</em>, <em>color</em><span class="optional">[</span>, <em>player</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doSendCreatureSquare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">Creature</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doSendMagicEffect">
+<tt class="descname">doSendMagicEffect</tt><big>(</big><em>pos</em>, <em>type</em><span class="optional">[</span>, <em>player</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doSendMagicEffect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Some alternatives are:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">magicEffect</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
+<span class="n">Creature</span><span class="o">.</span><span class="n">magicEffect</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">Position</span><span class="p">)</span>
+<span class="n">magicEffect</span><span class="p">(</span><span class="n">Position</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doSendDistanceShoot">
+<tt class="descname">doSendDistanceShoot</tt><big>(</big><em>fromPos</em>, <em>toPos</em>, <em>type</em><span class="optional">[</span>, <em>player</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doSendDistanceShoot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Player.shoot(fromPos, toPos, type)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreatureAddHealth">
+<tt class="descname">doCreatureAddHealth</tt><big>(</big><em>cid</em>, <em>health</em><span class="optional">[</span>, <em>hitEffect</em><span class="optional">[</span>, <em>hitColor</em><span class="optional">[</span>, <em>force</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#doCreatureAddHealth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">modifyHealth</span><span class="p">(</span><span class="n">health</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreatureAddMana">
+<tt class="descname">doCreatureAddMana</tt><big>(</big><em>cid</em>, <em>mana</em><big>)</big><a class="headerlink" href="#doCreatureAddMana" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">modifyMana</span><span class="p">(</span><span class="n">mana</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="setCreatureMaxHealth">
+<tt class="descname">setCreatureMaxHealth</tt><big>(</big><em>cid</em>, <em>health</em><big>)</big><a class="headerlink" href="#setCreatureMaxHealth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;healthmax&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">health</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="setCreatureMaxMana">
+<tt class="descname">setCreatureMaxMana</tt><big>(</big><em>cid</em>, <em>mana</em><big>)</big><a class="headerlink" href="#setCreatureMaxMana" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;manamax&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">health</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetMaxCapacity">
+<tt class="descname">doPlayerSetMaxCapacity</tt><big>(</big><em>cid</em>, <em>cap</em><big>)</big><a class="headerlink" href="#doPlayerSetMaxCapacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;capasity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cap</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddSpentMana">
+<tt class="descname">doPlayerAddSpentMana</tt><big>(</big><em>cid</em>, <em>amount</em><span class="optional">[</span>, <em>useMultiplier = true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerAddSpentMana" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">modifySpentMana</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddSoul">
+<tt class="descname">doPlayerAddSoul</tt><big>(</big><em>cid</em>, <em>amount</em><big>)</big><a class="headerlink" href="#doPlayerAddSoul" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">modifySoul</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddItem">
+<tt class="descname">doPlayerAddItem</tt><big>(</big><em>cid</em>, <em>itemid</em><span class="optional">[</span>, <em>count/subtype = 1</em><span class="optional">[</span>, <em>canDropOnMap = true</em><span class="optional">[</span>, <em>slot = 0</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerAddItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Player.addItem(Item(itemId[, count])[, placeOnGround = True])</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descname">doPlayerAddItem</tt><big>(</big><em>cid</em>, <em>itemid</em><span class="optional">[</span>, <em>count = 1</em><span class="optional">[</span>, <em>canDropOnMap = true</em><span class="optional">[</span>, <em>subtype = 1</em><span class="optional">[</span>, <em>slot = 0</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Player.addItem(Item(itemId[, count])[, placeOnGround = True])</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddItemEx">
+<tt class="descname">doPlayerAddItemEx</tt><big>(</big><em>cid</em>, <em>uid</em><span class="optional">[</span>, <em>canDropOnMap = false</em><span class="optional">[</span>, <em>slot = 0</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerAddItemEx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Not neseccary since we got no uid stuff, but Player.itemToUse(ItemObject) is possible.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSendTextMessage">
+<tt class="descname">doPlayerSendTextMessage</tt><big>(</big><em>cid</em>, <em>MessageClasses</em>, <em>message</em><big>)</big><a class="headerlink" href="#doPlayerSendTextMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Player.message(message[, MessageClass])</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSendChannelMessage">
+<tt class="descname">doPlayerSendChannelMessage</tt><big>(</big><em>cid</em>, <em>author</em>, <em>message</em>, <em>SpeakClasses</em>, <em>channel</em><big>)</big><a class="headerlink" href="#doPlayerSendChannelMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSendToChannel">
+<tt class="descname">doPlayerSendToChannel</tt><big>(</big><em>cid</em>, <em>targetId</em>, <em>SpeakClasses</em>, <em>message</em>, <em>channel</em><span class="optional">[</span>, <em>time</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerSendToChannel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerOpenChannel">
+<tt class="descname">doPlayerOpenChannel</tt><big>(</big><em>cid</em>, <em>channelId</em><big>)</big><a class="headerlink" href="#doPlayerOpenChannel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">openChannel</span><span class="p">(</span><span class="n">channelId</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddMoney">
+<tt class="descname">doPlayerAddMoney</tt><big>(</big><em>cid</em>, <em>money</em><big>)</big><a class="headerlink" href="#doPlayerAddMoney" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">addMoney</span><span class="p">(</span><span class="n">money</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerRemoveMoney">
+<tt class="descname">doPlayerRemoveMoney</tt><big>(</big><em>cid</em>, <em>money</em><big>)</big><a class="headerlink" href="#doPlayerRemoveMoney" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">removeMoney</span><span class="p">(</span><span class="n">money</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that this remove as much as possible if it&#8217;s not enough, you should therefore vertify the amount.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerTransferMoneyTo">
+<tt class="descname">doPlayerTransferMoneyTo</tt><big>(</big><em>cid</em>, <em>target</em>, <em>money</em><big>)</big><a class="headerlink" href="#doPlayerTransferMoneyTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">removeMoney</span><span class="p">(</span><span class="n">money</span><span class="p">)</span>
+<span class="n">Player2</span><span class="o">.</span><span class="n">addMoney</span><span class="p">(</span><span class="n">money</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doShowTextDialog">
+<tt class="descname">doShowTextDialog</tt><big>(</big><em>cid</em>, <em>itemid</em>, <em>text</em><big>)</big><a class="headerlink" href="#doShowTextDialog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">textWindow</span><span class="p">(</span><span class="n">Item</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doDecayItem">
+<tt class="descname">doDecayItem</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#doDecayItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">decay</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreateItem">
+<tt class="descname">doCreateItem</tt><big>(</big><em>itemid</em><span class="optional">[</span>, <em>type/count</em><span class="optional">]</span>, <em>pos</em><big>)</big><a class="headerlink" href="#doCreateItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>placeItem(Item(itemid, type/count), pos)
+or
+&lt;Item&gt;.place(pos)</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreateItemEx">
+<tt class="descname">doCreateItemEx</tt><big>(</big><em>itemid</em><span class="optional">[</span>, <em>count/subType = -1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doCreateItemEx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="p">(</span><span class="n">itemid</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doTileAddItemEx">
+<tt class="descname">doTileAddItemEx</tt><big>(</big><em>pos</em>, <em>uid</em><big>)</big><a class="headerlink" href="#doTileAddItemEx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>placeItem(Item, pos)
+or
+&lt;Item&gt;.place(pos)</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doMonsterSetTarget">
+<tt class="descname">doMonsterSetTarget</tt><big>(</big><em>cid</em>, <em>target</em><big>)</big><a class="headerlink" href="#doMonsterSetTarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doMonsterChangeTarget">
+<tt class="descname">doMonsterChangeTarget</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#doMonsterChangeTarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Creature.target = None (?)</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getMonsterInfo">
+<tt class="descname">getMonsterInfo</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#getMonsterInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Somewhat equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getMonster</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It give you the base class that every monster with that name is based on. Hench it&#8217;s easy to grab information.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="doAddCondition">
+<tt class="descname">doAddCondition</tt><big>(</big><em>cid</em>, <em>condition</em><big>)</big><a class="headerlink" href="#doAddCondition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doRemoveCondition">
+<tt class="descname">doRemoveCondition</tt><big>(</big><em>cid</em>, <em>type</em><span class="optional">[</span>, <em>subId</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doRemoveCondition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">removeCondition</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doRemoveConditions">
+<tt class="descname">doRemoveConditions</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>onlyPersistent</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doRemoveConditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to(?):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">loseAllConditions</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doRemoveCreature">
+<tt class="descname">doRemoveCreature</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>forceLogout = true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doRemoveCreature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doMoveCreature">
+<tt class="descname">doMoveCreature</tt><big>(</big><em>cid</em>, <em>direction</em><span class="optional">[</span>, <em>flag = FLAG _NOLIMIT</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doMoveCreature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doSteerCreature">
+<tt class="descname">doSteerCreature</tt><big>(</big><em>cid</em>, <em>position</em><big>)</big><a class="headerlink" href="#doSteerCreature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">autoWalkCreatureTo</span><span class="p">(</span><span class="n">Creature</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetPzLocked">
+<tt class="descname">doPlayerSetPzLocked</tt><big>(</big><em>cid</em>, <em>locked</em><big>)</big><a class="headerlink" href="#doPlayerSetPzLocked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetTown">
+<tt class="descname">doPlayerSetTown</tt><big>(</big><em>cid</em>, <em>townid</em><big>)</big><a class="headerlink" href="#doPlayerSetTown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetVocation">
+<tt class="descname">doPlayerSetVocation</tt><big>(</big><em>cid</em>, <em>voc</em><big>)</big><a class="headerlink" href="#doPlayerSetVocation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerRemoveItem">
+<tt class="descname">doPlayerRemoveItem</tt><big>(</big><em>cid</em>, <em>itemid</em><span class="optional">[</span>, <em>count</em><span class="optional">[</span>, <em>subType = -1</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerRemoveItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">findItemById</span><span class="p">(</span><span class="n">itemid</span><span class="p">)</span><span class="o">.</span><span class="n">modify</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="c"># or .remove()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddExperience">
+<tt class="descname">doPlayerAddExperience</tt><big>(</big><em>cid</em>, <em>amount</em><big>)</big><a class="headerlink" href="#doPlayerAddExperience" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">modifyExperience</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetGuildId">
+<tt class="descname">doPlayerSetGuildId</tt><big>(</big><em>cid</em>, <em>id</em><big>)</big><a class="headerlink" href="#doPlayerSetGuildId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetGuildLevel">
+<tt class="descname">doPlayerSetGuildLevel</tt><big>(</big><em>cid</em>, <em>level</em><span class="optional">[</span>, <em>rank</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerSetGuildLevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetGuildNick">
+<tt class="descname">doPlayerSetGuildNick</tt><big>(</big><em>cid</em>, <em>nick</em><big>)</big><a class="headerlink" href="#doPlayerSetGuildNick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddOutfit">
+<tt class="descname">doPlayerAddOutfit</tt><big>(</big><em>cid</em>, <em>looktype</em>, <em>addon</em><big>)</big><a class="headerlink" href="#doPlayerAddOutfit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">addOutfit</span><span class="p">(</span><span class="n">outfitName</span><span class="p">)</span>
+
+<span class="c"># or</span>
+
+<span class="n">Player</span><span class="o">.</span><span class="n">addOutfitAddon</span><span class="p">(</span><span class="n">outfitName</span><span class="p">,</span> <span class="n">addon</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerRemoveOutfit">
+<tt class="descname">doPlayerRemoveOutfit</tt><big>(</big><em>cid</em>, <em>looktype</em><span class="optional">[</span>, <em>addon = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerRemoveOutfit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">removeOutfit</span><span class="p">(</span><span class="n">outfitName</span><span class="p">)</span>
+
+<span class="c"># or:</span>
+
+<span class="n">Player</span><span class="o">.</span><span class="n">removeOutfitAddon</span><span class="p">(</span><span class="n">outfitName</span><span class="p">,</span> <span class="n">addon</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddOutfitId">
+<tt class="descname">doPlayerAddOutfitId</tt><big>(</big><em>cid</em>, <em>outfitId</em>, <em>addon</em><big>)</big><a class="headerlink" href="#doPlayerAddOutfitId" title="Permalink to this definition">¶</a></dt>
+<dd><p>See doPlayerAddOutfit</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerRemoveOutfitId">
+<tt class="descname">doPlayerRemoveOutfitId</tt><big>(</big><em>cid</em>, <em>outfitId</em><span class="optional">[</span>, <em>addon = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerRemoveOutfitId" title="Permalink to this definition">¶</a></dt>
+<dd><p>See doPlayerRemoveOutfit</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="canPlayerWearOutfit">
+<tt class="descname">canPlayerWearOutfit</tt><big>(</big><em>cid</em>, <em>looktype</em><span class="optional">[</span>, <em>addon = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#canPlayerWearOutfit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">canWearOutfit</span><span class="p">(</span><span class="n">outfitName</span><span class="p">)</span>
+
+<span class="c"># for addon check:</span>
+
+<span class="n">addon</span> <span class="ow">in</span> <span class="n">Player</span><span class="o">.</span><span class="n">getAddonsForOutfit</span><span class="p">(</span><span class="n">outfitName</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="canPlayerWearOutfitId">
+<tt class="descname">canPlayerWearOutfitId</tt><big>(</big><em>cid</em>, <em>outfitId</em><span class="optional">[</span>, <em>addon = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#canPlayerWearOutfitId" title="Permalink to this definition">¶</a></dt>
+<dd><p>See canPlayerWearOutfit</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureCondition">
+<tt class="descname">getCreatureCondition</tt><big>(</big><em>cid</em>, <em>condition</em><span class="optional">[</span>, <em>subId = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getCreatureCondition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Player.getCondition(condition[, subId])</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreatureSetDropLoot">
+<tt class="descname">doCreatureSetDropLoot</tt><big>(</big><em>cid</em>, <em>doDrop</em><big>)</big><a class="headerlink" href="#doCreatureSetDropLoot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerLossPercent">
+<tt class="descname">getPlayerLossPercent</tt><big>(</big><em>cid</em>, <em>lossType</em><big>)</big><a class="headerlink" href="#getPlayerLossPercent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetLossPercent">
+<tt class="descname">doPlayerSetLossPercent</tt><big>(</big><em>cid</em>, <em>lossType</em>, <em>newPercent</em><big>)</big><a class="headerlink" href="#doPlayerSetLossPercent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetLossSkill">
+<tt class="descname">doPlayerSetLossSkill</tt><big>(</big><em>cid</em>, <em>doLose</em><big>)</big><a class="headerlink" href="#doPlayerSetLossSkill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerLossSkill">
+<tt class="descname">getPlayerLossSkill</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerLossSkill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSwitchSaving">
+<tt class="descname">doPlayerSwitchSaving</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#doPlayerSwitchSaving" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">doSave</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">Player</span><span class="o">.</span><span class="n">doSave</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSave">
+<tt class="descname">doPlayerSave</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>shallow = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerSave" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isPlayerPzLocked">
+<tt class="descname">isPlayerPzLocked</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isPlayerPzLocked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isPlayerSaving">
+<tt class="descname">isPlayerSaving</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isPlayerSaving" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">doSave</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isCreature">
+<tt class="descname">isCreature</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isCreature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Thing</span><span class="o">.</span><span class="n">isCreature</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isMovable">
+<tt class="descname">isMovable</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#isMovable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Thing</span><span class="o">.</span><span class="n">movable</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureByName">
+<tt class="descname">getCreatureByName</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#getCreatureByName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Somewhat equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getMonster</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="n">getNPC</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerByGUID">
+<tt class="descname">getPlayerByGUID</tt><big>(</big><em>guid</em><big>)</big><a class="headerlink" href="#getPlayerByGUID" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerByNameWildcard">
+<tt class="descname">getPlayerByNameWildcard</tt><big>(</big><em>name~</em><span class="optional">[</span>, <em>ret = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPlayerByNameWildcard" title="Permalink to this definition">¶</a></dt>
+<dd><p>NOT IMPLANTED YET</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerGUIDByName">
+<tt class="descname">getPlayerGUIDByName</tt><big>(</big><em>name</em><span class="optional">[</span>, <em>multiworld = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPlayerGUIDByName" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerNameByGUID">
+<tt class="descname">getPlayerNameByGUID</tt><big>(</big><em>guid</em><span class="optional">[</span>, <em>multiworld = false</em><span class="optional">[</span>, <em>displayError = true</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPlayerNameByGUID" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerChangeName">
+<tt class="descname">doPlayerChangeName</tt><big>(</big><em>guid</em>, <em>oldName</em>, <em>newName</em><big>)</big><a class="headerlink" href="#doPlayerChangeName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Player.rename(newName)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="registerCreatureEvent">
+<tt class="descname">registerCreatureEvent</tt><big>(</big><em>uid</em>, <em>eventName</em><big>)</big><a class="headerlink" href="#registerCreatureEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">register</span><span class="p">(</span><span class="n">eventName</span><span class="p">,</span> <span class="n">Creature</span><span class="p">,</span> <span class="n">function</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="unregisterCreatureEvent">
+<tt class="descname">unregisterCreatureEvent</tt><big>(</big><em>uid</em>, <em>eventName</em><big>)</big><a class="headerlink" href="#unregisterCreatureEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">unregister</span><span class="p">(</span><span class="n">eventName</span><span class="p">,</span> <span class="n">Creature</span><span class="p">,</span> <span class="n">function</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getContainerSize">
+<tt class="descname">getContainerSize</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getContainerSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">len</span><span class="p">(</span><span class="n">Item</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getContainerCap">
+<tt class="descname">getContainerCap</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getContainerCap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">containerSize</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getContainerItem">
+<tt class="descname">getContainerItem</tt><big>(</big><em>uid</em>, <em>slot</em><big>)</big><a class="headerlink" href="#getContainerItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">getThing</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getHouseAccessList">
+<tt class="descname">getHouseAccessList</tt><big>(</big><em>houseid</em>, <em>listId</em><big>)</big><a class="headerlink" href="#getHouseAccessList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">House</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;doors&quot;</span><span class="p">][</span><span class="n">listId</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getHouseFromPos">
+<tt class="descname">getHouseFromPos</tt><big>(</big><em>pos</em><big>)</big><a class="headerlink" href="#getHouseFromPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getHouseByPos</span><span class="p">(</span><span class="n">Position</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="setHouseAccessList">
+<tt class="descname">setHouseAccessList</tt><big>(</big><em>houseid</em>, <em>listid</em>, <em>listtext</em><big>)</big><a class="headerlink" href="#setHouseAccessList" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal, you got to modify House.data[&#8220;doors&#8221;] directly.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="setHouseOwner">
+<tt class="descname">setHouseOwner</tt><big>(</big><em>houseId</em>, <em>owner</em><span class="optional">[</span>, <em>clean</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#setHouseOwner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">House</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="n">owner</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doChangeSpeed">
+<tt class="descname">doChangeSpeed</tt><big>(</big><em>cid</em>, <em>delta</em><big>)</big><a class="headerlink" href="#doChangeSpeed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">setSpeed</span><span class="p">(</span><span class="n">Creature</span><span class="o">.</span><span class="n">speed</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureOutfit">
+<tt class="descname">getCreatureOutfit</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureOutfit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">outfit</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureLastPosition">
+<tt class="descname">getCreatureLastPosition</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureLastPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">position</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureName">
+<tt class="descname">getCreatureName</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureSpeed">
+<tt class="descname">getCreatureSpeed</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureSpeed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">speed</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureBaseSpeed">
+<tt class="descname">getCreatureBaseSpeed</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureBaseSpeed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Creature.speed (we don't really deal with base right now)</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureTarget">
+<tt class="descname">getCreatureTarget</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureTarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isInArray">
+<tt class="descname">isInArray</tt><big>(</big><em>array</em>, <em>value</em><span class="optional">[</span>, <em>caseSensitive = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#isInArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">value</span> <span class="ow">in</span> <span class="n">array</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="addEvent">
+<tt class="descname">addEvent</tt><big>(</big><em>callback</em>, <em>delay</em>, <em>...</em><big>)</big><a class="headerlink" href="#addEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>callLater(delay (in seconds!), callback, ....)</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="stopEvent">
+<tt class="descname">stopEvent</tt><big>(</big><em>eventid</em><big>)</big><a class="headerlink" href="#stopEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>(return value of the event).stop()</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerPopupFYI">
+<tt class="descname">doPlayerPopupFYI</tt><big>(</big><em>cid</em>, <em>message</em><big>)</big><a class="headerlink" href="#doPlayerPopupFYI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">windowMessage</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSendTutorial">
+<tt class="descname">doPlayerSendTutorial</tt><big>(</big><em>cid</em>, <em>id</em><big>)</big><a class="headerlink" href="#doPlayerSendTutorial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">tutorial</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreatureSetLookDirection">
+<tt class="descname">doCreatureSetLookDirection</tt><big>(</big><em>cid</em>, <em>dir</em><big>)</big><a class="headerlink" href="#doCreatureSetLookDirection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">turn</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerModes">
+<tt class="descname">getPlayerModes</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerModes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">modes</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureMaster">
+<tt class="descname">getCreatureMaster</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureMaster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">master</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemIdByName">
+<tt class="descname">getItemIdByName</tt><big>(</big><em>name</em><span class="optional">[</span>, <em>displayError = true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getItemIdByName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">game</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">itemNames</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemInfo">
+<tt class="descname">getItemInfo</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#getItemInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">game</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">items</span><span class="p">[</span><span class="n">itemid</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemAttribute">
+<tt class="descname">getItemAttribute</tt><big>(</big><em>uid</em>, <em>key</em><big>)</big><a class="headerlink" href="#getItemAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Item.&lt;key&gt;</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doItemSetAttribute">
+<tt class="descname">doItemSetAttribute</tt><big>(</big><em>uid</em>, <em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#doItemSetAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Item.&lt;key&gt; = value</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doItemEraseAttribute">
+<tt class="descname">doItemEraseAttribute</tt><big>(</big><em>uid</em>, <em>key</em><big>)</big><a class="headerlink" href="#doItemEraseAttribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>del Item.&lt;key&gt;</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemWeight">
+<tt class="descname">getItemWeight</tt><big>(</big><em>uid</em><span class="optional">[</span>, <em>precise = true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getItemWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">weight</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemParent">
+<tt class="descname">getItemParent</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getItemParent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">inContainer</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="hasItemProperty">
+<tt class="descname">hasItemProperty</tt><big>(</big><em>uid</em>, <em>prop</em><big>)</big><a class="headerlink" href="#hasItemProperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Item.&lt;prop&gt;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="hasPlayerClient">
+<tt class="descname">hasPlayerClient</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#hasPlayerClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">client</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getDataDir">
+<tt class="descname">getDataDir</tt><big>(</big><big>)</big><a class="headerlink" href="#getDataDir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Always ./data</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getConfigFile">
+<tt class="descname">getConfigFile</tt><big>(</big><big>)</big><a class="headerlink" href="#getConfigFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function have no purpose.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getConfigValue">
+<tt class="descname">getConfigValue</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#getConfigValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>config.&lt;key&gt;</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreatureExecuteTalkAction">
+<tt class="descname">doCreatureExecuteTalkAction</tt><big>(</big><em>cid</em>, <em>text</em><span class="optional">[</span>, <em>ignoreAccess = false</em><span class="optional">[</span>, <em>channelId = CHANNEL _DEFAULT</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#doCreatureExecuteTalkAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Creature.say(text[,channelId = channelId])</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doReloadInfo">
+<tt class="descname">doReloadInfo</tt><big>(</big><em>id</em><span class="optional">[</span>, <em>cid</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doReloadInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Somewhat equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">reload</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This reloads everything tho.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="doSaveServer">
+<tt class="descname">doSaveServer</tt><big>(</big><span class="optional">[</span><em>shallow = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doSaveServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">engine</span><span class="o">.</span><span class="n">saveAll</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="loadmodlib">
+<tt class="descname">loadmodlib</tt><big>(</big><em>lib</em><big>)</big><a class="headerlink" href="#loadmodlib" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <a class="reference internal" href="#domodlib" title="domodlib"><tt class="xref py py-func docutils literal"><span class="pre">domodlib()</span></tt></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="domodlib">
+<tt class="descname">domodlib</tt><big>(</big><em>lib</em><big>)</big><a class="headerlink" href="#domodlib" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <a class="reference external" href="http://docs.python.org/2.7/reference/simple_stmts.html#import" title="(in Python v2.7)"><tt class="xref std std-keyword docutils literal"><span class="pre">import</span></tt></a></p>
+<p>Somewhat equal to:</p>
+<div class="highlight-python"><pre>import &lt;lib&gt;</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="dodirectory">
+<tt class="descname">dodirectory</tt><big>(</big><em>dir</em><span class="optional">[</span>, <em>recursively = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#dodirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Somewhat equal to:</p>
+<div class="highlight-python"><pre>from &lt;dir&gt; import *</pre>
+</div>
+<p>Or to:</p>
+<div class="highlight-python"><pre>import dir.*</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerGiveItem">
+<tt class="descname">doPlayerGiveItem</tt><big>(</big><em>cid</em>, <em>itemid</em>, <em>amount</em>, <em>subType</em><big>)</big><a class="headerlink" href="#doPlayerGiveItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can be done like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="n">Item</span><span class="p">(</span><span class="n">itemid</span><span class="p">,</span> <span class="n">amount</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerGiveItemContainer">
+<tt class="descname">doPlayerGiveItemContainer</tt><big>(</big><em>cid</em>, <em>containerid</em>, <em>itemid</em>, <em>amount</em>, <em>subType</em><big>)</big><a class="headerlink" href="#doPlayerGiveItemContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">addItemToContainer</span><span class="p">(</span><span class="n">ContainerItem</span><span class="p">,</span> <span class="n">Item</span><span class="p">(</span><span class="n">itemid</span><span class="p">,</span> <span class="n">amount</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isPremium">
+<tt class="descname">isPremium</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isPremium" title="Permalink to this definition">¶</a></dt>
+<dd><p>Desided by player access flags</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="isNumeric">
+<tt class="descname">isNumeric</tt><big>(</big><em>str</em><big>)</big><a class="headerlink" href="#isNumeric" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="playerExists">
+<tt class="descname">playerExists</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#playerExists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">True</span> <span class="k">if</span> <span class="n">getPlayer</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">else</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getTibiaTime">
+<tt class="descname">getTibiaTime</tt><big>(</big><big>)</big><a class="headerlink" href="#getTibiaTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getTibiaTime</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getHouseOwner">
+<tt class="descname">getHouseOwner</tt><big>(</big><em>houseId</em><big>)</big><a class="headerlink" href="#getHouseOwner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getHouseById</span><span class="p">(</span><span class="n">houseId</span><span class="p">)</span><span class="o">.</span><span class="n">owner</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getHouseName">
+<tt class="descname">getHouseName</tt><big>(</big><em>houseId</em><big>)</big><a class="headerlink" href="#getHouseName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getHouseById</span><span class="p">(</span><span class="n">houseId</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getHouseRent">
+<tt class="descname">getHouseRent</tt><big>(</big><em>houseId</em><big>)</big><a class="headerlink" href="#getHouseRent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getHouseById</span><span class="p">(</span><span class="n">houseId</span><span class="p">)</span><span class="o">.</span><span class="n">rent</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getHousePrice">
+<tt class="descname">getHousePrice</tt><big>(</big><em>houseId</em><big>)</big><a class="headerlink" href="#getHousePrice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getHouseById</span><span class="p">(</span><span class="n">houseId</span><span class="p">)</span><span class="o">.</span><span class="n">price</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getHouseTown">
+<tt class="descname">getHouseTown</tt><big>(</big><em>houseId</em><big>)</big><a class="headerlink" href="#getHouseTown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getHouseById</span><span class="p">(</span><span class="n">houseId</span><span class="p">)</span><span class="o">.</span><span class="n">town_id</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getHouseDoorsCount">
+<tt class="descname">getHouseDoorsCount</tt><big>(</big><em>houseId</em><big>)</big><a class="headerlink" href="#getHouseDoorsCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can be done like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">len</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">houseDoors</span><span class="p">[</span><span class="n">houseId</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getHouseBedsCount">
+<tt class="descname">getHouseBedsCount</tt><big>(</big><em>houseId</em><big>)</big><a class="headerlink" href="#getHouseBedsCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equalent yet</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getHouseTilesCount">
+<tt class="descname">getHouseTilesCount</tt><big>(</big><em>houseId</em><big>)</big><a class="headerlink" href="#getHouseTilesCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getHouseById</span><span class="p">(</span><span class="n">houseId</span><span class="p">)</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemNameById">
+<tt class="descname">getItemNameById</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#getItemNameById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">itemAttribute</span><span class="p">(</span><span class="n">itemid</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemPluralNameById">
+<tt class="descname">getItemPluralNameById</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#getItemPluralNameById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">itemAttribute</span><span class="p">(</span><span class="n">itemid</span><span class="p">,</span> <span class="s">&quot;plural&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemArticleById">
+<tt class="descname">getItemArticleById</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#getItemArticleById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">itemAttribute</span><span class="p">(</span><span class="n">itemid</span><span class="p">,</span> <span class="s">&quot;article&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemName">
+<tt class="descname">getItemName</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getItemName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemPluralName">
+<tt class="descname">getItemPluralName</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getItemPluralName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">plural</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemArticle">
+<tt class="descname">getItemArticle</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getItemArticle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">article</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemText">
+<tt class="descname">getItemText</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getItemText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemSpecialDescription">
+<tt class="descname">getItemSpecialDescription</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getItemSpecialDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">description</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemWriter">
+<tt class="descname">getItemWriter</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getItemWriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">writer</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemDate">
+<tt class="descname">getItemDate</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getItemDate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">written</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getTilePzInfo">
+<tt class="descname">getTilePzInfo</tt><big>(</big><em>pos</em><big>)</big><a class="headerlink" href="#getTilePzInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Position</span><span class="o">.</span><span class="n">getTile</span><span class="p">()</span><span class="o">.</span><span class="n">getFlags</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">TILEFLAGS_PROTECTIONZONE</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getTileZoneInfo">
+<tt class="descname">getTileZoneInfo</tt><big>(</big><em>pos</em><big>)</big><a class="headerlink" href="#getTileZoneInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Position</span><span class="o">.</span><span class="n">getTile</span><span class="p">()</span><span class="o">.</span><span class="n">getFlags</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doSummonCreature">
+<tt class="descname">doSummonCreature</tt><big>(</big><em>name</em>, <em>pos</em>, <em>displayError</em><big>)</big><a class="headerlink" href="#doSummonCreature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">game</span><span class="o">.</span><span class="n">monster</span><span class="o">.</span><span class="n">getMonster</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getOnlinePlayers">
+<tt class="descname">getOnlinePlayers</tt><big>(</big><big>)</big><a class="headerlink" href="#getOnlinePlayers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">len</span><span class="p">(</span><span class="n">game</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">allPlayers</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerByName">
+<tt class="descname">getPlayerByName</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#getPlayerByName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getPlayer</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isPlayer">
+<tt class="descname">isPlayer</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isPlayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">isPlayer</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isPlayerGhost">
+<tt class="descname">isPlayerGhost</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isPlayerGhost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="ow">not</span> <span class="n">Creature</span><span class="o">.</span><span class="n">alive</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isMonster">
+<tt class="descname">isMonster</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isMonster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">isMonster</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isNpc">
+<tt class="descname">isNpc</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isNpc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">isNPC</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddLevel">
+<tt class="descname">doPlayerAddLevel</tt><big>(</big><em>cid</em>, <em>amount</em>, <em>round</em><big>)</big><a class="headerlink" href="#doPlayerAddLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">modifyLevel</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddMagLevel">
+<tt class="descname">doPlayerAddMagLevel</tt><big>(</big><em>cid</em>, <em>amount</em><big>)</big><a class="headerlink" href="#doPlayerAddMagLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">modifyMagicLeve</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddSkill">
+<tt class="descname">doPlayerAddSkill</tt><big>(</big><em>cid</em>, <em>skill</em>, <em>amount</em>, <em>round</em><big>)</big><a class="headerlink" href="#doPlayerAddSkill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">addSkillLevel</span><span class="p">(</span><span class="n">skill</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCopyItem">
+<tt class="descname">doCopyItem</tt><big>(</big><em>item</em>, <em>attributes</em><big>)</big><a class="headerlink" href="#doCopyItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">item</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doRemoveThing">
+<tt class="descname">doRemoveThing</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#doRemoveThing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Depends on where the item is.</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doChangeTypeItem">
+<tt class="descname">doChangeTypeItem</tt><big>(</big><em>uid</em>, <em>subtype</em><big>)</big><a class="headerlink" href="#doChangeTypeItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Item.count -= 1 (you need to refresh the item tho)</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doSetItemText">
+<tt class="descname">doSetItemText</tt><big>(</big><em>uid</em>, <em>text</em>, <em>writer</em>, <em>date</em><big>)</big><a class="headerlink" href="#doSetItemText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">test</span> <span class="o">=</span> <span class="n">text</span>
+<span class="n">Item</span><span class="o">.</span><span class="n">written</span> <span class="o">=</span> <span class="n">date</span>
+<span class="n">Item</span><span class="o">.</span><span class="n">writtenBy</span> <span class="o">=</span> <span class="n">writer</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doItemSetActionId">
+<tt class="descname">doItemSetActionId</tt><big>(</big><em>uid</em>, <em>aid</em><big>)</big><a class="headerlink" href="#doItemSetActionId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>PyOT support multiple actions, so Item.actions.append("action") and Item.actions.remove("action")</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getFluidSourceType">
+<tt class="descname">getFluidSourceType</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#getFluidSourceType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">itemAttribute</span><span class="p">(</span><span class="n">itemid</span><span class="p">,</span> <span class="s">&quot;fluidSource&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getDepotId">
+<tt class="descname">getDepotId</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getDepotId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Depots are indexed based on depotid in player.</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemDescriptions">
+<tt class="descname">getItemDescriptions</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getItemDescriptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">description</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemWeightById">
+<tt class="descname">getItemWeightById</tt><big>(</big><em>itemid</em>, <em>count</em>, <em>precision</em><big>)</big><a class="headerlink" href="#getItemWeightById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">itemAttribute</span><span class="p">(</span><span class="n">itemid</span><span class="p">,</span> <span class="s">&quot;weight&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">count</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getItemWeaponType">
+<tt class="descname">getItemWeaponType</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getItemWeaponType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">weaponType</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isContainer">
+<tt class="descname">isContainer</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#isContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">container</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isItemStackable">
+<tt class="descname">isItemStackable</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#isItemStackable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">stackable</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isItemContainer">
+<tt class="descname">isItemContainer</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#isItemContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">container</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isItemFluidContainer">
+<tt class="descname">isItemFluidContainer</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#isItemFluidContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">fluidSource</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isItemMovable">
+<tt class="descname">isItemMovable</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#isItemMovable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">movable</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="choose">
+<tt class="descname">choose</tt><big>(</big><em>...</em><big>)</big><a class="headerlink" href="#choose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">Iter</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getDistanceBetween">
+<tt class="descname">getDistanceBetween</tt><big>(</big><em>fromPosition</em>, <em>toPosition</em><big>)</big><a class="headerlink" href="#getDistanceBetween" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fromPosition</span><span class="o">.</span><span class="n">distanceTo</span><span class="p">(</span><span class="n">toPosition</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getCreatureLookPosition">
+<tt class="descname">getCreatureLookPosition</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureLookPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Creature</span><span class="o">.</span><span class="n">positionInDirection</span><span class="p">(</span><span class="n">Creature</span><span class="o">.</span><span class="n">direction</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPositionByDirection">
+<tt class="descname">getPositionByDirection</tt><big>(</big><em>position</em>, <em>direction</em>, <em>size</em><big>)</big><a class="headerlink" href="#getPositionByDirection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">positionInDirection</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doComparePositions">
+<tt class="descname">doComparePositions</tt><big>(</big><em>position</em>, <em>positionEx</em><big>)</big><a class="headerlink" href="#doComparePositions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">position</span> <span class="o">==</span> <span class="n">positionEx</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getArea">
+<tt class="descname">getArea</tt><big>(</big><em>position</em>, <em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#getArea" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>We don't do areas like lua do.</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Position">
+<tt class="descname">Position</tt><big>(</big><em>x</em>, <em>y</em>, <em>z</em>, <em>stackpos</em><big>)</big><a class="headerlink" href="#Position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Position</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="ow">and</span> <span class="n">StackPosition</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">stackpos</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="isValidPosition">
+<tt class="descname">isValidPosition</tt><big>(</big><em>position</em><big>)</big><a class="headerlink" href="#isValidPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">getTile</span><span class="p">(</span><span class="n">position</span><span class="p">):</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreateTeleport">
+<tt class="descname">doCreateTeleport</tt><big>(</big><em>itemid</em>, <em>topos</em>, <em>createpos</em><big>)</big><a class="headerlink" href="#doCreateTeleport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Item</span><span class="o">.</span><span class="n">teledest</span> <span class="o">=</span> <span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">]</span> <span class="c"># Yes, it&#39;s a list and NOT a Position object, there are a couple of reasons for this, but well.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreateMonster">
+<tt class="descname">doCreateMonster</tt><big>(</big><em>name</em>, <em>pos</em><span class="optional">[</span>, <em>extend = false</em><span class="optional">[</span>, <em>force = false</em><span class="optional">[</span>, <em>displayError = true</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#doCreateMonster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getMonster</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doCreateNpc">
+<tt class="descname">doCreateNpc</tt><big>(</big><em>name</em>, <em>pos</em><span class="optional">[</span>, <em>displayError = true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doCreateNpc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">getNPC</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddSkillTry">
+<tt class="descname">doPlayerAddSkillTry</tt><big>(</big><em>cid</em>, <em>skillid</em>, <em>n</em><span class="optional">[</span>, <em>useMultiplier = true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerAddSkillTry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Player.skillAttempt(skillid[, n=1])</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doSummonMonster">
+<tt class="descname">doSummonMonster</tt><big>(</big><em>cid</em>, <em>name</em><big>)</big><a class="headerlink" href="#doSummonMonster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">monster</span> <span class="o">=</span> <span class="n">getMonster</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="n">Player</span><span class="o">.</span><span class="n">getPositionInDirection</span><span class="p">(</span><span class="n">Player</span><span class="o">.</span><span class="n">direction</span><span class="p">))</span>
+<span class="n">monster</span><span class="o">.</span><span class="n">setMaster</span><span class="p">(</span><span class="n">Player</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddMount">
+<tt class="descname">doPlayerAddMount</tt><big>(</big><em>cid</em>, <em>mountId</em><big>)</big><a class="headerlink" href="#doPlayerAddMount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">addMount</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerRemoveMount">
+<tt class="descname">doPlayerRemoveMount</tt><big>(</big><em>cid</em>, <em>mountId</em><big>)</big><a class="headerlink" href="#doPlayerRemoveMount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">removeMount</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerMount">
+<tt class="descname">getPlayerMount</tt><big>(</big><em>cid</em>, <em>mountId</em><big>)</big><a class="headerlink" href="#getPlayerMount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">canUseMount</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetMount">
+<tt class="descname">doPlayerSetMount</tt><big>(</big><em>cid</em>, <em>mountId</em><big>)</big><a class="headerlink" href="#doPlayerSetMount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">mount</span> <span class="o">=</span> <span class="n">mountid</span> <span class="ow">or</span> <span class="n">mountname</span> <span class="c"># both work in teory i suppose</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetMountStatus">
+<tt class="descname">doPlayerSetMountStatus</tt><big>(</big><em>cid</em>, <em>mounted</em><big>)</big><a class="headerlink" href="#doPlayerSetMountStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Player</span><span class="o">.</span><span class="n">mounted</span> <span class="o">=</span> <span class="n">mounted</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="getMountInfo">
+<tt class="descname">getMountInfo</tt><big>(</big><span class="optional">[</span><em>mountId</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getMountInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mount</span> <span class="o">=</span> <span class="n">game</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">getMount</span><span class="p">(</span><span class="n">mountname</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddMapMark">
+<tt class="descname">doPlayerAddMapMark</tt><big>(</big><em>cid</em>, <em>pos</em>, <em>type</em><span class="optional">[</span>, <em>description</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerAddMapMark" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equal to:</p>
+<div class="highlight-python"><pre>Player.mapMarker(Position, Type[, description])</pre>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddPremiumDays">
+<tt class="descname">doPlayerAddPremiumDays</tt><big>(</big><em>cid</em>, <em>days</em><big>)</big><a class="headerlink" href="#doPlayerAddPremiumDays" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerPremiumDays">
+<tt class="descname">getPlayerPremiumDays</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerPremiumDays" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayerAccountManager">
+<tt class="descname">getPlayerAccountManager</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerAccountManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayersByAccountId">
+<tt class="descname">getPlayersByAccountId</tt><big>(</big><em>accId</em><big>)</big><a class="headerlink" href="#getPlayersByAccountId" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getAccountIdByName">
+<tt class="descname">getAccountIdByName</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#getAccountIdByName" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getAccountByName">
+<tt class="descname">getAccountByName</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#getAccountByName" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getAccountIdByAccount">
+<tt class="descname">getAccountIdByAccount</tt><big>(</big><em>accName</em><big>)</big><a class="headerlink" href="#getAccountIdByAccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getAccountByAccountId">
+<tt class="descname">getAccountByAccountId</tt><big>(</big><em>accId</em><big>)</big><a class="headerlink" href="#getAccountByAccountId" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getIpByName">
+<tt class="descname">getIpByName</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#getIpByName" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="getPlayersByIp">
+<tt class="descname">getPlayersByIp</tt><big>(</big><em>ip</em><span class="optional">[</span>, <em>mask = 0xFFFFFFFF</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPlayersByIp" title="Permalink to this definition">¶</a></dt>
+<dd><p>No equal</p>
+</dd></dl>
+
+<dl class="docutils">
+<dt>** string actions (see pythons documentation instead) **</dt>
+<dd><p class="first">string.split(str)</p>
+<p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">splitBy</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>string.trim(str)</p>
+<p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">str</span><span class="o">.</span><span class="n">trim</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>string.explode(str, sep, limit)</p>
+<p>Equal to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>string.expand(str)</p>
+<p>Equal to:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span class="nb">str</span> <span class="o">+=</span> <span class="nb">str</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>** part of the guild system, yet to be implanted **
+.. function:: getPlayerGuildId(cid)</p>
+<dl class="function">
+<dt id="getPlayerGuildName">
+<tt class="descname">getPlayerGuildName</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerGuildName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerGuildRankId">
+<tt class="descname">getPlayerGuildRankId</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerGuildRankId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerGuildRank">
+<tt class="descname">getPlayerGuildRank</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerGuildRank" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerGuildNick">
+<tt class="descname">getPlayerGuildNick</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerGuildNick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerGuildLevel">
+<tt class="descname">getPlayerGuildLevel</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerGuildLevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerGUID">
+<tt class="descname">getPlayerGUID</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerGUID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerNameDescription">
+<tt class="descname">getPlayerNameDescription</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerNameDescription" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetNameDescription">
+<tt class="descname">doPlayerSetNameDescription</tt><big>(</big><em>cid</em>, <em>desc</em><big>)</big><a class="headerlink" href="#doPlayerSetNameDescription" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerSpecialDescription">
+<tt class="descname">getPlayerSpecialDescription</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerSpecialDescription" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetSpecialDescription">
+<tt class="descname">doPlayerSetSpecialDescription</tt><big>(</big><em>cid</em>, <em>desc</em><big>)</big><a class="headerlink" href="#doPlayerSetSpecialDescription" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isSorcerer">
+<tt class="descname">isSorcerer</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isSorcerer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isDruid">
+<tt class="descname">isDruid</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isDruid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isPaladin">
+<tt class="descname">isPaladin</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isPaladin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isKnight">
+<tt class="descname">isKnight</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isKnight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isRookie">
+<tt class="descname">isRookie</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isRookie" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isCorpse">
+<tt class="descname">isCorpse</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#isCorpse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descname">getContainerCapById(itemid) Item.containerSize</tt></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getMonsterAttackSpells">
+<tt class="descname">getMonsterAttackSpells</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#getMonsterAttackSpells" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getMonsterHealingSpells">
+<tt class="descname">getMonsterHealingSpells</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#getMonsterHealingSpells" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getMonsterLootList">
+<tt class="descname">getMonsterLootList</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#getMonsterLootList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getMonsterSummonList">
+<tt class="descname">getMonsterSummonList</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#getMonsterSummonList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getDirectionTo">
+<tt class="descname">getDirectionTo</tt><big>(</big><em>pos1</em>, <em>pos2</em><big>)</big><a class="headerlink" href="#getDirectionTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isInRange">
+<tt class="descname">isInRange</tt><big>(</big><em>position</em>, <em>fromPosition</em>, <em>toPosition</em><big>)</big><a class="headerlink" href="#isInRange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isItemRune">
+<tt class="descname">isItemRune</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#isItemRune" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isItemDoor">
+<tt class="descname">isItemDoor</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#isItemDoor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getItemRWInfo">
+<tt class="descname">getItemRWInfo</tt><big>(</big><em>uid</em><big>)</big><a class="headerlink" href="#getItemRWInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getItemLevelDoor">
+<tt class="descname">getItemLevelDoor</tt><big>(</big><em>itemid</em><big>)</big><a class="headerlink" href="#getItemLevelDoor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPartyLeader">
+<tt class="descname">getPartyLeader</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPartyLeader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isInParty">
+<tt class="descname">isInParty</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#isInParty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isPrivateChannel">
+<tt class="descname">isPrivateChannel</tt><big>(</big><em>channelId</em><big>)</big><a class="headerlink" href="#isPrivateChannel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerResetIdleTime">
+<tt class="descname">doPlayerResetIdleTime</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#doPlayerResetIdleTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doBroadcastMessage">
+<tt class="descname">doBroadcastMessage</tt><big>(</big><em>text</em>, <em>class</em><big>)</big><a class="headerlink" href="#doBroadcastMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerBroadcastMessage">
+<tt class="descname">doPlayerBroadcastMessage</tt><big>(</big><em>cid</em>, <em>text</em>, <em>class</em>, <em>checkFlag</em>, <em>ghost</em><big>)</big><a class="headerlink" href="#doPlayerBroadcastMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getBooleanFromString">
+<tt class="descname">getBooleanFromString</tt><big>(</big><em>input</em><big>)</big><a class="headerlink" href="#getBooleanFromString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetExperienceRate">
+<tt class="descname">doPlayerSetExperienceRate</tt><big>(</big><em>cid</em>, <em>value</em><big>)</big><a class="headerlink" href="#doPlayerSetExperienceRate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetMagicRate">
+<tt class="descname">doPlayerSetMagicRate</tt><big>(</big><em>cid</em>, <em>value</em><big>)</big><a class="headerlink" href="#doPlayerSetMagicRate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doShutdown">
+<tt class="descname">doShutdown</tt><big>(</big><big>)</big><a class="headerlink" href="#doShutdown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getHouseEntry">
+<tt class="descname">getHouseEntry</tt><big>(</big><em>houseId</em><big>)</big><a class="headerlink" href="#getHouseEntry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doWriteLogFile">
+<tt class="descname">doWriteLogFile</tt><big>(</big><em>file</em>, <em>text</em><big>)</big><a class="headerlink" href="#doWriteLogFile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getExperienceForLevel">
+<tt class="descname">getExperienceForLevel</tt><big>(</big><em>lv</em><big>)</big><a class="headerlink" href="#getExperienceForLevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doMutePlayer">
+<tt class="descname">doMutePlayer</tt><big>(</big><em>cid</em>, <em>time</em><big>)</big><a class="headerlink" href="#doMutePlayer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerGroupName">
+<tt class="descname">getPlayerGroupName</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerGroupName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerVocationName">
+<tt class="descname">getPlayerVocationName</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerVocationName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPromotedVocation">
+<tt class="descname">getPromotedVocation</tt><big>(</big><em>vid</em><big>)</big><a class="headerlink" href="#getPromotedVocation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerRemovePremiumDays">
+<tt class="descname">doPlayerRemovePremiumDays</tt><big>(</big><em>cid</em>, <em>days</em><big>)</big><a class="headerlink" href="#doPlayerRemovePremiumDays" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerMasterPos">
+<tt class="descname">getPlayerMasterPos</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerMasterPos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddAddons">
+<tt class="descname">doPlayerAddAddons</tt><big>(</big><em>cid</em>, <em>addon</em><big>)</big><a class="headerlink" href="#doPlayerAddAddons" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerWithdrawAllMoney">
+<tt class="descname">doPlayerWithdrawAllMoney</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#doPlayerWithdrawAllMoney" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerDepositAllMoney">
+<tt class="descname">doPlayerDepositAllMoney</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#doPlayerDepositAllMoney" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerTransferAllMoneyTo">
+<tt class="descname">doPlayerTransferAllMoneyTo</tt><big>(</big><em>cid</em>, <em>target</em><big>)</big><a class="headerlink" href="#doPlayerTransferAllMoneyTo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getMonthDayEnding">
+<tt class="descname">getMonthDayEnding</tt><big>(</big><em>day</em><big>)</big><a class="headerlink" href="#getMonthDayEnding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getMonthString">
+<tt class="descname">getMonthString</tt><big>(</big><em>m</em><big>)</big><a class="headerlink" href="#getMonthString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getArticle">
+<tt class="descname">getArticle</tt><big>(</big><em>str</em><big>)</big><a class="headerlink" href="#getArticle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerTakeItem">
+<tt class="descname">doPlayerTakeItem</tt><big>(</big><em>cid</em>, <em>itemid</em>, <em>amount</em><big>)</big><a class="headerlink" href="#doPlayerTakeItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerBuyItem">
+<tt class="descname">doPlayerBuyItem</tt><big>(</big><em>cid</em>, <em>itemid</em>, <em>count</em>, <em>cost</em>, <em>charges</em><big>)</big><a class="headerlink" href="#doPlayerBuyItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerBuyItemContainer">
+<tt class="descname">doPlayerBuyItemContainer</tt><big>(</big><em>cid</em>, <em>containerid</em>, <em>itemid</em>, <em>count</em>, <em>cost</em>, <em>charges</em><big>)</big><a class="headerlink" href="#doPlayerBuyItemContainer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSellItem">
+<tt class="descname">doPlayerSellItem</tt><big>(</big><em>cid</em>, <em>itemid</em>, <em>count</em>, <em>cost</em><big>)</big><a class="headerlink" href="#doPlayerSellItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerWithdrawMoney">
+<tt class="descname">doPlayerWithdrawMoney</tt><big>(</big><em>cid</em>, <em>amount</em><big>)</big><a class="headerlink" href="#doPlayerWithdrawMoney" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerDepositMoney">
+<tt class="descname">doPlayerDepositMoney</tt><big>(</big><em>cid</em>, <em>amount</em><big>)</big><a class="headerlink" href="#doPlayerDepositMoney" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddStamina">
+<tt class="descname">doPlayerAddStamina</tt><big>(</big><em>cid</em>, <em>minutes</em><big>)</big><a class="headerlink" href="#doPlayerAddStamina" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doCleanHouse">
+<tt class="descname">doCleanHouse</tt><big>(</big><em>houseId</em><big>)</big><a class="headerlink" href="#doCleanHouse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doCleanMap">
+<tt class="descname">doCleanMap</tt><big>(</big><big>)</big><a class="headerlink" href="#doCleanMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doRefreshMap">
+<tt class="descname">doRefreshMap</tt><big>(</big><big>)</big><a class="headerlink" href="#doRefreshMap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doGuildAddEnemy">
+<tt class="descname">doGuildAddEnemy</tt><big>(</big><em>guild</em>, <em>enemy</em>, <em>war</em>, <em>type</em><big>)</big><a class="headerlink" href="#doGuildAddEnemy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doGuildRemoveEnemy">
+<tt class="descname">doGuildRemoveEnemy</tt><big>(</big><em>guild</em>, <em>enemy</em><big>)</big><a class="headerlink" href="#doGuildRemoveEnemy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doUpdateHouseAuctions">
+<tt class="descname">doUpdateHouseAuctions</tt><big>(</big><big>)</big><a class="headerlink" href="#doUpdateHouseAuctions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getModList">
+<tt class="descname">getModList</tt><big>(</big><big>)</big><a class="headerlink" href="#getModList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getHighscoreString">
+<tt class="descname">getHighscoreString</tt><big>(</big><em>skillId</em><big>)</big><a class="headerlink" href="#getHighscoreString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getWaypointPosition">
+<tt class="descname">getWaypointPosition</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#getWaypointPosition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doWaypointAddTemporial">
+<tt class="descname">doWaypointAddTemporial</tt><big>(</big><em>name</em>, <em>pos</em><big>)</big><a class="headerlink" href="#doWaypointAddTemporial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getGameState">
+<tt class="descname">getGameState</tt><big>(</big><big>)</big><a class="headerlink" href="#getGameState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doSetGameState">
+<tt class="descname">doSetGameState</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#doSetGameState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doExecuteRaid">
+<tt class="descname">doExecuteRaid</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#doExecuteRaid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isIpBanished">
+<tt class="descname">isIpBanished</tt><big>(</big><em>ip</em><span class="optional">[</span>, <em>mask</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#isIpBanished" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isPlayerBanished">
+<tt class="descname">isPlayerBanished</tt><big>(</big><em>name/guid</em>, <em>type</em><big>)</big><a class="headerlink" href="#isPlayerBanished" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isAccountBanished">
+<tt class="descname">isAccountBanished</tt><big>(</big><em>accountId</em><span class="optional">[</span>, <em>playerId</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#isAccountBanished" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doAddIpBanishment">
+<tt class="descname">doAddIpBanishment</tt><big>(</big><em>...</em><big>)</big><a class="headerlink" href="#doAddIpBanishment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doAddPlayerBanishment">
+<tt class="descname">doAddPlayerBanishment</tt><big>(</big><em>...</em><big>)</big><a class="headerlink" href="#doAddPlayerBanishment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doAddAccountBanishment">
+<tt class="descname">doAddAccountBanishment</tt><big>(</big><em>...</em><big>)</big><a class="headerlink" href="#doAddAccountBanishment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doAddNotation">
+<tt class="descname">doAddNotation</tt><big>(</big><em>...</em><big>)</big><a class="headerlink" href="#doAddNotation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doAddStatement">
+<tt class="descname">doAddStatement</tt><big>(</big><em>...</em><big>)</big><a class="headerlink" href="#doAddStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doRemoveIpBanishment">
+<tt class="descname">doRemoveIpBanishment</tt><big>(</big><em>ip</em><span class="optional">[</span>, <em>mask</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doRemoveIpBanishment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doRemovePlayerBanishment">
+<tt class="descname">doRemovePlayerBanishment</tt><big>(</big><em>name/guid</em>, <em>type</em><big>)</big><a class="headerlink" href="#doRemovePlayerBanishment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doRemoveAccountBanishment">
+<tt class="descname">doRemoveAccountBanishment</tt><big>(</big><em>accountId</em><span class="optional">[</span>, <em>playerId</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doRemoveAccountBanishment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doRemoveNotations">
+<tt class="descname">doRemoveNotations</tt><big>(</big><em>accountId</em><span class="optional">[</span>, <em>playerId</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doRemoveNotations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doRemoveStatements">
+<tt class="descname">doRemoveStatements</tt><big>(</big><em>name/guid</em><span class="optional">[</span>, <em>channelId</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doRemoveStatements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getNotationsCount">
+<tt class="descname">getNotationsCount</tt><big>(</big><em>accountId</em><span class="optional">[</span>, <em>playerId</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getNotationsCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getStatementsCount">
+<tt class="descname">getStatementsCount</tt><big>(</big><em>name/guid</em><span class="optional">[</span>, <em>channelId</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getStatementsCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getBanData">
+<tt class="descname">getBanData</tt><big>(</big><em>value</em><span class="optional">[</span>, <em>type</em><span class="optional">[</span>, <em>param</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#getBanData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getBanReason">
+<tt class="descname">getBanReason</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#getBanReason" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getBanAction">
+<tt class="descname">getBanAction</tt><big>(</big><em>id</em><span class="optional">[</span>, <em>ipBanishment = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getBanAction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getBanList">
+<tt class="descname">getBanList</tt><big>(</big><em>type</em><span class="optional">[</span>, <em>value</em><span class="optional">[</span>, <em>param</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#getBanList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getExperienceStage">
+<tt class="descname">getExperienceStage</tt><big>(</big><em>level</em><big>)</big><a class="headerlink" href="#getExperienceStage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getLogsDir">
+<tt class="descname">getLogsDir</tt><big>(</big><big>)</big><a class="headerlink" href="#getLogsDir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getCreatureSummons">
+<tt class="descname">getCreatureSummons</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureSummons" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getTownId">
+<tt class="descname">getTownId</tt><big>(</big><em>townName</em><big>)</big><a class="headerlink" href="#getTownId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getTownName">
+<tt class="descname">getTownName</tt><big>(</big><em>townId</em><big>)</big><a class="headerlink" href="#getTownName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getTownTemplePosition">
+<tt class="descname">getTownTemplePosition</tt><big>(</big><em>townId</em><big>)</big><a class="headerlink" href="#getTownTemplePosition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getTownHouses">
+<tt class="descname">getTownHouses</tt><big>(</big><em>townId</em><big>)</big><a class="headerlink" href="#getTownHouses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getSpectators">
+<tt class="descname">getSpectators</tt><big>(</big><em>centerPos</em>, <em>rangex</em>, <em>rangey</em><span class="optional">[</span>, <em>multifloor = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getSpectators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getVocationInfo">
+<tt class="descname">getVocationInfo</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#getVocationInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getGroupInfo">
+<tt class="descname">getGroupInfo</tt><big>(</big><em>id</em><span class="optional">[</span>, <em>premium = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getGroupInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getVocationList">
+<tt class="descname">getVocationList</tt><big>(</big><big>)</big><a class="headerlink" href="#getVocationList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getGroupList">
+<tt class="descname">getGroupList</tt><big>(</big><big>)</big><a class="headerlink" href="#getGroupList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getChannelList">
+<tt class="descname">getChannelList</tt><big>(</big><big>)</big><a class="headerlink" href="#getChannelList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getTownList">
+<tt class="descname">getTownList</tt><big>(</big><big>)</big><a class="headerlink" href="#getTownList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getWaypointList">
+<tt class="descname">getWaypointList</tt><big>(</big><big>)</big><a class="headerlink" href="#getWaypointList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getTalkActionList">
+<tt class="descname">getTalkActionList</tt><big>(</big><big>)</big><a class="headerlink" href="#getTalkActionList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getExperienceStageList">
+<tt class="descname">getExperienceStageList</tt><big>(</big><big>)</big><a class="headerlink" href="#getExperienceStageList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerRates">
+<tt class="descname">getPlayerRates</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerRates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetRate">
+<tt class="descname">doPlayerSetRate</tt><big>(</big><em>cid</em>, <em>type</em>, <em>value</em><big>)</big><a class="headerlink" href="#doPlayerSetRate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerPartner">
+<tt class="descname">getPlayerPartner</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerPartner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetPartner">
+<tt class="descname">doPlayerSetPartner</tt><big>(</big><em>cid</em>, <em>guid</em><big>)</big><a class="headerlink" href="#doPlayerSetPartner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerFollowCreature">
+<tt class="descname">doPlayerFollowCreature</tt><big>(</big><em>cid</em>, <em>target</em><big>)</big><a class="headerlink" href="#doPlayerFollowCreature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerParty">
+<tt class="descname">getPlayerParty</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerParty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerJoinParty">
+<tt class="descname">doPlayerJoinParty</tt><big>(</big><em>cid</em>, <em>lid</em><big>)</big><a class="headerlink" href="#doPlayerJoinParty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerLeaveParty">
+<tt class="descname">doPlayerLeaveParty</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>forced = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerLeaveParty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPartyMembers">
+<tt class="descname">getPartyMembers</tt><big>(</big><em>lid</em><big>)</big><a class="headerlink" href="#getPartyMembers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getCreatureGuildEmblem">
+<tt class="descname">getCreatureGuildEmblem</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>target</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getCreatureGuildEmblem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doCreatureSetGuildEmblem">
+<tt class="descname">doCreatureSetGuildEmblem</tt><big>(</big><em>cid</em>, <em>emblem</em><big>)</big><a class="headerlink" href="#doCreatureSetGuildEmblem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getCreaturePartyShield">
+<tt class="descname">getCreaturePartyShield</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>target</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getCreaturePartyShield" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doCreatureSetPartyShield">
+<tt class="descname">doCreatureSetPartyShield</tt><big>(</big><em>cid</em>, <em>shield</em><big>)</big><a class="headerlink" href="#doCreatureSetPartyShield" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getCreatureSkullType">
+<tt class="descname">getCreatureSkullType</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>target</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getCreatureSkullType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doCreatureSetSkullType">
+<tt class="descname">doCreatureSetSkullType</tt><big>(</big><em>cid</em>, <em>skull</em><big>)</big><a class="headerlink" href="#doCreatureSetSkullType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerSkullEnd">
+<tt class="descname">getPlayerSkullEnd</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerSkullEnd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetSkullEnd">
+<tt class="descname">doPlayerSetSkullEnd</tt><big>(</big><em>cid</em>, <em>time</em>, <em>type</em><big>)</big><a class="headerlink" href="#doPlayerSetSkullEnd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerBlessing">
+<tt class="descname">getPlayerBlessing</tt><big>(</big><em>cid</em>, <em>blessing</em><big>)</big><a class="headerlink" href="#getPlayerBlessing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerAddBlessing">
+<tt class="descname">doPlayerAddBlessing</tt><big>(</big><em>cid</em>, <em>blessing</em><big>)</big><a class="headerlink" href="#doPlayerAddBlessing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerStamina">
+<tt class="descname">getPlayerStamina</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerStamina" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetStamina">
+<tt class="descname">doPlayerSetStamina</tt><big>(</big><em>cid</em>, <em>minutes</em><big>)</big><a class="headerlink" href="#doPlayerSetStamina" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerBalance">
+<tt class="descname">getPlayerBalance</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerBalance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetBalance">
+<tt class="descname">doPlayerSetBalance</tt><big>(</big><em>cid</em>, <em>balance</em><big>)</big><a class="headerlink" href="#doPlayerSetBalance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getCreatureNoMove">
+<tt class="descname">getCreatureNoMove</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getCreatureNoMove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doCreatureSetNoMove">
+<tt class="descname">doCreatureSetNoMove</tt><big>(</big><em>cid</em>, <em>block</em><big>)</big><a class="headerlink" href="#doCreatureSetNoMove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerIdleTime">
+<tt class="descname">getPlayerIdleTime</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerIdleTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetIdleTime">
+<tt class="descname">doPlayerSetIdleTime</tt><big>(</big><em>cid</em>, <em>amount</em><big>)</big><a class="headerlink" href="#doPlayerSetIdleTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerLastLoad">
+<tt class="descname">getPlayerLastLoad</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerLastLoad" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerLastLogin">
+<tt class="descname">getPlayerLastLogin</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerLastLogin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerTradeState">
+<tt class="descname">getPlayerTradeState</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getPlayerTradeState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSendMailByName">
+<tt class="descname">doPlayerSendMailByName</tt><big>(</big><em>name</em>, <em>item</em><span class="optional">[</span>, <em>town</em><span class="optional">[</span>, <em>actor</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#doPlayerSendMailByName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getChannelUsers">
+<tt class="descname">getChannelUsers</tt><big>(</big><em>channelId</em><big>)</big><a class="headerlink" href="#getChannelUsers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getSearchString">
+<tt class="descname">getSearchString</tt><big>(</big><em>fromPosition</em>, <em>toPosition</em><span class="optional">[</span>, <em>fromIsCreature = false</em><span class="optional">[</span>, <em>toIsCreature = false</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#getSearchString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getClosestFreeTile">
+<tt class="descname">getClosestFreeTile</tt><big>(</big><em>cid</em>, <em>targetpos</em><span class="optional">[</span>, <em>extended = false</em><span class="optional">[</span>, <em>ignoreHouse = true</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#getClosestFreeTile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doTeleportThing">
+<tt class="descname">doTeleportThing</tt><big>(</big><em>cid</em>, <em>newpos</em><span class="optional">[</span>, <em>pushmove = true</em><span class="optional">[</span>, <em>fullTeleport = true</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#doTeleportThing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doSendAnimatedText">
+<tt class="descname">doSendAnimatedText</tt><big>(</big><em>pos</em>, <em>text</em>, <em>color</em><span class="optional">[</span>, <em>player</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doSendAnimatedText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doAddContainerItemEx">
+<tt class="descname">doAddContainerItemEx</tt><big>(</big><em>uid</em>, <em>virtuid</em><big>)</big><a class="headerlink" href="#doAddContainerItemEx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doRelocate">
+<tt class="descname">doRelocate</tt><big>(</big><em>pos</em>, <em>posTo</em><span class="optional">[</span>, <em>creatures = true</em><span class="optional">[</span>, <em>unmovable = true</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#doRelocate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doCleanTile">
+<tt class="descname">doCleanTile</tt><big>(</big><em>pos</em><span class="optional">[</span>, <em>forceMapLoaded = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doCleanTile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doConvinceCreature">
+<tt class="descname">doConvinceCreature</tt><big>(</big><em>cid</em>, <em>target</em><big>)</big><a class="headerlink" href="#doConvinceCreature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getMonsterTargetList">
+<tt class="descname">getMonsterTargetList</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getMonsterTargetList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getMonsterFriendList">
+<tt class="descname">getMonsterFriendList</tt><big>(</big><em>cid</em><big>)</big><a class="headerlink" href="#getMonsterFriendList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="isSightClear">
+<tt class="descname">isSightClear</tt><big>(</big><em>fromPos</em>, <em>toPos</em>, <em>floorCheck</em><big>)</big><a class="headerlink" href="#isSightClear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doCreatureChangeOutfit">
+<tt class="descname">doCreatureChangeOutfit</tt><big>(</big><em>cid</em>, <em>outfit</em><big>)</big><a class="headerlink" href="#doCreatureChangeOutfit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doSetMonsterOutfit">
+<tt class="descname">doSetMonsterOutfit</tt><big>(</big><em>cid</em>, <em>name</em><span class="optional">[</span>, <em>time = -1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doSetMonsterOutfit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doSetItemOutfit">
+<tt class="descname">doSetItemOutfit</tt><big>(</big><em>cid</em>, <em>item</em><span class="optional">[</span>, <em>time = -1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doSetItemOutfit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doSetCreatureOutfit">
+<tt class="descname">doSetCreatureOutfit</tt><big>(</big><em>cid</em>, <em>outfit</em><span class="optional">[</span>, <em>time = -1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doSetCreatureOutfit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getWorldType">
+<tt class="descname">getWorldType</tt><big>(</big><big>)</big><a class="headerlink" href="#getWorldType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="setWorldType">
+<tt class="descname">setWorldType</tt><big>(</big><em>type</em><big>)</big><a class="headerlink" href="#setWorldType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getWorldTime">
+<tt class="descname">getWorldTime</tt><big>(</big><big>)</big><a class="headerlink" href="#getWorldTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getWorldLight">
+<tt class="descname">getWorldLight</tt><big>(</big><big>)</big><a class="headerlink" href="#getWorldLight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getWorldCreatures">
+<tt class="descname">getWorldCreatures</tt><big>(</big><em>type</em><big>)</big><a class="headerlink" href="#getWorldCreatures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getWorldUpTime">
+<tt class="descname">getWorldUpTime</tt><big>(</big><big>)</big><a class="headerlink" href="#getWorldUpTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getGuildId">
+<tt class="descname">getGuildId</tt><big>(</big><em>guildName</em><big>)</big><a class="headerlink" href="#getGuildId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getGuildMotd">
+<tt class="descname">getGuildMotd</tt><big>(</big><em>guildId</em><big>)</big><a class="headerlink" href="#getGuildMotd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getPlayerSex">
+<tt class="descname">getPlayerSex</tt><big>(</big><em>cid</em><span class="optional">[</span>, <em>full = false</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPlayerSex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doPlayerSetSex">
+<tt class="descname">doPlayerSetSex</tt><big>(</big><em>cid</em>, <em>newSex</em><big>)</big><a class="headerlink" href="#doPlayerSetSex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="numberToVariant">
+<tt class="descname">numberToVariant</tt><big>(</big><em>number</em><big>)</big><a class="headerlink" href="#numberToVariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="stringToVariant">
+<tt class="descname">stringToVariant</tt><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#stringToVariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="positionToVariant">
+<tt class="descname">positionToVariant</tt><big>(</big><em>pos</em><big>)</big><a class="headerlink" href="#positionToVariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="targetPositionToVariant">
+<tt class="descname">targetPositionToVariant</tt><big>(</big><em>pos</em><big>)</big><a class="headerlink" href="#targetPositionToVariant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="variantToNumber">
+<tt class="descname">variantToNumber</tt><big>(</big><em>var</em><big>)</big><a class="headerlink" href="#variantToNumber" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="variantToString">
+<tt class="descname">variantToString</tt><big>(</big><em>var</em><big>)</big><a class="headerlink" href="#variantToString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="variantToPosition">
+<tt class="descname">variantToPosition</tt><big>(</big><em>var</em><big>)</big><a class="headerlink" href="#variantToPosition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="doAddContainerItem">
+<tt class="descname">doAddContainerItem</tt><big>(</big><em>uid</em>, <em>itemid</em><span class="optional">[</span>, <em>count/subType = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doAddContainerItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getHouseInfo">
+<tt class="descname">getHouseInfo</tt><big>(</big><em>houseId</em><span class="optional">[</span>, <em>displayError = true</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getHouseInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="getHouseByPlayerGUID">
+<tt class="descname">getHouseByPlayerGUID</tt><big>(</big><em>playerGUID</em><big>)</big><a class="headerlink" href="#getHouseByPlayerGUID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scriptevents.html" title="Scriptable events in PyOT"
+             >previous</a> |</li>
+        <li><a href="index.html">PyOT 1.0-alpha1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011-2012, stian, soul4soul, sentinello, Mr. Ez, Outerworld.
+      Last updated on Dec 10, 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

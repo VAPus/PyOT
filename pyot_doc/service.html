@@ -1,0 +1,225 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>service Package &mdash; PyOT 1.0-alpha1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0-alpha1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PyOT 1.0-alpha1 documentation" href="index.html" />
+    <link rel="up" title="core Package" href="core.html" />
+    <link rel="next" title="Scriptable events in PyOT" href="scriptevents.html" />
+    <link rel="prev" title="protocols Package" href="game.protocols.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scriptevents.html" title="Scriptable events in PyOT"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="game.protocols.html" title="protocols Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">PyOT 1.0-alpha1 documentation</a> &raquo;</li>
+          <li><a href="modules.html" >PyOT Modules</a> &raquo;</li>
+          <li><a href="core.html" accesskey="U">core Package</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">service Package</a><ul>
+<li><a class="reference internal" href="#module-service.gameserver"><tt class="docutils literal"><span class="pre">gameserver</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-service.loginserver"><tt class="docutils literal"><span class="pre">loginserver</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="game.protocols.html"
+                        title="previous chapter">protocols Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scriptevents.html"
+                        title="next chapter">Scriptable events in PyOT</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/service.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="service-package">
+<h1>service Package<a class="headerlink" href="#service-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-service.gameserver">
+<span id="gameserver-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">gameserver</span></tt> Module<a class="headerlink" href="#module-service.gameserver" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="service.gameserver.GameFactory">
+<em class="property">class </em><tt class="descclassname">service.gameserver.</tt><tt class="descname">GameFactory</tt><a class="headerlink" href="#service.gameserver.GameFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="core.html#protocolbase.TibiaFactory" title="protocolbase.TibiaFactory"><tt class="xref py py-class docutils literal"><span class="pre">protocolbase.TibiaFactory</span></tt></a></p>
+<dl class="attribute">
+<dt id="service.gameserver.GameFactory.protocol">
+<tt class="descname">protocol</tt><a class="headerlink" href="#service.gameserver.GameFactory.protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#service.gameserver.GameProtocol" title="service.gameserver.GameProtocol"><tt class="xref py py-class docutils literal"><span class="pre">GameProtocol</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="service.gameserver.GameProtocol">
+<em class="property">class </em><tt class="descclassname">service.gameserver.</tt><tt class="descname">GameProtocol</tt><a class="headerlink" href="#service.gameserver.GameProtocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="core.html#protocolbase.TibiaProtocol" title="protocolbase.TibiaProtocol"><tt class="xref py py-class docutils literal"><span class="pre">protocolbase.TibiaProtocol</span></tt></a></p>
+<dl class="attribute">
+<dt id="service.gameserver.GameProtocol.connections">
+<tt class="descname">connections</tt><em class="property"> = 0</em><a class="headerlink" href="#service.gameserver.GameProtocol.connections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="service.gameserver.GameProtocol.exitWaitingList">
+<tt class="descname">exitWaitingList</tt><big>(</big><em>message</em>, <em>slot</em><big>)</big><a class="headerlink" href="#service.gameserver.GameProtocol.exitWaitingList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="service.gameserver.GameProtocol.exitWithError">
+<tt class="descname">exitWithError</tt><big>(</big><em>message</em><big>)</big><a class="headerlink" href="#service.gameserver.GameProtocol.exitWithError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="service.gameserver.GameProtocol.onConnect">
+<tt class="descname">onConnect</tt><big>(</big><big>)</big><a class="headerlink" href="#service.gameserver.GameProtocol.onConnect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="service.gameserver.GameProtocol.onConnectionLost">
+<tt class="descname">onConnectionLost</tt><big>(</big><big>)</big><a class="headerlink" href="#service.gameserver.GameProtocol.onConnectionLost" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="service.gameserver.GameProtocol.onFirstPacket">
+<tt class="descname">onFirstPacket</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#service.gameserver.GameProtocol.onFirstPacket" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="service.gameserver.GameProtocol.onInit">
+<tt class="descname">onInit</tt><big>(</big><big>)</big><a class="headerlink" href="#service.gameserver.GameProtocol.onInit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="service.gameserver.GameProtocol.onPacket">
+<tt class="descname">onPacket</tt><big>(</big><em>packet</em><big>)</big><a class="headerlink" href="#service.gameserver.GameProtocol.onPacket" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-service.loginserver">
+<span id="loginserver-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">loginserver</span></tt> Module<a class="headerlink" href="#module-service.loginserver" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="service.loginserver.LoginFactory">
+<em class="property">class </em><tt class="descclassname">service.loginserver.</tt><tt class="descname">LoginFactory</tt><a class="headerlink" href="#service.loginserver.LoginFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="core.html#protocolbase.TibiaFactory" title="protocolbase.TibiaFactory"><tt class="xref py py-class docutils literal"><span class="pre">protocolbase.TibiaFactory</span></tt></a></p>
+<dl class="attribute">
+<dt id="service.loginserver.LoginFactory.protocol">
+<tt class="descname">protocol</tt><a class="headerlink" href="#service.loginserver.LoginFactory.protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#service.loginserver.LoginProtocol" title="service.loginserver.LoginProtocol"><tt class="xref py py-class docutils literal"><span class="pre">LoginProtocol</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="service.loginserver.LoginProtocol">
+<em class="property">class </em><tt class="descclassname">service.loginserver.</tt><tt class="descname">LoginProtocol</tt><a class="headerlink" href="#service.loginserver.LoginProtocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="core.html#protocolbase.TibiaProtocol" title="protocolbase.TibiaProtocol"><tt class="xref py py-class docutils literal"><span class="pre">protocolbase.TibiaProtocol</span></tt></a></p>
+<dl class="method">
+<dt id="service.loginserver.LoginProtocol.exitWithError">
+<tt class="descname">exitWithError</tt><big>(</big><em>message</em>, <em>error=10</em><big>)</big><a class="headerlink" href="#service.loginserver.LoginProtocol.exitWithError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="service.loginserver.LoginProtocol.onFirstPacket">
+<tt class="descname">onFirstPacket</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#service.loginserver.LoginProtocol.onFirstPacket" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scriptevents.html" title="Scriptable events in PyOT"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="game.protocols.html" title="protocols Package"
+             >previous</a> |</li>
+        <li><a href="index.html">PyOT 1.0-alpha1 documentation</a> &raquo;</li>
+          <li><a href="modules.html" >PyOT Modules</a> &raquo;</li>
+          <li><a href="core.html" >core Package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011-2012, stian, soul4soul, sentinello, Mr. Ez, Outerworld.
+      Last updated on Dec 10, 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
